@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.greenhouse.mapper.EnvironmentMapper">
+
+    <!-- 获取指定时间范围内的环境数据 -->
+    <select id="selectByTimeRange" resultType="com.greenhouse.entity.EnvironmentData">
+        SELECT * FROM environment_data
+        WHERE greenhouse_id = #{greenhouseId}
+        <if test="startTime != null">
+            AND recorded_at >= #{startTime}
+        </if>
+        <if test="endTime != null">
+            AND recorded_at &lt;= #{endTime}
+        </if>
+        ORDER BY recorded_at DESC
+    </select>
+
+    <!-- 获取指定时间范围内的环境数据统计信息 -->
+    <select id="selectStatisticsByTimeRange" resultType="map">
+        SELECT 
+            AVG(temperature) as avg_temperature,
+            MIN(temperature) as min_temperature,
+            MAX(temperature) as max_temperature,
+            AVG(humidity) as avg_humidity,
+            MIN(humidity) as min_humidity,
+            MAX(humidity) as max_humidity,
+            AVG(light_intensity) as avg_light_intensity,
+            MIN(light_intensity) as min_light_intensity,
+            MAX(light_intensity) as max_light_intensity,
+            AVG(soil_humidity) as avg_soil_humidity,
+            MIN(soil_humidity) as min_soil_humidity,
+            MAX(soil_humidity) as max_soil_humidity,
+            AVG(co2_level) as avg_co2_level,
+            MIN(co2_level) as min_co2_level,
+            MAX(co2_level) as max_co2_level,
+            COUNT(*) as total_records
+        FROM environment_data
+        WHERE greenhouse_id = #{greenhouseId}
+        <if test="startTime != null">
+            AND recorded_at >= #{startTime}
+        </if>
+        <if test="endTime != null">
+            AND recorded_at &lt;= #{endTime}
+        </if>
+    </select>
+
+    <!-- 获取温度异常的环境数据 -->
+    <select id="selectTemperatureAbnormal" resultType="com.greenhouse.entity.EnvironmentData">
+        SELECT * FROM environment_data
+        WHERE greenhouse_id = #{greenhouseId}
+        AND (temperature &lt; #{minTemp} OR temperature > #{maxTemp})
+        <if test="startTime != null">
+            AND recorded_at >= #{startTime}
+        </if>
+        <if test="endTime != null">
+            AND recorded_at &lt;= #{endTime}
+        </if>
+        ORDER BY recorded_at DESC
+    </select>
+
+    <!-- 获取湿度异常的环境数据 -->
+    <select id="selectHumidityAbnormal" resultType="com.greenhouse.entity.EnvironmentData">
+        SELECT * FROM environment_data
+        WHERE greenhouse_id = #{greenhouseId}
+        AND (humidity &lt; #{minHumidity} OR humidity > #{maxHumidity})
+        <if test="startTime != null">
+            AND recorded_at >= #{startTime}
+        </if>
+        <if test="endTime != null">
+            AND recorded_at &lt;= #{endTime}
+        </if>
+        ORDER BY recorded_at DESC
+    </select>
+
+    <!-- 获取光照强度异常的环境数据 -->
+    <select id="selectLightAbnormal" resultType="com.greenhouse.entity.EnvironmentData">
+        SELECT * FROM environment_data
+        WHERE greenhouse_id = #{greenhouseId}
+        AND (light_intensity &lt; #{minLight} OR light_intensity > #{maxLight})
+        <if test="startTime != null">
+            AND recorded_at >= #{startTime}
+        </if>
+        <if test="endTime != null">
+            AND recorded_at &lt;= #{endTime}
+        </if>
+        ORDER BY recorded_at DESC
+    </select>
+
+    <!-- 分页查询环境数据历史记录 -->
+    <select id="selectHistoryPage" resultType="com.greenhouse.entity.EnvironmentData">
+        SELECT * FROM environment_data
+        WHERE greenhouse_id = #{greenhouseId}
+        <if test="startTime != null">
+            AND recorded_at >= #{startTime}
+        </if>
+        <if test="endTime != null">
+            AND recorded_at &lt;= #{endTime}
+        </if>
+        ORDER BY recorded_at DESC
+    </select>
+
+    <!-- 获取每小时平均环境数据 -->
+    <select id="selectHourlyAverage" resultType="map">
+        SELECT 
+            DATE_FORMAT(recorded_at, '%Y-%m-%d %H:00:00') as time,
+            AVG(temperature) as avg_temperature,
+            AVG(humidity) as avg_humidity,
+            AVG(light_intensity) as avg_light_intensity,
+            AVG(soil_humidity) as avg_soil_humidity,
+            AVG(co2_level) as avg_co2_level,
+            COUNT(*) as record_count
+        FROM environment_data
+        WHERE greenhouse_id = #{greenhouseId}
+        <if test="startTime != null">
+            AND recorded_at >= #{startTime}
+        </if>
+        <if test="endTime != null">
+            AND recorded_at &lt;= #{endTime}
+        </if>
+        GROUP BY DATE_FORMAT(recorded_at, '%Y-%m-%d %H')
+        ORDER BY DATE_FORMAT(recorded_at, '%Y-%m-%d %H')
+    </select>
+
+    <!-- 获取每日平均环境数据 -->
+    <select id="selectDailyAverage" resultType="map">
+        SELECT 
+            DATE_FORMAT(recorded_at, '%Y-%m-%d 00:00:00') as time,
+            AVG(temperature) as avg_temperature,
+            MIN(temperature) as min_temperature,
+            MAX(temperature) as max_temperature,
+            AVG(humidity) as avg_humidity,
+            MIN(humidity) as min_humidity,
+            MAX(humidity) as max_humidity,
+            AVG(light_intensity) as avg_light_intensity,
+            MIN(light_intensity) as min_light_intensity,
+            MAX(light_intensity) as max_light_intensity,
+            AVG(soil_humidity) as avg_soil_humidity,
+            MIN(soil_humidity) as min_soil_humidity,
+            MAX(soil_humidity) as max_soil_humidity,
+            AVG(co2_level) as avg_co2_level,
+            MIN(co2_level) as min_co2_level,
+            MAX(co2_level) as max_co2_level,
+            COUNT(*) as record_count
+        FROM environment_data
+        WHERE greenhouse_id = #{greenhouseId}
+        <if test="startTime != null">
+            AND recorded_at >= #{startTime}
+        </if>
+        <if test="endTime != null">
+            AND recorded_at &lt;= #{endTime}
+        </if>
+        GROUP BY DATE(recorded_at)
+        ORDER BY DATE(recorded_at)
+    </select>
+
+    <!-- 删除指定时间之前的历史数据 -->
+    <delete id="deleteBeforeTime">
+        DELETE FROM environment_data
+        WHERE recorded_at &lt; #{beforeTime}
+    </delete>
+
+</mapper>

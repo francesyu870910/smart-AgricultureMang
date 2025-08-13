@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.greenhouse.mapper.ControlLogMapper">
+
+    <!-- 获取指定时间范围内的控制日志 -->
+    <select id="selectByTimeRange" resultType="com.greenhouse.entity.ControlLog">
+        SELECT * FROM control_logs
+        WHERE 1=1
+        <if test="deviceId != null and deviceId != ''">
+            AND device_id = #{deviceId}
+        </if>
+        <if test="startTime != null">
+            AND created_at >= #{startTime}
+        </if>
+        <if test="endTime != null">
+            AND created_at &lt;= #{endTime}
+        </if>
+        ORDER BY created_at DESC
+    </select>
+
+    <!-- 获取设备操作统计 -->
+    <select id="selectDeviceOperationStatistics" resultType="map">
+        SELECT 
+            device_id,
+            COUNT(*) as operation_count,
+            SUM(CASE WHEN result = 'success' THEN 1 ELSE 0 END) as success_count,
+            SUM(CASE WHEN result = 'failed' THEN 1 ELSE 0 END) as failed_count,
+            SUM(CASE WHEN result = 'timeout' THEN 1 ELSE 0 END) as timeout_count,
+            MAX(created_at) as last_operation_time
+        FROM control_logs
+        WHERE 1=1
+        <if test="startTime != null">
+            AND created_at >= #{startTime}
+        </if>
+        <if test="endTime != null">
+            AND created_at &lt;= #{endTime}
+        </if>
+        GROUP BY device_id
+        ORDER BY operation_count DESC
+    </select>
+
+    <!-- 获取每日操作统计 -->
+    <select id="selectDailyOperationStatistics" resultType="map">
+        SELECT 
+            DATE(created_at) as date,
+            COUNT(*) as total_operations,
+            SUM(CASE WHEN result = 'success' THEN 1 ELSE 0 END) as success_operations,
+            SUM(CASE WHEN result = 'failed' THEN 1 ELSE 0 END) as failed_operations,
+            SUM(CASE WHEN result = 'timeout' THEN 1 ELSE 0 END) as timeout_operations,
+            SUM(CASE WHEN operation_source = 'manual' THEN 1 ELSE 0 END) as manual_operations,
+            SUM(CASE WHEN operation_source = 'auto' THEN 1 ELSE 0 END) as auto_operations,
+            SUM(CASE WHEN operation_source = 'remote' THEN 1 ELSE 0 END) as remote_operations
+        FROM control_logs
+        WHERE 1=1
+        <if test="startTime != null">
+            AND created_at >= #{startTime}
+        </if>
+        <if test="endTime != null">
+            AND created_at &lt;= #{endTime}
+        </if>
+        GROUP BY DATE(created_at)
+        ORDER BY date
+    </select>
+
+    <!-- 删除指定时间之前的控制日志 -->
+    <delete id="deleteBeforeTime">
+        DELETE FROM control_logs
+        WHERE created_at &lt; #{beforeTime}
+    </delete>
+
+</mapper>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.greenhouse.mapper.DeviceMapper">
+
+    <!-- 根据设备类型查询设备列表 -->
+    <select id="selectByDeviceType" resultType="com.greenhouse.entity.DeviceStatus">
+        SELECT * FROM device_status
+        WHERE device_type = #{deviceType}
+        ORDER BY updated_at DESC
+    </select>
+
+    <!-- 根据设备状态查询设备列表 -->
+    <select id="selectByStatus" resultType="com.greenhouse.entity.DeviceStatus">
+        SELECT * FROM device_status
+        WHERE status = #{status}
+        ORDER BY updated_at DESC
+    </select>
+
+    <!-- 批量更新设备状态 -->
+    <update id="batchUpdateStatus">
+        UPDATE device_status 
+        SET status = #{status}, updated_at = NOW()
+        WHERE device_id IN
+        <foreach collection="deviceIds" item="deviceId" open="(" separator="," close=")">
+            #{deviceId}
+        </foreach>
+    </update>
+
+    <!-- 分页查询设备列表 -->
+    <select id="selectDevicePage" resultType="com.greenhouse.entity.DeviceStatus">
+        SELECT * FROM device_status
+        <where>
+            <if test="deviceType != null">
+                AND device_type = #{deviceType}
+            </if>
+            <if test="status != null">
+                AND status = #{status}
+            </if>
+        </where>
+        ORDER BY updated_at DESC
+    </select>
+
+    <!-- 获取设备类型统计 -->
+    <select id="selectDeviceTypeStatistics" resultType="map">
+        SELECT 
+            device_type,
+            COUNT(*) as device_count,
+            SUM(CASE WHEN status = 'online' THEN 1 ELSE 0 END) as online_count,
+            SUM(CASE WHEN status = 'offline' THEN 1 ELSE 0 END) as offline_count,
+            SUM(CASE WHEN status = 'error' THEN 1 ELSE 0 END) as error_count,
+            SUM(CASE WHEN is_running = true THEN 1 ELSE 0 END) as running_count
+        FROM device_status
+        GROUP BY device_type
+        ORDER BY device_count DESC
+    </select>
+
+    <!-- 获取设备状态统计 -->
+    <select id="selectDeviceStatusStatistics" resultType="map">
+        SELECT 
+            status,
+            COUNT(*) as device_count,
+            ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM device_status), 2) as percentage
+        FROM device_status
+        GROUP BY status
+        ORDER BY device_count DESC
+    </select>
+
+    <!-- 查询需要维护的设备 -->
+    <select id="selectDevicesNeedMaintenance" resultType="com.greenhouse.entity.DeviceStatus">
+        SELECT * FROM device_status
+        WHERE last_maintenance IS NULL 
+           OR DATEDIFF(CURDATE(), last_maintenance) > #{days}
+        ORDER BY last_maintenance ASC, created_at ASC
+    </select>
+
+</mapper>

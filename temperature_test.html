@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>温度监控组件测试</title>
+    <style>
+        :root {
+            --primary-color: #2E7D32;
+            --secondary-color: #4CAF50;
+            --accent-color: #66BB6A;
+            --warning-color: #FF9800;
+            --danger-color: #F44336;
+            --success-color: #4CAF50;
+            --info-color: #2196F3;
+            
+            --bg-color: #F5F5F5;
+            --card-bg: #FFFFFF;
+            --text-primary: #212121;
+            --text-secondary: #757575;
+            --text-light: #FFFFFF;
+            --border-color: #E0E0E0;
+            --shadow: 0 2px 4px rgba(0,0,0,0.1);
+            --shadow-hover: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+        }
+        
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .test-header {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+        }
+        
+        .test-controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+        }
+        
+        .btn-secondary {
+            background-color: var(--text-secondary);
+            color: var(--text-light);
+        }
+        
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .status-success {
+            background-color: rgba(76, 175, 80, 0.1);
+            color: var(--success-color);
+            border: 1px solid rgba(76, 175, 80, 0.3);
+        }
+        
+        .status-error {
+            background-color: rgba(244, 67, 54, 0.1);
+            color: var(--danger-color);
+            border: 1px solid rgba(244, 67, 54, 0.3);
+        }
+    </style>
+    <link rel="stylesheet" href="src/main/resources/static/frontend/css/main.css">
+    <link rel="stylesheet" href="src/main/resources/static/frontend/css/components.css">
+    <link rel="stylesheet" href="src/main/resources/static/frontend/css/charts.css">
+</head>
+<body>
+    <div class="test-container">
+        <div class="test-header">
+            <h1>温度监控组件测试</h1>
+            <p>测试温度监控模块的各项功能</p>
+            
+            <div class="test-controls">
+                <button class="btn btn-primary" onclick="loadComponent()">加载组件</button>
+                <button class="btn btn-secondary" onclick="simulateData()">模拟数据</button>
+                <button class="btn btn-secondary" onclick="testThresholds()">测试阈值</button>
+                <button class="btn btn-secondary" onclick="testChart()">测试图表</button>
+            </div>
+            
+            <div id="test-status"></div>
+        </div>
+        
+        <div id="temperature-content">
+            <div class="status">点击"加载组件"开始测试</div>
+        </div>
+    </div>
+
+    <!-- JavaScript文件 -->
+    <script src="src/main/resources/static/frontend/js/utils/format.js"></script>
+    <script src="src/main/resources/static/frontend/js/utils/validation.js"></script>
+    <script src="src/main/resources/static/frontend/js/utils/chart.js"></script>
+    <script src="src/main/resources/static/frontend/js/utils/error.js"></script>
+    <script src="src/main/resources/static/frontend/js/utils/notification.js"></script>
+    <script src="src/main/resources/static/frontend/js/utils/data.js"></script>
+    <script src="src/main/resources/static/frontend/js/utils/ui.js"></script>
+    <script src="src/main/resources/static/frontend/js/services/storage.js"></script>
+    <script src="src/main/resources/static/frontend/js/services/api.js"></script>
+    <script src="src/main/resources/static/frontend/js/components/temperature.js"></script>
+
+    <script>
+        // 创建全局API服务实例
+        const apiService = new ApiService();
+        let temperatureComponentInstance = null;
+        
+        function showStatus(message, type = 'success') {
+            const statusDiv = document.getElementById('test-status');
+            statusDiv.innerHTML = `<div class="status status-${type}">${message}</div>`;
+        }
+        
+        async function loadComponent() {
+            try {
+                showStatus('正在加载温度监控组件...', 'success');
+                
+                temperatureComponentInstance = new TemperatureComponent();
+                const html = await temperatureComponentInstance.render();
+                document.getElementById('temperature-content').innerHTML = html;
+                await temperatureComponentInstance.init();
+                
+                showStatus('✅ 温度监控组件加载成功！', 'success');
+                console.log('温度组件测试成功');
+                
+            } catch (error) {
+                console.error('温度组件测试失败:', error);
+                showStatus('❌ 组件加载失败: ' + error.message, 'error');
+            }
+        }
+        
+        function simulateData() {
+            if (!temperatureComponentInstance) {
+                showStatus('❌ 请先加载组件', 'error');
+                return;
+            }
+            
+            try {
+                // 模拟实时温度数据
+                const temperatures = [22.5, 25.3, 28.1, 31.2, 19.8, 24.7, 26.9];
+                let index = 0;
+                
+                const interval = setInterval(() => {
+                    if (index >= temperatures.length) {
+                        clearInterval(interval);
+                        showStatus('✅ 数据模拟完成', 'success');
+                        return;
+                    }
+                    
+                    const mockData = {
+                        temperature: temperatures[index],
+                        recordedAt: new Date().toISOString()
+                    };
+                    
+                    temperatureComponentInstance.updateEnvironmentData(mockData);
+                    showStatus(`📊 模拟温度数据: ${temperatures[index]}°C`, 'success');
+                    index++;
+                }, 2000);
+                
+            } catch (error) {
+                showStatus('❌ 数据模拟失败: ' + error.message, 'error');
+            }
+        }
+        
+        function testThresholds() {
+            if (!temperatureComponentInstance) {
+                showStatus('❌ 请先加载组件', 'error');
+                return;
+            }
+            
+            try {
+                // 测试不同的阈值设置
+                const testCases = [
+                    { temp: 15, expected: '过低' },
+                    { temp: 25, expected: '正常' },
+                    { temp: 35, expected: '过高' }
+                ];
+                
+                testCases.forEach((testCase, index) => {
+                    setTimeout(() => {
+                        temperatureComponentInstance.updateEnvironmentData({
+                            temperature: testCase.temp,
+                            recordedAt: new Date().toISOString()
+                        });
+                        
+                        showStatus(`🧪 测试阈值: ${testCase.temp}°C (预期: ${testCase.expected})`, 'success');
+                    }, index * 1500);
+                });
+                
+            } catch (error) {
+                showStatus('❌ 阈值测试失败: ' + error.message, 'error');
+            }
+        }
+        
+        function testChart() {
+            if (!temperatureComponentInstance) {
+                showStatus('❌ 请先加载组件', 'error');
+                return;
+            }
+            
+            try {
+                // 生成历史数据用于图表测试
+                const historyData = [];
+                const now = new Date();
+                
+                for (let i = 23; i >= 0; i--) {
+                    const time = new Date(now.getTime() - i * 60 * 60 * 1000);
+                    const baseTemp = 24;
+                    const variation = Math.sin(i * 0.5) * 5 + Math.random() * 2;
+                    
+                    historyData.push({
+                        temperature: (baseTemp + variation).toFixed(1),
+                        recordedAt: time.toISOString()
+                    });
+                }
+                
+                temperatureComponentInstance.historyData = historyData;
+                temperatureComponentInstance.drawTrendChart();
+                temperatureComponentInstance.updateStatistics();
+                
+                showStatus('✅ 图表测试完成，已生成24小时历史数据', 'success');
+                
+            } catch (error) {
+                showStatus('❌ 图表测试失败: ' + error.message, 'error');
+            }
+        }
+        
+        // 页面加载完成后的初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            showStatus('🚀 测试页面已准备就绪，点击按钮开始测试', 'success');
+        });
+    </script>
+</body>
+</html>

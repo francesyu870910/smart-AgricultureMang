@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>温室数字化监控系统</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #333;
+        }
+
+        /* 顶部导航栏 */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: 30px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* 侧边栏 */
+        .sidebar {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            width: 280px;
+            height: calc(100vh - 60px);
+            background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
+            box-shadow: 2px 0 15px rgba(0,0,0,0.2);
+            overflow-y: auto;
+            z-index: 100;
+        }
+
+        .sidebar-menu {
+            padding: 30px 0;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 18px 25px;
+            color: #ecf0f1;
+            text-decoration: none;
+            border-left: 4px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .menu-item:hover {
+            background: rgba(52, 152, 219, 0.2);
+            border-left-color: #3498db;
+            color: #3498db;
+            transform: translateX(5px);
+        }
+
+        .menu-item.active {
+            background: rgba(46, 204, 113, 0.2);
+            border-left-color: #2ecc71;
+            color: #2ecc71;
+            transform: translateX(5px);
+        }
+
+        .menu-item .icon {
+            margin-right: 15px;
+            width: 24px;
+            height: 24px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        /* 主内容区域 */
+        .main-content {
+            margin-left: 280px;
+            margin-top: 60px;
+            padding: 30px;
+            min-height: calc(100vh - 60px);
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+
+        /* 内容页面容器 */
+        .content-page {
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .content-page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 页面标题 */
+        .page-header {
+            background: white;
+            padding: 25px 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-left: 5px solid #4CAF50;
+        }
+
+        .page-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .page-title .icon {
+            margin-right: 15px;
+            font-size: 32px;
+        }
+
+        .page-subtitle {
+            color: #7f8c8d;
+            margin-top: 8px;
+            font-size: 16px;
+        }
+
+        /* 系统状态网格 */
+        .system-status {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .status-item {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s;
+        }
+
+        .status-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .status-value {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .status-value.status-online {
+            color: #28a745;
+        }
+
+        .status-value.status-warning {
+            color: #ffc107;
+        }
+
+        .status-value.status-error {
+            color: #dc3545;
+        }
+
+        .status-label {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* 仪表板卡片 */
+        .dashboard-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            border-color: #4CAF50;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .card-icon {
+            font-size: 48px;
+            margin-right: 20px;
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .card-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .card-action {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .dashboard-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 动画效果 */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <div class="header-left">
+            <div class="logo">🌱 温室数字化监控系统</div>
+        </div>
+        <div class="header-right">
+            <div class="user-info">
+                <span>👤 管理员</span>
+                <span>|</span>
+                <span id="currentTime"></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 侧边栏 -->
+    <aside class="sidebar">
+        <nav class="sidebar-menu">
+            <div class="menu-item active" onclick="showPage('dashboard')">
+                <span class="icon">📊</span> 系统概览
+            </div>
+            <div class="menu-item" onclick="showPage('environment')">
+                <span class="icon">🌡️</span> 环境监控
+            </div>
+            <div class="menu-item" onclick="showPage('devices')">
+                <span class="icon">⚙️</span> 设备控制
+            </div>
+            <div class="menu-item" onclick="showPage('alerts')">
+                <span class="icon">🚨</span> 报警管理
+            </div>
+            <div class="menu-item" onclick="showPage('tasks')">
+                <span class="icon">⏰</span> 定时任务
+            </div>
+            <div class="menu-item" onclick="showPage('analytics')">
+                <span class="icon">📈</span> 数据分析
+            </div>
+            <div class="menu-item" onclick="showPage('history')">
+                <span class="icon">📋</span> 历史记录
+            </div>
+        </nav>
+    </aside>
+
+    <!-- 主内容区域 -->
+    <main class="main-content">
+        <!-- 系统概览页面 -->
+        <div id="dashboard-page" class="content-page active">
+            <div class="page-header">
+                <h1 class="page-title">
+                    <span class="icon">📊</span>
+                    系统概览
+                </h1>
+                <p class="page-subtitle">温室数字化监控系统总览</p>
+            </div>
+            
+            <!-- 系统状态 -->
+            <div class="system-status">
+                <h2 style="margin-bottom: 20px;">系统状态</h2>
+                <div class="status-grid">
+                    <div class="status-item">
+                        <div class="status-value status-online" id="systemStatus">正常</div>
+                        <div class="status-label">系统状态</div>
+                    </div>
+                    <div class="status-item">
+                        <div class="status-value status-online" id="deviceCount">12</div>
+                        <div class="status-label">在线设备</div>
+                    </div>
+                    <div class="status-item">
+                        <div class="status-value status-warning" id="alertCount">3</div>
+                        <div class="status-label">待处理报警</div>
+                    </div>
+                    <div class="status-item">
+                        <div class="status-value status-online" id="taskStatus">运行中</div>
+                        <div class="status-label">定时任务</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 功能模块卡片 -->
+            <div class="dashboard-cards">
+                <div class="card environment-card" onclick="showPage('environment')">
+                    <div class="card-header">
+                        <div class="card-icon">🌡️</div>
+                        <div class="card-title">环境监控</div>
+                    </div>
+                    <div class="card-description">
+                        实时监控温室内的温度、湿度、光照强度、土壤湿度和CO2浓度等环境参数
+                    </div>
+                    <a href="#" class="card-action">查看详情 →</a>
+                </div>
+
+                <div class="card device-card" onclick="showPage('devices')">
+                    <div class="card-header">
+                        <div class="card-icon">⚙️</div>
+                        <div class="card-title">设备控制</div>
+                    </div>
+                    <div class="card-description">
+                        远程控制温室内的加热器、冷却器、加湿器、风扇、补光灯等设备
+                    </div>
+                    <a href="#" class="card-action">查看详情 →</a>
+                </div>
+
+                <div class="card alert-card" onclick="showPage('alerts')">
+                    <div class="card-header">
+                        <div class="card-icon">🚨</div>
+                        <div class="card-title">报警管理</div>
+                    </div>
+                    <div class="card-description">
+                        管理环境参数异常、设备故障等各类报警信息，及时响应处理
+                    </div>
+                    <a href="#" class="card-action">查看详情 →</a>
+                </div>
+
+                <div class="card task-card" onclick="showPage('tasks')">
+                    <div class="card-header">
+                        <div class="card-icon">⏰</div>
+                        <div class="card-title">定时任务</div>
+                    </div>
+                    <div class="card-description">
+                        管理数据采集、设备控制、报警检测等自动化定时任务
+                    </div>
+                    <a href="#" class="card-action">查看详情 →</a>
+                </div>
+
+                <div class="card analytics-card" onclick="showPage('analytics')">
+                    <div class="card-header">
+                        <div class="card-icon">📈</div>
+                        <div class="card-title">数据分析</div>
+                    </div>
+                    <div class="card-description">
+                        分析环境数据趋势，生成统计报表，优化温室管理策略
+                    </div>
+                    <a href="#" class="card-action">查看详情 →</a>
+                </div>
+
+                <div class="card history-card" onclick="showPage('history')">
+                    <div class="card-header">
+                        <div class="card-icon">📋</div>
+                        <div class="card-title">历史记录</div>
+                    </div>
+                    <div class="card-description">
+                        查看历史环境数据、设备操作记录、报警处理记录等
+                    </div>
+                    <a href="#" class="card-action">查看详情 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 环境监控页面 -->
+        <div id="environment-page" class="content-page">
+            <div class="page-header">
+                <h1 class="page-title">
+                    <span class="icon">🌡️</span>
+                    环境监控
+                </h1>
+                <p class="page-subtitle">实时监控温室环境参数</p>
+            </div>
+            <div id="environment-content">正在加载环境监控数据...</div>
+        </div>
+
+        <!-- 设备控制页面 -->
+        <div id="devices-page" class="content-page">
+            <div class="page-header">
+                <h1 class="page-title">
+                    <span class="icon">⚙️</span>
+                    设备控制
+                </h1>
+                <p class="page-subtitle">远程控制温室设备</p>
+            </div>
+            <div id="devices-content">正在加载设备控制面板...</div>
+        </div>
+
+        <!-- 报警管理页面 -->
+        <div id="alerts-page" class="content-page">
+            <div class="page-header">
+                <h1 class="page-title">
+                    <span class="icon">🚨</span>
+                    报警管理
+                </h1>
+                <p class="page-subtitle">管理系统报警信息</p>
+            </div>
+            <div id="alerts-content">正在加载报警管理...</div>
+        </div>
+
+        <!-- 定时任务页面 -->
+        <div id="tasks-page" class="content-page">
+            <div class="page-header">
+                <h1 class="page-title">
+                    <span class="icon">⏰</span>
+                    定时任务管理
+                </h1>
+                <p class="page-subtitle">管理系统自动化任务</p>
+            </div>
+            <div id="tasks-content">正在加载定时任务...</div>
+        </div>
+
+        <!-- 数据分析页面 -->
+        <div id="analytics-page" class="content-page">
+            <div class="page-header">
+                <h1 class="page-title">
+                    <span class="icon">📈</span>
+                    数据分析
+                </h1>
+                <p class="page-subtitle">分析环境数据和系统性能</p>
+            </div>
+            <div id="analytics-content">正在加载数据分析...</div>
+        </div>
+
+        <!-- 历史记录页面 -->
+        <div id="history-page" class="content-page">
+            <div class="page-header">
+                <h1 class="page-title">
+                    <span class="icon">📋</span>
+                    历史记录
+                </h1>
+                <p class="page-subtitle">查看系统历史数据</p>
+            </div>
+            <div id="history-content">正在加载历史记录...</div>
+        </div>
+    </main> 
+   <script>
+        // 当前活动页面
+        let currentPage = 'dashboard';
+        
+        // 显示指定页面
+        function showPage(pageId) {
+            // 隐藏所有页面
+            document.querySelectorAll('.content-page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // 显示目标页面
+            const targetPage = document.getElementById(pageId + '-page');
+            if (targetPage) {
+                targetPage.classList.add('active');
+                currentPage = pageId;
+                
+                // 更新菜单状态
+                updateMenuState(pageId);
+                
+                // 加载页面内容
+                loadPageContent(pageId);
+            }
+        }
+        
+        // 更新菜单状态
+        function updateMenuState(activePageId) {
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // 根据页面ID找到对应的菜单项并激活
+            const menuItems = document.querySelectorAll('.menu-item');
+            const pageIndex = {
+                'dashboard': 0,
+                'environment': 1,
+                'devices': 2,
+                'alerts': 3,
+                'tasks': 4,
+                'analytics': 5,
+                'history': 6
+            };
+            
+            if (pageIndex[activePageId] !== undefined) {
+                menuItems[pageIndex[activePageId]].classList.add('active');
+            }
+        }
+        
+        // 加载页面内容
+        async function loadPageContent(pageId) {
+            const contentDiv = document.getElementById(pageId + '-content');
+            if (!contentDiv) return;
+            
+            try {
+                switch(pageId) {
+                    case 'environment':
+                        await loadEnvironmentContent(contentDiv);
+                        break;
+                    case 'devices':
+                        await loadDevicesContent(contentDiv);
+                        break;
+                    case 'alerts':
+                        await loadAlertsContent(contentDiv);
+                        break;
+                    case 'tasks':
+                        await loadTasksContent(contentDiv);
+                        break;
+                    case 'analytics':
+                        await loadAnalyticsContent(contentDiv);
+                        break;
+                    case 'history':
+                        await loadHistoryContent(contentDiv);
+                        break;
+                }
+            } catch (error) {
+                contentDiv.innerHTML = `<div style="text-align: center; color: #e74c3c; padding: 40px;">加载失败: ${error.message}</div>`;
+            }
+        }
+
+        // 加载环境监控内容
+        async function loadEnvironmentContent(container) {
+            container.innerHTML = `
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px;">
+                    <div style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center;">
+                        <div style="font-size: 48px; margin-bottom: 15px;">🌡️</div>
+                        <div style="font-size: 18px; font-weight: bold; margin-bottom: 10px; color: #333;">温度</div>
+                        <div style="font-size: 32px; font-weight: bold; margin-bottom: 10px; color: #FF6B6B;" id="temperature">23.5°C</div>
+                        <div style="color: #666; font-size: 14px;">正常范围</div>
+                    </div>
+                    
+                    <div style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center;">
+                        <div style="font-size: 48px; margin-bottom: 15px;">💧</div>
+                        <div style="font-size: 18px; font-weight: bold; margin-bottom: 10px; color: #333;">湿度</div>
+                        <div style="font-size: 32px; font-weight: bold; margin-bottom: 10px; color: #4ECDC4;" id="humidity">65.8%</div>
+                        <div style="color: #666; font-size: 14px;">正常范围</div>
+                    </div>
+                    
+                    <div style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center;">
+                        <div style="font-size: 48px; margin-bottom: 15px;">☀️</div>
+                        <div style="font-size: 18px; font-weight: bold; margin-bottom: 10px; color: #333;">光照强度</div>
+                        <div style="font-size: 32px; font-weight: bold; margin-bottom: 10px; color: #FFE66D;" id="light">25000 lux</div>
+                        <div style="color: #666; font-size: 14px;">充足</div>
+                    </div>
+                    
+                    <div style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center;">
+                        <div style="font-size: 48px; margin-bottom: 15px;">🌱</div>
+                        <div style="font-size: 18px; font-weight: bold; margin-bottom: 10px; color: #333;">土壤湿度</div>
+                        <div style="font-size: 32px; font-weight: bold; margin-bottom: 10px; color: #A8E6CF;" id="soil">58.2%</div>
+                        <div style="color: #666; font-size: 14px;">适宜</div>
+                    </div>
+                </div>
+                
+                <div style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 20px;">
+                    <h3 style="margin-bottom: 20px;">控制面板</h3>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <button style="padding: 10px 20px; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;" onclick="refreshEnvironmentData()">刷新数据</button>
+                        <button style="padding: 10px 20px; background: #2196F3; color: white; border: none; border-radius: 5px; cursor: pointer;" onclick="generateTestData()">生成测试数据</button>
+                        <button style="padding: 10px 20px; background: #FF9800; color: white; border: none; border-radius: 5px; cursor: pointer;" onclick="exportEnvironmentData()">导出数据</button>
+                    </div>
+                </div>
+            `;
+            
+            // 启动数据更新
+            setInterval(updateEnvironmentData, 30000);
+        }
+        
+        // 加载设备控制内容
+        async function loadDevicesContent(container) {
+            container.innerHTML = `
+                <div style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                    <h3 style="margin-bottom: 20px;">批量控制</h3>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <button style="padding: 10px 20px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;" onclick="startAllDevices()">启动所有设备</button>
+                        <button style="padding: 10px 20px; background: #dc3545; color: white; border: none; border-radius: 5px; cursor: pointer;" onclick="stopAllDevices()">停止所有设备</button>
+                        <button style="padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;" onclick="refreshDevices()">刷新状态</button>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;" id="devicesGrid">
+                    ${generateDeviceCards()}
+                </div>
+            `;
+        }
+        
+        // 加载报警管理内容
+        async function loadAlertsContent(container) {
+            container.innerHTML = `
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px;">
+                    <div style="background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center;">
+                        <div style="font-size: 32px; margin-bottom: 10px;">🚨</div>
+                        <div style="font-size: 24px; font-weight: bold; margin-bottom: 5px; color: #dc3545;">2</div>
+                        <div style="color: #666; font-size: 14px;">严重报警</div>
+                    </div>
+                    <div style="background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center;">
+                        <div style="font-size: 32px; margin-bottom: 10px;">⚠️</div>
+                        <div style="font-size: 24px; font-weight: bold; margin-bottom: 5px; color: #fd7e14;">5</div>
+                        <div style="color: #666; font-size: 14px;">高级报警</div>
+                    </div>
+                    <div style="background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center;">
+                        <div style="font-size: 32px; margin-bottom: 10px;">⚡</div>
+                        <div style="font-size: 24px; font-weight: bold; margin-bottom: 5px; color: #ffc107;">8</div>
+                        <div style="color: #666; font-size: 14px;">中级报警</div>
+                    </div>
+                    <div style="background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center;">
+                        <div style="font-size: 32px; margin-bottom: 10px;">ℹ️</div>
+                        <div style="font-size: 24px; font-weight: bold; margin-bottom: 5px; color: #28a745;">3</div>
+                        <div style="color: #666; font-size: 14px;">低级报警</div>
+                    </div>
+                </div>
+                
+                <div style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <h3 style="margin-bottom: 20px;">最新报警</h3>
+                    <div id="alertsList">
+                        ${generateAlertItems()}
+                    </div>
+                </div>
+            `;
+        }     
+   
+        // 加载定时任务内容
+        async function loadTasksContent(container) {
+            container.innerHTML = `
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; padding: 20px; margin-bottom: 30px; color: white;">
+                    <h3 style="margin-bottom: 15px; font-size: 1.3rem;">🚀 系统自动化特性</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                        <div style="display: flex; align-items: center; padding: 10px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; font-size: 14px;">✓ 每30秒自动生成环境数据</div>
+                        <div style="display: flex; align-items: center; padding: 10px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; font-size: 14px;">✓ 每1分钟更新设备状态</div>
+                        <div style="display: flex; align-items: center; padding: 10px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; font-size: 14px;">✓ 每2分钟执行自动化控制</div>
+                        <div style="display: flex; align-items: center; padding: 10px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; font-size: 14px;">✓ 每1分钟检测环境报警</div>
+                    </div>
+                </div>
+                
+                <div style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                    <h3 style="margin-bottom: 20px;">任务控制中心</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 25px;">
+                        <button style="padding: 15px 25px; background: linear-gradient(135deg, #56ab2f 0%, #a8e6cf 100%); color: white; border: none; border-radius: 12px; cursor: pointer; font-weight: 600;" onclick="startAllTasks()">🚀 启动所有任务</button>
+                        <button style="padding: 15px 25px; background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%); color: white; border: none; border-radius: 12px; cursor: pointer; font-weight: 600;" onclick="stopAllTasks()">🛑 停止所有任务</button>
+                        <button style="padding: 15px 25px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 12px; cursor: pointer; font-weight: 600;" onclick="refreshTaskStatus()">🔄 刷新状态</button>
+                        <button style="padding: 15px 25px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; border: none; border-radius: 12px; cursor: pointer; font-weight: 600;" onclick="triggerAllTasks()">⚡ 手动触发所有任务</button>
+                    </div>
+                    
+                    <div style="background: rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 20px; border: 1px solid rgba(255, 255, 255, 0.2);">
+                        <div style="display: flex; align-items: center; font-size: 1.1rem; font-weight: 500;">
+                            <span style="width: 12px; height: 12px; border-radius: 50%; margin-right: 10px; background: #56ab2f; box-shadow: 0 0 10px rgba(86, 171, 47, 0.5); animation: pulse 2s infinite;" id="taskStatusDot"></span>
+                            <span>系统状态：<strong id="taskStatusText">运行中</strong></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin: 30px 0;">
+                    <div style="background: white; border-radius: 20px; padding: 30px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                        <div style="font-size: 14px; color: #666; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">环境数据生成</div>
+                        <div style="font-size: 2.5rem; font-weight: 700; color: #333; margin-bottom: 10px;" id="envTaskCount">156</div>
+                        <div style="font-size: 12px; color: #888; font-weight: 500;">次执行</div>
+                    </div>
+                    
+                    <div style="background: white; border-radius: 20px; padding: 30px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(135deg, #56ab2f 0%, #a8e6cf 100%);"></div>
+                        <div style="font-size: 14px; color: #666; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">设备状态更新</div>
+                        <div style="font-size: 2.5rem; font-weight: 700; color: #333; margin-bottom: 10px;" id="deviceTaskCount">89</div>
+                        <div style="font-size: 12px; color: #888; font-weight: 500;">次执行</div>
+                    </div>
+                    
+                    <div style="background: white; border-radius: 20px; padding: 30px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);"></div>
+                        <div style="font-size: 14px; color: #666; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">报警检测</div>
+                        <div style="font-size: 2.5rem; font-weight: 700; color: #333; margin-bottom: 10px;" id="alertTaskCount">67</div>
+                        <div style="font-size: 12px; color: #888; font-weight: 500;">次执行</div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // 加载数据分析内容
+        async function loadAnalyticsContent(container) {
+            container.innerHTML = `
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px;">
+                    <div style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        <h4 style="margin-bottom: 15px; color: #333;">📊 数据统计</h4>
+                        <div style="font-size: 24px; font-weight: bold; color: #4CAF50; margin-bottom: 10px;">1,234</div>
+                        <div style="color: #666; font-size: 14px;">总数据点</div>
+                    </div>
+                    
+                    <div style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        <h4 style="margin-bottom: 15px; color: #333;">📈 趋势分析</h4>
+                        <div style="font-size: 24px; font-weight: bold; color: #2196F3; margin-bottom: 10px;">↗ 上升</div>
+                        <div style="color: #666; font-size: 14px;">温度趋势</div>
+                    </div>
+                    
+                    <div style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        <h4 style="margin-bottom: 15px; color: #333;">⚡ 效率指标</h4>
+                        <div style="font-size: 24px; font-weight: bold; color: #FF9800; margin-bottom: 10px;">95.2%</div>
+                        <div style="color: #666; font-size: 14px;">系统效率</div>
+                    </div>
+                </div>
+                
+                <div style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <h3 style="margin-bottom: 20px;">分析工具</h3>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <button style="padding: 10px 20px; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;" onclick="generateReport()">生成报告</button>
+                        <button style="padding: 10px 20px; background: #2196F3; color: white; border: none; border-radius: 5px; cursor: pointer;" onclick="exportAnalytics()">导出分析</button>
+                        <button style="padding: 10px 20px; background: #FF9800; color: white; border: none; border-radius: 5px; cursor: pointer;" onclick="refreshAnalytics()">刷新数据</button>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // 加载历史记录内容
+        async function loadHistoryContent(container) {
+            container.innerHTML = `
+                <div style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                    <h3 style="margin-bottom: 20px;">筛选条件</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                        <select style="padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                            <option>选择数据类型</option>
+                            <option>环境数据</option>
+                            <option>设备操作</option>
+                            <option>报警记录</option>
+                        </select>
+                        <input type="date" style="padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                        <input type="date" style="padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                        <button style="padding: 10px 20px; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;" onclick="searchHistory()">搜索</button>
+                    </div>
+                </div>
+                
+                <div style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <h3 style="margin-bottom: 20px;">历史记录</h3>
+                    <div id="historyList">
+                        ${generateHistoryItems()}
+                    </div>
+                </div>
+            `;
+        }     
+   
+        // 生成设备卡片
+        function generateDeviceCards() {
+            const devices = [
+                { name: '加热器', icon: '🔥', status: '运行中', color: '#FF6B6B' },
+                { name: '冷却器', icon: '❄️', status: '待机', color: '#4ECDC4' },
+                { name: '加湿器', icon: '💨', status: '运行中', color: '#45B7D1' },
+                { name: '风扇', icon: '🌪️', status: '运行中', color: '#96CEB4' },
+                { name: '补光灯', icon: '💡', status: '关闭', color: '#FFEAA7' },
+                { name: '水泵', icon: '🚰', status: '运行中', color: '#74B9FF' }
+            ];
+            
+            return devices.map(device => `
+                <div style="background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <div style="font-size: 32px; margin-right: 15px;">${device.icon}</div>
+                        <div>
+                            <div style="font-size: 18px; font-weight: bold; color: #333;">${device.name}</div>
+                            <div style="color: ${device.color}; font-size: 14px;">${device.status}</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 10px;">
+                        <button style="flex: 1; padding: 8px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;" onclick="startDevice('${device.name}')">启动</button>
+                        <button style="flex: 1; padding: 8px; background: #dc3545; color: white; border: none; border-radius: 5px; cursor: pointer;" onclick="stopDevice('${device.name}')">停止</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        // 生成报警项目
+        function generateAlertItems() {
+            const alerts = [
+                { type: '严重', message: '温度过高：当前温度35°C，超出安全范围', time: '2分钟前', color: '#dc3545' },
+                { type: '警告', message: '湿度偏低：当前湿度45%，建议调整', time: '5分钟前', color: '#fd7e14' },
+                { type: '信息', message: '设备维护提醒：加热器需要定期检查', time: '10分钟前', color: '#28a745' }
+            ];
+            
+            return alerts.map(alert => `
+                <div style="border-left: 4px solid ${alert.color}; padding: 15px; margin-bottom: 10px; background: #f8f9fa; border-radius: 5px;">
+                    <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 5px;">
+                        <span style="background: ${alert.color}; color: white; padding: 2px 8px; border-radius: 3px; font-size: 12px;">${alert.type}</span>
+                        <span style="color: #666; font-size: 12px; margin-left: auto;">${alert.time}</span>
+                    </div>
+                    <div style="color: #333; font-size: 14px;">${alert.message}</div>
+                </div>
+            `).join('');
+        }
+        
+        // 生成历史记录项目
+        function generateHistoryItems() {
+            const history = [
+                { type: '环境数据', content: '温度: 24.5°C, 湿度: 68%', time: '2024-01-15 14:30:00' },
+                { type: '设备操作', content: '启动加热器', time: '2024-01-15 14:25:00' },
+                { type: '报警记录', content: '湿度过低报警已处理', time: '2024-01-15 14:20:00' }
+            ];
+            
+            return history.map(item => `
+                <div style="border-bottom: 1px solid #eee; padding: 15px 0;">
+                    <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 5px;">
+                        <span style="background: #4CAF50; color: white; padding: 2px 8px; border-radius: 3px; font-size: 12px;">${item.type}</span>
+                        <span style="color: #666; font-size: 12px; margin-left: auto;">${item.time}</span>
+                    </div>
+                    <div style="color: #333; font-size: 14px;">${item.content}</div>
+                </div>
+            `).join('');
+        }
+        
+        // 环境数据相关函数
+        function refreshEnvironmentData() {
+            updateEnvironmentData();
+            alert('环境数据已刷新');
+        }
+        
+        function generateTestData() {
+            // 生成随机测试数据
+            const temp = (Math.random() * 10 + 20).toFixed(1);
+            const humidity = (Math.random() * 30 + 50).toFixed(1);
+            const light = Math.floor(Math.random() * 10000 + 20000);
+            const soil = (Math.random() * 20 + 50).toFixed(1);
+            
+            document.getElementById('temperature').textContent = temp + '°C';
+            document.getElementById('humidity').textContent = humidity + '%';
+            document.getElementById('light').textContent = light + ' lux';
+            document.getElementById('soil').textContent = soil + '%';
+            
+            alert('测试数据已生成');
+        }
+        
+        function exportEnvironmentData() {
+            alert('环境数据导出功能开发中...');
+        }
+        
+        function updateEnvironmentData() {
+            // 模拟数据更新
+            generateTestData();
+        }
+        
+        // 设备控制相关函数
+        function startAllDevices() {
+            alert('所有设备启动中...');
+        }
+        
+        function stopAllDevices() {
+            alert('所有设备停止中...');
+        }
+        
+        function refreshDevices() {
+            alert('设备状态已刷新');
+        }
+        
+        function startDevice(deviceName) {
+            alert(`启动${deviceName}...`);
+        }
+        
+        function stopDevice(deviceName) {
+            alert(`停止${deviceName}...`);
+        }
+        
+        // 定时任务相关函数
+        function startAllTasks() {
+            alert('启动所有定时任务...');
+        }
+        
+        function stopAllTasks() {
+            alert('停止所有定时任务...');
+        }
+        
+        function refreshTaskStatus() {
+            alert('任务状态已刷新');
+        }
+        
+        function triggerAllTasks() {
+            alert('手动触发所有任务...');
+        }
+        
+        // 数据分析相关函数
+        function generateReport() {
+            alert('生成分析报告...');
+        }
+        
+        function exportAnalytics() {
+            alert('导出分析数据...');
+        }
+        
+        function refreshAnalytics() {
+            alert('分析数据已刷新');
+        }
+        
+        // 历史记录相关函数
+        function searchHistory() {
+            alert('搜索历史记录...');
+        }
+        
+        // 更新当前时间
+        function updateCurrentTime() {
+            const now = new Date();
+            const timeString = now.toLocaleString('zh-CN');
+            const timeElement = document.getElementById('currentTime');
+            if (timeElement) {
+                timeElement.textContent = timeString;
+            }
+        }
+        
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCurrentTime();
+            setInterval(updateCurrentTime, 1000);
+            
+            // 模拟系统状态更新
+            setInterval(function() {
+                const deviceCount = Math.floor(Math.random() * 3) + 10;
+                const alertCount = Math.floor(Math.random() * 5) + 1;
+                
+                document.getElementById('deviceCount').textContent = deviceCount;
+                document.getElementById('alertCount').textContent = alertCount;
+            }, 60000);
+        });
+    </script>
+</body>
+</html>

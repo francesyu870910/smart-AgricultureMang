@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定时任务管理 - 温室数字化监控系统</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            color: #333;
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            color: #667eea;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+        }
+
+        transition: all 0.3s ease;
+        background: rgba(102, 126, 234, 0.1);
+        border: 2px solid transparent;
+        font-weight: 500;
+        }
+
+        .nav a:hover,
+        .nav a.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .task-control-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .task-control-panel h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+
+        .task-control-panel h2::before {
+            content: "⚙️";
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .control-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #56ab2f 0%, #a8e6cf 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(86, 171, 47, 0.3);
+        }
+
+        .btn-success:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(86, 171, 47, 0.4);
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 65, 108, 0.3);
+        }
+
+        .btn-danger:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 65, 108, 0.4);
+        }
+
+        .btn-warning {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(240, 147, 251, 0.3);
+        }
+
+        .btn-warning:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(240, 147, 251, 0.4);
+        }
+
+        .status-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        .status-running {
+            background: #56ab2f;
+            box-shadow: 0 0 10px rgba(86, 171, 47, 0.5);
+        }
+
+        .status-stopped {
+            background: #ff416c;
+            box-shadow: 0 0 10px rgba(255, 65, 108, 0.5);
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.7;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* 任务列表样式 */
+        .task-list-container {
+            background: rgba(248, 249, 250, 0.8);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .task-list-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr 1.5fr 1.5fr 1fr 1.5fr;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .task-header-item {
+            padding: 15px 12px;
+            text-align: center;
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .task-header-item:last-child {
+            border-right: none;
+        }
+
+        .task-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .task-item {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr 1.5fr 1.5fr 1fr 1.5fr;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .task-item:hover {
+            background: rgba(102, 126, 234, 0.05);
+            transform: translateX(2px);
+        }
+
+        .task-item:last-child {
+            border-bottom: none;
+        }
+
+        .task-cell {
+            padding: 15px 12px;
+            text-align: center;
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+        }
+
+        .task-cell:last-child {
+            border-right: none;
+        }
+
+        .task-name {
+            text-align: left !important;
+            justify-content: flex-start !important;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .task-name .task-icon {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+
+        .task-status {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .status-badge {
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .status-running {
+            background: rgba(86, 171, 47, 0.2);
+            color: #56ab2f;
+            border: 1px solid rgba(86, 171, 47, 0.3);
+        }
+
+        .status-stopped {
+            background: rgba(255, 65, 108, 0.2);
+            color: #ff416c;
+            border: 1px solid rgba(255, 65, 108, 0.3);
+        }
+
+        .status-paused {
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+            border: 1px solid rgba(255, 193, 7, 0.3);
+        }
+
+        .task-frequency {
+            font-family: 'Consolas', 'Monaco', monospace;
+            color: #666;
+            font-size: 12px;
+        }
+
+        .task-time {
+            font-family: 'Consolas', 'Monaco', monospace;
+            color: #666;
+            font-size: 11px;
+        }
+
+        .task-count {
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        .task-actions {
+            display: flex;
+            gap: 5px;
+            justify-content: center;
+        }
+
+        .task-btn {
+            padding: 4px 8px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 11px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+        }
+
+        .task-btn-start {
+            background: #56ab2f;
+            color: white;
+        }
+
+        .task-btn-start:hover {
+            background: #4a9628;
+            transform: scale(1.05);
+        }
+
+        .task-btn-stop {
+            background: #ff416c;
+            color: white;
+        }
+
+        .task-btn-stop:hover {
+            background: #e63946;
+            transform: scale(1.05);
+        }
+
+        .task-btn-pause {
+            background: #ffc107;
+            color: #333;
+        }
+
+        .task-btn-pause:hover {
+            background: #e0a800;
+            transform: scale(1.05);
+        }
+
+        .task-btn-trigger {
+            background: #667eea;
+            color: white;
+        }
+
+        .task-btn-trigger:hover {
+            background: #5a6fd8;
+            transform: scale(1.05);
+        }
+
+        .statistics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .s tat-title {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-subtitle {
+            font-size: 12px;
+            color: #888;
+            font-weight: 500;
+        }
+
+        .log-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .log-container h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+
+        .log-container h2::before {
+            content: "📝";
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .log-entry {
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            border-radius: 12px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 13px;
+            border-left: 4px solid #ddd;
+            background: rgba(248, 249, 250, 0.8);
+            transition: all 0.3s ease;
+        }
+
+        .log-entry:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .log-timestamp {
+            color: #666;
+            margin-right: 15px;
+            font-weight: 600;
+        }
+
+        .log-success {
+            border-left-color: #56ab2f;
+            background: rgba(86, 171, 47, 0.1);
+            color: #2d5016;
+        }
+
+        .log-error {
+            border-left-color: #ff416c;
+            background: rgba(255, 65, 108, 0.1);
+            color: #8b1538;
+        }
+
+        .log-info {
+            border-left-color: #667eea;
+            background: rgba(102, 126, 234, 0.1);
+            color: #2d3748;
+        }
+
+        .feature-highlight {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            font-size: 14px;
+            color: white;
+        }
+
+        .feature-item::before {
+            content: "✓";
+            margin-right: 10px;
+            color: #56ab2f;
+            font-weight: bold;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🕐 定时任务管理中心</h1>
+            <p style="color: #666; margin-top: 10px; font-size: 1.1rem;">温室数字化自动化任务调度系统</p>
+            <nav class="nav">
+                <a href="/dashboard.html">🏠 返回首页</a>
+                <a href="environment.html">🌡️ 环境监控</a>
+                <a href="devices.html">⚙️ 设备控制</a>
+                <a href="alerts.html">🚨 报警管理</a>
+                <a href="scheduled-tasks.html" class="active">⏰ 定时任务</a>
+            </nav>
+        </header>
+
+        <!-- 系统特性介绍 -->
+        <div class="feature-highlight">
+            <h3 style="color: white; margin-bottom: 15px; font-size: 1.3rem;">🚀 系统自动化特性</h3>
+            <div class="feature-list">
+                <div class="feature-item">每30秒自动生成环境数据</div>
+                <div class="feature-item">每1分钟更新设备状态</div>
+                <div class="feature-item">每2分钟执行自动化控制</div>
+                <div class="feature-item">每1分钟检测环境报警</div>
+                <div class="feature-item">每5分钟检测设备故障</div>
+                <div class="feature-item">智能化设备联动控制</div>
+            </div>
+        </div>
+
+        <!-- 任务控制面板 -->
+        <div class="task-control-panel">
+            <h2>任务控制中心</h2>
+            <div class="control-buttons">
+                <button class="btn btn-success" onclick="startTasks()">
+                    🚀 启动所有任务
+                </button>
+                <button class="btn btn-danger" onclick="stopTasks()">
+                    🛑 停止所有任务
+                </button>
+                <button class="btn btn-primary" onclick="refreshStatus()">
+                    🔄 刷新状态
+                </button>
+                <button class="btn btn-warning" onclick="triggerAllTasks()">
+                    ⚡ 手动触发所有任务
+                </button>
+            </div>
+
+            <div class="status-section">
+                <div class="status-indicator">
+                    <span class="status-dot status-running" id="statusDot"></span>
+                    <span>系统状态：<strong id="statusText">运行中</strong></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 手动触发任务 -->
+        <div class="task-control-panel">
+            <h2>手动任务触发</h2>
+            <div class="control-buttons">
+                <button class="btn btn-primary" onclick="triggerEnvironmentData()">
+                    🌡️ 生成环境数据
+                </button>
+                <button class="btn btn-primary" onclick="triggerDeviceUpdate()">
+                    ⚙️ 更新设备状态
+                </button>
+                <button class="btn btn-primary" onclick="triggerAlertDetection()">
+                    🚨 检测报警
+                </button>
+                <button class="btn btn-primary" onclick="triggerAutomaticControl()">
+                    🤖 自动化控制
+                </button>
+            </div>
+        </div>
+        <!-- 任务列表 -->
+        <div class="task-control-panel">
+            <h2>当前任务列表</h2>
+            <div class="task-list-container">
+                <div class="task-list-header">
+                    <div class="task-header-item">任务名称</div>
+                    <div class="task-header-item">状态</div>
+                    <div class="task-header-item">执行频率</div>
+                    <div class="task-header-item">上次执行</div>
+                    <div class="task-header-item">下次执行</div>
+                    <div class="task-header-item">执行次数</div>
+                    <div class="task-header-item">操作</div>
+                </div>
+                <div class="task-list" id="taskList">
+                    <!-- 静态任务列表作为备用 -->
+                    <div class="task-item">
+                        <div class="task-cell task-name">
+                            <span class="task-icon">🌡️</span>
+                            <div>
+                                <div style="font-weight: 600;">环境数据生成</div>
+                                <div style="font-size: 11px; color: #666; margin-top: 2px;">自动采集温室环境数据</div>
+                            </div>
+                        </div>
+                        <div class="task-cell task-status">
+                            <span class="status-badge status-running">运行中</span>
+                        </div>
+                        <div class="task-cell task-frequency">每30秒</div>
+                        <div class="task-cell task-time">25秒前</div>
+                        <div class="task-cell task-time">5秒后</div>
+                        <div class="task-cell task-count">156</div>
+                        <div class="task-cell task-actions">
+                            <button class="task-btn task-btn-pause">暂停</button>
+                            <button class="task-btn task-btn-stop">停止</button>
+                            <button class="task-btn task-btn-trigger">触发</button>
+                        </div>
+                    </div>
+                    <div class="task-item">
+                        <div class="task-cell task-name">
+                            <span class="task-icon">⚙️</span>
+                            <div>
+                                <div style="font-weight: 600;">设备状态更新</div>
+                                <div style="font-size: 11px; color: #666; margin-top: 2px;">更新所有设备运行状态</div>
+                            </div>
+                        </div>
+                        <div class="task-cell task-status">
+                            <span class="status-badge status-running">运行中</span>
+                        </div>
+                        <div class="task-cell task-frequency">每1分钟</div>
+                        <div class="task-cell task-time">45秒前</div>
+                        <div class="task-cell task-time">15秒后</div>
+                        <div class="task-cell task-count">89</div>
+                        <div class="task-cell task-actions">
+                            <button class="task-btn task-btn-pause">暂停</button>
+                            <button class="task-btn task-btn-stop">停止</button>
+                            <button class="task-btn task-btn-trigger">触发</button>
+                        </div>
+                    </div>
+                    <div class="task-item">
+                        <div class="task-cell task-name">
+                            <span class="task-icon">🚨</span>
+                            <div>
+                                <div style="font-weight: 600;">报警检测</div>
+                                <div style="font-size: 11px; color: #666; margin-top: 2px;">检测环境异常并生成报警</div>
+                            </div>
+                        </div>
+                        <div class="task-cell task-status">
+                            <span class="status-badge status-running">运行中</span>
+                        </div>
+                        <div class="task-cell task-frequency">每1分钟</div>
+                        <div class="task-cell task-time">30秒前</div>
+                        <div class="task-cell task-time">30秒后</div>
+                        <div class="task-cell task-count">234</div>
+                        <div class="task-cell task-actions">
+                            <button class="task-btn task-btn-pause">暂停</button>
+                            <button class="task-btn task-btn-stop">停止</button>
+                            <button class="task-btn task-btn-trigger">触发</button>
+                        </div>
+                    </div>
+                    <div class="task-item">
+                        <div class="task-cell task-name">
+                            <span class="task-icon">🤖</span>
+                            <div>
+                                <div style="font-weight: 600;">自动化控制</div>
+                                <div style="font-size: 11px; color: #666; margin-top: 2px;">根据环境数据自动控制设备</div>
+                            </div>
+                        </div>
+                        <div class="task-cell task-status">
+                            <span class="status-badge status-running">运行中</span>
+                        </div>
+                        <div class="task-cell task-frequency">每2分钟</div>
+                        <div class="task-cell task-time">1分钟前</div>
+                        <div class="task-cell task-time">40秒后</div>
+                        <div class="task-cell task-count">67</div>
+                        <div class="task-cell task-actions">
+                            <button class="task-btn task-btn-pause">暂停</button>
+                            <button class="task-btn task-btn-stop">停止</button>
+                            <button class="task-btn task-btn-trigger">触发</button>
+                        </div>
+                    </div>
+                    <div class="task-item">
+                        <div class="task-cell task-name">
+                            <span class="task-icon">🔧</span>
+                            <div>
+                                <div style="font-weight: 600;">设备故障检测</div>
+                                <div style="font-size: 11px; color: #666; margin-top: 2px;">检测设备故障和异常状态</div>
+                            </div>
+                        </div>
+                        <div class="task-cell task-status">
+                            <span class="status-badge status-running">运行中</span>
+                        </div>
+                        <div class="task-cell task-frequency">每5分钟</div>
+                        <div class="task-cell task-time">3分钟前</div>
+                        <div class="task-cell task-time">2分钟后</div>
+                        <div class="task-cell task-count">23</div>
+                        <div class="task-cell task-actions">
+                            <button class="task-btn task-btn-pause">暂停</button>
+                            <button class="task-btn task-btn-stop">停止</button>
+                            <button class="task-btn task-btn-trigger">触发</button>
+                        </div>
+                    </div>
+                    <div class="task-item">
+                        <div class="task-cell task-name">
+                            <span class="task-icon">💾</span>
+                            <div>
+                                <div style="font-weight: 600;">数据备份</div>
+                                <div style="font-size: 11px; color: #666; margin-top: 2px;">定期备份系统重要数据</div>
+                            </div>
+                        </div>
+                        <div class="task-cell task-status">
+                            <span class="status-badge status-paused">已暂停</span>
+                        </div>
+                        <div class="task-cell task-frequency">每小时</div>
+                        <div class="task-cell task-time">1小时前</div>
+                        <div class="task-cell task-time">30分钟后</div>
+                        <div class="task-cell task-count">12</div>
+                        <div class="task-cell task-actions">
+                            <button class="task-btn task-btn-start">恢复</button>
+                            <button class="task-btn task-btn-stop">停止</button>
+                            <button class="task-btn task-btn-trigger">触发</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 统计信息 -->
+        <div class="statistics-grid" id="statisticsGrid">
+            <div class="stat-card">
+                <div class="stat-title">环境数据生成</div>
+                <div class="stat-value" id="envDataCount">156</div>
+                <div class="stat-subtitle">次执行</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">设备状态更新</div>
+                <div class="stat-value" id="deviceUpdateCount">89</div>
+                <div class="stat-subtitle">次执行</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">报警检测</div>
+                <div class="stat-value" id="alertDetectionCount">234</div>
+                <div class="stat-subtitle">次执行</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">自动化控制</div>
+                <div class="stat-value" id="autoControlCount">67</div>
+                <div class="stat-subtitle">次执行</div>
+            </div>
+        </div>
+
+        <!-- 操作日志 -->
+        <div class="log-container">
+            <h2>实时操作日志</h2>
+            <div id="logContainer">
+                <div class="log-entry log-info">
+                    <span class="log-timestamp">[2025-08-13 21:35:12]</span>
+                    <strong>系统初始化:</strong> 定时任务管理系统启动完成
+                </div>
+                <div class="log-entry log-success">
+                    <span class="log-timestamp">[2025-08-13 21:34:45]</span>
+                    <strong>环境数据生成:</strong> 成功生成温室环境数据 (温度: 23.5°C, 湿度: 65%)
+                </div>
+                <div class="log-entry log-success">
+                    <span class="log-timestamp">[2025-08-13 21:33:30]</span>
+                    <strong>设备状态更新:</strong> 12个设备状态更新完成，运行正常
+                </div>
+                <div class="log-entry log-info">
+                    <span class="log-timestamp">[2025-08-13 21:32:15]</span>
+                    <strong>自动化控制:</strong> 根据环境数据自动调节设备功率
+                </div>
+            </div>
+        </div>
+    </div>
+    <sc ript>
+        // API基础URL
+        const API_BASE = '/api/scheduled-tasks';
+
+        // 任务数据
+        const tasks = [
+        {
+        id: 'env-data-generation',
+        name: '环境数据生成',
+        icon: '🌡️',
+        status: 'running',
+        frequency: '每30秒',
+        lastExecution: new Date(Date.now() - 25000),
+        nextExecution: new Date(Date.now() + 5000),
+        executionCount: 156,
+        description: '自动采集温室环境数据'
+        },
+        {
+        id: 'device-status-update',
+        name: '设备状态更新',
+        icon: '⚙️',
+        status: 'running',
+        frequency: '每1分钟',
+        lastExecution: new Date(Date.now() - 45000),
+        nextExecution: new Date(Date.now() + 15000),
+        executionCount: 89,
+        description: '更新所有设备运行状态'
+        },
+        {
+        id: 'alert-detection',
+        name: '报警检测',
+        icon: '🚨',
+        status: 'running',
+        frequency: '每1分钟',
+        lastExecution: new Date(Date.now() - 30000),
+        nextExecution: new Date(Date.now() + 30000),
+        executionCount: 234,
+        description: '检测环境异常并生成报警'
+        },
+        {
+        id: 'automatic-control',
+        name: '自动化控制',
+        icon: '🤖',
+        status: 'running',
+        frequency: '每2分钟',
+        lastExecution: new Date(Date.now() - 80000),
+        nextExecution: new Date(Date.now() + 40000),
+        executionCount: 67,
+        description: '根据环境数据自动控制设备'
+        },
+        {
+        id: 'device-fault-detection',
+        name: '设备故障检测',
+        icon: '🔧',
+        status: 'running',
+        frequency: '每5分钟',
+        lastExecution: new Date(Date.now() - 180000),
+        nextExecution: new Date(Date.now() + 120000),
+        executionCount: 23,
+        description: '检测设备故障和异常状态'
+        },
+        {
+        id: 'data-backup',
+        name: '数据备份',
+        icon: '💾',
+        status: 'paused',
+        frequency: '每小时',
+        lastExecution: new Date(Date.now() - 3600000),
+        nextExecution: new Date(Date.now() + 1800000),
+        executionCount: 12,
+        description: '定期备份系统重要数据'
+        }
+        ];
+        // 立即执行测试
+        console.log('JavaScript代码开始执行...');
+        alert('JavaScript代码正在运行！');
+
+        // 页面加载时初始化
+        document.addEventListener('DOMContentLoaded', function() {
+        console.log('页面加载完成，开始初始化...');
+        console.log('任务数据:', tasks);
+        alert('DOMContentLoaded事件触发！');
+
+        try {
+        refreshStatus();
+        renderTaskList();
+        addLogEntry('系统初始化', '定时任务管理系统启动完成', 'info');
+
+        console.log('任务列表渲染完成');
+
+        // 模拟数据更新
+        setInterval(updateStatistics, 10000);
+        setInterval(updateTaskTimes, 1000); // 每秒更新时间
+        } catch (error) {
+        console.error('初始化失败:', error);
+        }
+        });
+
+        // 渲染任务列表
+        function renderTaskList() {
+        console.log('开始渲染任务列表...');
+        const taskList = document.getElementById('taskList');
+
+        if (!taskList) {
+        console.error('找不到taskList元素');
+        return;
+        }
+
+        console.log('找到taskList元素，清空内容');
+        taskList.innerHTML = '';
+
+        console.log('开始遍历任务:', tasks.length, '个任务');
+        tasks.forEach((task, index) => {
+        console.log(`渲染任务 ${index + 1}:`, task.name);
+        const taskItem = document.createElement('div');
+        taskItem.className = 'task-item';
+        taskItem.innerHTML = `
+        <div class="task-cell task-name">
+            <span class="task-icon">${task.icon}</span>
+            <div>
+                <div style="font-weight: 600;">${task.name}</div>
+                <div style="font-size: 11px; color: #666; margin-top: 2px;">${task.description}</div>
+            </div>
+        </div>
+        <div class="task-cell task-status" data-label="状态">
+            <span class="status-badge status-${task.status}">
+                ${getStatusText(task.status)}
+            </span>
+        </div>
+        <div class="task-cell task-frequency" data-label="执行频率">${task.frequency}</div>
+        <div class="task-cell task-time" data-label="上次执行" id="last-${task.id}">
+            ${formatTime(task.lastExecution)}
+        </div>
+        <div class="task-cell task-time" data-label="下次执行" id="next-${task.id}">
+            ${formatCountdown(task.nextExecution)}
+        </div>
+        <div class="task-cell task-count" data-label="执行次数">${task.executionCount}</div>
+        <div class="task-cell task-actions" data-label="操作">
+            ${generateTaskActions(task)}
+        </div>
+        `;
+        taskList.appendChild(taskItem);
+        console.log(`任务 ${task.name} 已添加到列表`);
+        });
+
+        console.log('任务列表渲染完成，总共', tasks.length, '个任务');
+        }
+        // 获取状态文本
+        function getStatusText(status) {
+        const statusMap = {
+        'running': '运行中',
+        'stopped': '已停止',
+        'paused': '已暂停'
+        };
+        return statusMap[status] || status;
+        }
+
+        // 格式化时间显示
+        function formatTime(date) {
+        const now = new Date();
+        const diff = Math.abs(now - date);
+
+        if (diff < 60000) { // 小于1分钟 return Math.floor(diff / 1000) + '秒前' ; } else if (diff < 3600000) { // 小于1小时
+            return Math.floor(diff / 60000) + '分钟前' ; } else { return date.toLocaleTimeString('zh-CN', { hour: '2-digit'
+            , minute: '2-digit' , second: '2-digit' }); } } // 格式化倒计时 function formatCountdown(date) { const now=new
+            Date(); const diff=date - now; if (diff <=0) { return '即将执行' ; } if (diff < 60000) { // 小于1分钟 return
+            Math.floor(diff / 1000) + '秒后' ; } else if (diff < 3600000) { // 小于1小时 return Math.floor(diff / 60000)
+            + '分钟后' ; } else { return date.toLocaleTimeString('zh-CN', { hour: '2-digit' , minute: '2-digit' }); } } //
+            生成任务操作按钮 function generateTaskActions(task) { let actions='' ; if (task.status==='running' ) { actions
+            +=`<button class="task-btn task-btn-pause" onclick="pauseTask('${task.id}')">暂停</button>`;
+            actions += `<button class="task-btn task-btn-stop" onclick="stopTask('${task.id}')">停止</button>`;
+            } else if (task.status === 'stopped') {
+            actions += `<button class="task-btn task-btn-start" onclick="startTask('${task.id}')">启动</button>`;
+            } else if (task.status === 'paused') {
+            actions += `<button class="task-btn task-btn-start" onclick="resumeTask('${task.id}')">恢复</button>`;
+            actions += `<button class="task-btn task-btn-stop" onclick="stopTask('${task.id}')">停止</button>`;
+            }
+
+            actions += `<button class="task-btn task-btn-trigger" onclick="triggerTaskById('${task.id}')">触发</button>`;
+
+            return actions;
+            }
+            // 更新任务时间显示
+            function updateTaskTimes() {
+            tasks.forEach(task => {
+            const lastElement = document.getElementById(`last-${task.id}`);
+            const nextElement = document.getElementById(`next-${task.id}`);
+
+            if (lastElement) {
+            lastElement.textContent = formatTime(task.lastExecution);
+            }
+
+            if (nextElement) {
+            nextElement.textContent = formatCountdown(task.nextExecution);
+            }
+            });
+            }
+
+            // 任务控制函数
+            function startTask(taskId) {
+            const task = tasks.find(t => t.id === taskId);
+            if (task) {
+            task.status = 'running';
+            task.nextExecution = new Date(Date.now() + getFrequencyMs(task.frequency));
+            renderTaskList();
+            addLogEntry('任务启动', `${task.icon} ${task.name} 已启动`, 'success');
+            }
+            }
+
+            function stopTask(taskId) {
+            const task = tasks.find(t => t.id === taskId);
+            if (task) {
+            task.status = 'stopped';
+            renderTaskList();
+            addLogEntry('任务停止', `${task.icon} ${task.name} 已停止`, 'info');
+            }
+            }
+
+            function pauseTask(taskId) {
+            const task = tasks.find(t => t.id === taskId);
+            if (task) {
+            task.status = 'paused';
+            renderTaskList();
+            addLogEntry('任务暂停', `${task.icon} ${task.name} 已暂停`, 'info');
+            }
+            }
+
+            function resumeTask(taskId) {
+            const task = tasks.find(t => t.id === taskId);
+            if (task) {
+            task.status = 'running';
+            task.nextExecution = new Date(Date.now() + getFrequencyMs(task.frequency));
+            renderTaskList();
+            addLogEntry('任务恢复', `${task.icon} ${task.name} 已恢复运行`, 'success');
+            }
+            }
+
+            function triggerTaskById(taskId) {
+            const task = tasks.find(t => t.id === taskId);
+            if (task) {
+            task.executionCount++;
+            task.lastExecution = new Date();
+            task.nextExecution = new Date(Date.now() + getFrequencyMs(task.frequency));
+            renderTaskList();
+            addLogEntry('手动触发', `${task.icon} ${task.name} 手动执行完成`, 'success');
+            updateStatistics();
+            }
+            }
+            // 获取频率对应的毫秒数
+            function getFrequencyMs(frequency) {
+            const frequencyMap = {
+            '每30秒': 30000,
+            '每1分钟': 60000,
+            '每2分钟': 120000,
+            '每5分钟': 300000,
+            '每小时': 3600000
+            };
+            return frequencyMap[frequency] || 60000;
+            }
+
+            // 启动所有任务
+            async function startTasks() {
+            try {
+            addLogEntry('任务启动', '正在启动所有定时任务...', 'info');
+
+            // 更新所有非运行状态的任务为运行中
+            let startedCount = 0;
+            tasks.forEach(task => {
+            if (task.status === 'stopped' || task.status === 'paused') {
+            task.status = 'running';
+            task.nextExecution = new Date(Date.now() + getFrequencyMs(task.frequency));
+            startedCount++;
+            }
+            });
+            
+            // 立即重新渲染任务列表以显示状态变化
+            renderTaskList();
+            updateStatus(true);
+            addLogEntry('任务启动', `✅ 已启动 ${startedCount} 个定时任务`, 'success');
+
+            } catch (error) {
+            addLogEntry('任务启动', '❌ 启动失败: ' + error.message, 'error');
+            }
+            }
+
+            // 停止所有任务
+            async function stopTasks() {
+            try {
+            addLogEntry('任务停止', '正在停止所有定时任务...', 'info');
+
+            // 更新所有任务状态为停止
+            tasks.forEach(task => {
+            if (task.status === 'running') {
+            task.status = 'stopped';
+            }
+            });
+            renderTaskList();
+            updateStatus(false);
+            addLogEntry('任务停止', '🛑 所有定时任务已停止', 'success');
+
+            } catch (error) {
+            addLogEntry('任务停止', '❌ 停止失败: ' + error.message, 'error');
+            }
+            }
+
+            // 刷新任务状态
+            async function refreshStatus() {
+            try {
+            const isRunning = Math.random() > 0.3;
+            updateStatus(isRunning);
+            addLogEntry('状态刷新', '📊 系统状态已刷新', 'info');
+            } catch (error) {
+            addLogEntry('状态查询', '❌ 状态查询失败: ' + error.message, 'error');
+            }
+            } /
+            / 更新状态显示
+            function updateStatus(isRunning) {
+            const statusDot = document.getElementById('statusDot');
+            const statusText = document.getElementById('statusText');
+
+            if (isRunning) {
+            statusDot.className = 'status-dot status-running';
+            statusText.textContent = '运行中';
+            } else {
+            statusDot.className = 'status-dot status-stopped';
+            statusText.textContent = '已停止';
+            }
+            }
+
+            // 手动触发任务
+            async function triggerEnvironmentData() {
+            await triggerTask('environment-data', '环境数据生成', '🌡️');
+            }
+
+            async function triggerDeviceUpdate() {
+            await triggerTask('device-update', '设备状态更新', '⚙️');
+            }
+
+            async function triggerAlertDetection() {
+            await triggerTask('alert-detection', '报警检测', '🚨');
+            }
+
+            async function triggerAutomaticControl() {
+            await triggerTask('automatic-control', '自动化控制', '🤖');
+            }
+
+            // 触发所有任务
+            async function triggerAllTasks() {
+            try {
+            addLogEntry('批量触发', '⚡ 正在触发所有任务...', 'info');
+
+            // 更新任务执行时间和次数
+            tasks.forEach(task => {
+            task.executionCount++;
+            task.lastExecution = new Date();
+            task.nextExecution = new Date(Date.now() + getFrequencyMs(task.frequency));
+            });
+            renderTaskList();
+            updateStatistics();
+            addLogEntry('批量触发', '✅ 所有任务触发完成', 'success');
+
+            } catch (error) {
+            addLogEntry('批量触发', '❌ 批量触发失败: ' + error.message, 'error');
+            }
+            }
+
+            // 通用任务触发函数
+            async function triggerTask(taskType, taskName, icon) {
+            try {
+            addLogEntry(taskName, `${icon} 正在执行${taskName}任务...`, 'info');
+
+            // 更新对应任务的执行信息
+            const taskMap = {
+            'environment-data': 'env-data-generation',
+            'device-update': 'device-status-update',
+            'alert-detection': 'alert-detection',
+            'automatic-control': 'automatic-control'
+            };
+
+            const taskId = taskMap[taskType];
+            const task = tasks.find(t => t.id === taskId);
+            if (task) {
+            task.executionCount++;
+            task.lastExecution = new Date();
+            task.nextExecution = new Date(Date.now() + getFrequencyMs(task.frequency));
+            renderTaskList();
+            }
+
+            updateStatistics();
+            addLogEntry(taskName, `${icon} ${taskName}任务执行成功`, 'success');
+
+            } catch (error) {
+            addLogEntry(taskName, `❌ ${taskName}任务执行失败: ` + error.message, 'error');
+            }
+            }
+            // 更新统计数据
+            function updateStatistics() {
+            const envCount = document.getElementById('envDataCount');
+            const deviceCount = document.getElementById('deviceUpdateCount');
+            const alertCount = document.getElementById('alertDetectionCount');
+            const autoCount = document.getElementById('autoControlCount');
+
+            envCount.textContent = parseInt(envCount.textContent) + Math.floor(Math.random() * 3);
+            deviceCount.textContent = parseInt(deviceCount.textContent) + Math.floor(Math.random() * 2);
+            alertCount.textContent = parseInt(alertCount.textContent) + Math.floor(Math.random() * 5);
+            autoCount.textContent = parseInt(autoCount.textContent) + Math.floor(Math.random() * 2);
+            }
+
+            // 添加日志条目
+            function addLogEntry(operation, message, type = 'info') {
+            const logContainer = document.getElementById('logContainer');
+            const entry = document.createElement('div');
+            entry.className = `log-entry log-${type}`;
+
+            const timestamp = new Date().toLocaleString('zh-CN');
+            entry.innerHTML = `
+            <span class="log-timestamp">[${timestamp}]</span>
+            <strong>${operation}:</strong> ${message}
+            `;
+
+            logContainer.insertBefore(entry, logContainer.firstChild);
+
+            // 限制日志条目数量
+            const entries = logContainer.querySelectorAll('.log-entry');
+            if (entries.length > 15) {
+            logContainer.removeChild(entries[entries.length - 1]);
+            }
+            }
+
+            // 定期刷新状态和统计
+            setInterval(() => {
+            refreshStatus();
+            }, 30000); // 每30秒刷新一次
+            </script>
+</body>
+
+</html>

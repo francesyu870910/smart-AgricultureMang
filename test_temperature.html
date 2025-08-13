@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>温度监控组件测试</title>
+    <link rel="stylesheet" href="src/main/resources/static/frontend/css/main.css">
+    <link rel="stylesheet" href="src/main/resources/static/frontend/css/components.css">
+    <link rel="stylesheet" href="src/main/resources/static/frontend/css/charts.css">
+</head>
+<body>
+    <div style="padding: 20px;">
+        <h1>温度监控组件测试</h1>
+        <div id="temperature-content"></div>
+    </div>
+
+    <!-- JavaScript文件 -->
+    <script src="src/main/resources/static/frontend/js/utils/format.js"></script>
+    <script src="src/main/resources/static/frontend/js/utils/validation.js"></script>
+    <script src="src/main/resources/static/frontend/js/utils/chart.js"></script>
+    <script src="src/main/resources/static/frontend/js/utils/notification.js"></script>
+    <script src="src/main/resources/static/frontend/js/services/api.js"></script>
+    <script src="src/main/resources/static/frontend/js/components/temperature.js"></script>
+
+    <script>
+        // 创建全局API服务实例
+        const apiService = new ApiService();
+        
+        // 测试温度组件
+        async function testTemperatureComponent() {
+            try {
+                const component = new TemperatureComponent();
+                const html = await component.render();
+                document.getElementById('temperature-content').innerHTML = html;
+                await component.init();
+                
+                console.log('温度组件测试成功');
+                
+                // 模拟数据更新
+                setTimeout(() => {
+                    component.updateEnvironmentData({
+                        temperature: 25.5,
+                        recordedAt: new Date().toISOString()
+                    });
+                }, 2000);
+                
+            } catch (error) {
+                console.error('温度组件测试失败:', error);
+                document.getElementById('temperature-content').innerHTML = 
+                    '<div style="color: red;">组件加载失败: ' + error.message + '</div>';
+            }
+        }
+
+        // 页面加载完成后测试
+        document.addEventListener('DOMContentLoaded', testTemperatureComponent);
+    </script>
+</body>
+</html>

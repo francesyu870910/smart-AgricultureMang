@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API测试</title>
+</head>
+<body>
+    <h1>API连接测试</h1>
+    <button onclick="testAPI()">测试API连接</button>
+    <div id="result"></div>
+
+    <script>
+        async function testAPI() {
+            const resultDiv = document.getElementById('result');
+            
+            try {
+                // 测试不同端口
+                const ports = [8080, 8081, 8082, 8888, 9090];
+                
+                for (const port of ports) {
+                    try {
+                        const response = await fetch(`http://localhost:${port}/api/scheduled-tasks/status`);
+                        if (response.ok) {
+                            const data = await response.json();
+                            resultDiv.innerHTML = `<p style="color: green;">成功连接到端口 ${port}!</p><pre>${JSON.stringify(data, null, 2)}</pre>`;
+                            return;
+                        }
+                    } catch (e) {
+                        console.log(`端口 ${port} 连接失败:`, e.message);
+                    }
+                }
+                
+                resultDiv.innerHTML = '<p style="color: red;">所有端口都连接失败</p>';
+                
+            } catch (error) {
+                resultDiv.innerHTML = `<p style="color: red;">错误: ${error.message}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>

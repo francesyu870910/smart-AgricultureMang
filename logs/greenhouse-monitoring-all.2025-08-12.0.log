@@ -1,0 +1,1010 @@
+2025-08-12 00:00:02.934 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 28520 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-12 00:00:02.935 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-12 00:00:02.936 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-12 00:00:03.542 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:00:03.543 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-12 00:00:03.544 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-12 00:00:03.586 [restartedMain] INFO  [] [] o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-12 00:00:03.615 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+2025-08-12 00:00:03.624 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+2025-08-12 00:00:03.653 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 00:00:03.660 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-12 00:00:03.688 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 00:00:04.206 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 00:00:04.285 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-12 00:00:04.337 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 102 mappings in 'requestMappingHandlerMapping'
+2025-08-12 00:00:04.353 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-12 00:00:04.363 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-12 00:00:04.417 [restartedMain] WARN  [] [] o.s.b.d.autoconfigure.OptionalLiveReloadServer - Unable to start LiveReload server
+2025-08-12 00:00:04.430 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:00:04.444 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Started GreenhouseApplication in 1.589 seconds (JVM running for 776.217)
+2025-08-12 00:00:04.445 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting simulation system initialization...
+2025-08-12 00:00:04.446 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Initializing simulated devices...
+2025-08-12 00:00:04.556 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully initialized simulated devices
+2025-08-12 00:00:04.557 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting scheduled tasks...
+2025-08-12 00:00:04.558 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully started scheduled tasks
+2025-08-12 00:00:04.558 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Simulation system initialization completed successfully
+2025-08-12 00:00:06.617 [background-preinit] INFO  [] [] org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-12 00:00:06.618 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 14068 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-12 00:00:06.619 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-12 00:00:06.620 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-12 00:00:08.323 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:00:08.327 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-12 00:00:08.327 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-12 00:00:08.445 [restartedMain] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-12 00:00:08.522 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-12 00:00:08.728 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-12 00:00:08.801 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 00:00:08.858 [restartedMain] INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-12 00:00:09.066 [restartedMain] INFO  [] [] org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-12 00:00:09.189 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-12 00:00:09.478 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 00:00:10.236 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 00:00:10.372 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-12 00:00:10.487 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 102 mappings in 'requestMappingHandlerMapping'
+2025-08-12 00:00:10.513 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-12 00:00:10.528 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-12 00:00:10.635 [restartedMain] WARN  [] [] o.s.b.d.autoconfigure.OptionalLiveReloadServer - Unable to start LiveReload server
+2025-08-12 00:00:10.650 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:00:10.655 [restartedMain] WARN  [] [] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8083 is already in use
+2025-08-12 00:00:10.661 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-12 00:00:10.671 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-12 00:00:10.673 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:00:10.673 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-12 00:00:10.678 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:00:10.678 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:00:10.709 [restartedMain] ERROR [] [] o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8083 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8083 or configure this application to listen on another port.
+
+2025-08-12 00:04:50.136 [background-preinit] INFO  [] [] org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-12 00:04:50.141 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 11060 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-12 00:04:50.142 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-12 00:04:50.143 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-12 00:04:52.279 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:04:52.283 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-12 00:04:52.284 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-12 00:04:52.425 [restartedMain] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-12 00:04:52.515 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-12 00:04:52.739 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-12 00:04:52.827 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 00:04:52.911 [restartedMain] INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-12 00:04:53.128 [restartedMain] INFO  [] [] org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-12 00:04:53.271 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-12 00:04:53.624 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 00:04:54.433 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 00:04:54.599 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-12 00:04:54.712 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 102 mappings in 'requestMappingHandlerMapping'
+2025-08-12 00:04:54.735 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-12 00:04:54.749 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-12 00:04:54.852 [restartedMain] WARN  [] [] o.s.b.d.autoconfigure.OptionalLiveReloadServer - Unable to start LiveReload server
+2025-08-12 00:04:54.870 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:04:54.939 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Started GreenhouseApplication in 5.45 seconds (JVM running for 6.05)
+2025-08-12 00:04:54.941 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting simulation system initialization...
+2025-08-12 00:04:54.943 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Initializing simulated devices...
+2025-08-12 00:04:55.263 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully initialized simulated devices
+2025-08-12 00:04:55.263 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting scheduled tasks...
+2025-08-12 00:04:55.264 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully started scheduled tasks
+2025-08-12 00:04:55.264 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Simulation system initialization completed successfully
+2025-08-12 00:05:01.969 [http-nio-8083-exec-2] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-12 00:05:01.970 [http-nio-8083-exec-2] INFO  [] [] org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-12 00:05:01.970 [http-nio-8083-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2025-08-12 00:05:01.971 [http-nio-8083-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2025-08-12 00:05:01.971 [http-nio-8083-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2025-08-12 00:05:01.972 [http-nio-8083-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@5c3f46e8
+2025-08-12 00:05:01.972 [http-nio-8083-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@29d8a13c
+2025-08-12 00:05:01.974 [http-nio-8083-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-08-12 00:05:01.974 [http-nio-8083-exec-2] INFO  [] [] org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2025-08-12 00:05:01.988 [http-nio-8083-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-12 00:05:02.027 [http-nio-8083-exec-2] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-12 00:05:02.165 [http-nio-8083-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-12 00:08:17.247 [http-nio-8083-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-12 00:08:17.249 [http-nio-8083-exec-4] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-12 00:08:17.251 [http-nio-8083-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-12 00:09:29.241 [http-nio-8083-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/login.html", parameters={}
+2025-08-12 00:09:29.243 [http-nio-8083-exec-7] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-12 00:09:29.304 [http-nio-8083-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-12 00:12:40.360 [http-nio-8083-exec-10] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-12 00:12:40.363 [http-nio-8083-exec-10] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-12 00:12:40.365 [http-nio-8083-exec-10] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-12 00:12:53.881 [http-nio-8083-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-12 00:12:53.882 [http-nio-8083-exec-2] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-12 00:12:53.883 [http-nio-8083-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-12 00:14:33.636 [Thread-1] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:14:33.636 [Thread-1] INFO  [] [] org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-12 00:14:33.637 [Thread-1] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-08-12 00:14:33.642 [Thread-1] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:14:33.644 [Thread-1] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:14:33.650 [Thread-1] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-12 00:14:33.659 [Thread-1] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-12 00:14:33.791 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 11060 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-12 00:14:33.791 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-12 00:14:33.791 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-12 00:14:34.105 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:14:34.106 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-12 00:14:34.106 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-12 00:14:34.134 [restartedMain] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-12 00:14:34.200 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 00:14:34.205 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2025-08-12 00:14:34.214 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2025-08-12 00:14:34.215 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-12 00:14:34.236 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 00:14:34.269 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 00:14:34.340 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-12 00:14:34.362 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 2 mappings in 'requestMappingHandlerMapping'
+2025-08-12 00:14:34.373 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-08-12 00:14:34.380 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-12 00:14:34.551 [restartedMain] WARN  [] [] o.s.b.d.autoconfigure.OptionalLiveReloadServer - Unable to start LiveReload server
+2025-08-12 00:14:34.587 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:14:34.604 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Started GreenhouseApplication in 0.874 seconds (JVM running for 585.714)
+2025-08-12 00:14:36.440 [Thread-7] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:14:36.440 [Thread-7] INFO  [] [] org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-12 00:14:36.443 [Thread-7] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:14:36.444 [Thread-7] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:14:36.446 [Thread-7] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2025-08-12 00:14:36.446 [Thread-7] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2025-08-12 00:14:36.551 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 11060 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-12 00:14:36.552 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-12 00:14:36.552 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-12 00:14:36.900 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:14:36.901 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-12 00:14:36.901 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-12 00:14:36.929 [restartedMain] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-12 00:14:36.947 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+2025-08-12 00:14:36.954 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+2025-08-12 00:14:36.975 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 00:14:36.981 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-12 00:14:37.008 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 00:14:37.336 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 00:14:37.382 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-12 00:14:37.421 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 102 mappings in 'requestMappingHandlerMapping'
+2025-08-12 00:14:37.428 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-12 00:14:37.435 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-12 00:14:37.465 [restartedMain] WARN  [] [] o.s.b.d.autoconfigure.OptionalLiveReloadServer - Unable to start LiveReload server
+2025-08-12 00:14:37.472 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:14:37.508 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Started GreenhouseApplication in 1.004 seconds (JVM running for 588.618)
+2025-08-12 00:14:37.509 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting simulation system initialization...
+2025-08-12 00:14:37.509 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Initializing simulated devices...
+2025-08-12 00:14:37.603 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully initialized simulated devices
+2025-08-12 00:14:37.603 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting scheduled tasks...
+2025-08-12 00:14:37.605 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully started scheduled tasks
+2025-08-12 00:14:37.605 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Simulation system initialization completed successfully
+2025-08-12 00:14:39.259 [background-preinit] INFO  [] [] org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-12 00:14:39.261 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 15856 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-12 00:14:39.261 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-12 00:14:39.263 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-12 00:14:40.833 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:14:40.836 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-12 00:14:40.837 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-12 00:14:40.942 [restartedMain] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-12 00:14:41.025 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-12 00:14:41.218 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-12 00:14:41.290 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 00:14:41.342 [restartedMain] INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-12 00:14:41.524 [restartedMain] INFO  [] [] org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-12 00:14:41.648 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-12 00:14:41.894 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 00:14:42.591 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 00:14:42.718 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-12 00:14:42.822 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 102 mappings in 'requestMappingHandlerMapping'
+2025-08-12 00:14:42.844 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-12 00:14:42.854 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-12 00:14:42.945 [restartedMain] WARN  [] [] o.s.b.d.autoconfigure.OptionalLiveReloadServer - Unable to start LiveReload server
+2025-08-12 00:14:42.962 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:14:42.966 [restartedMain] WARN  [] [] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8083 is already in use
+2025-08-12 00:14:42.973 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-12 00:14:42.982 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-12 00:14:42.984 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:14:42.985 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-12 00:14:42.989 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:14:42.989 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:14:43.022 [restartedMain] ERROR [] [] o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8083 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8083 or configure this application to listen on another port.
+
+2025-08-12 00:38:00.954 [background-preinit] INFO  [] [] org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-12 00:38:00.959 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 24420 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-12 00:38:00.960 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-12 00:38:00.961 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-12 00:38:02.810 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:38:02.814 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-12 00:38:02.814 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-12 00:38:02.970 [restartedMain] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-12 00:38:03.056 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-12 00:38:03.279 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-12 00:38:03.363 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 00:38:03.436 [restartedMain] INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-12 00:38:03.630 [restartedMain] INFO  [] [] org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-12 00:38:03.762 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-12 00:38:04.073 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 00:38:04.855 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 00:38:05.001 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-12 00:38:05.114 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 102 mappings in 'requestMappingHandlerMapping'
+2025-08-12 00:38:05.139 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-12 00:38:05.153 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-12 00:38:05.275 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:38:05.317 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Started GreenhouseApplication in 4.982 seconds (JVM running for 5.522)
+2025-08-12 00:38:05.320 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting simulation system initialization...
+2025-08-12 00:38:05.320 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Initializing simulated devices...
+2025-08-12 00:38:05.614 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully initialized simulated devices
+2025-08-12 00:38:05.615 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting scheduled tasks...
+2025-08-12 00:38:05.616 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully started scheduled tasks
+2025-08-12 00:38:05.616 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Simulation system initialization completed successfully
+2025-08-12 00:39:31.745 [http-nio-8083-exec-1] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-12 00:39:31.745 [http-nio-8083-exec-1] INFO  [] [] org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-12 00:39:31.745 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2025-08-12 00:39:31.746 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2025-08-12 00:39:31.746 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2025-08-12 00:39:31.747 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@30d52b3c
+2025-08-12 00:39:31.747 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@12f1b02d
+2025-08-12 00:39:31.748 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-08-12 00:39:31.748 [http-nio-8083-exec-1] INFO  [] [] org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-08-12 00:39:31.759 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-12 00:39:31.773 [http-nio-8083-exec-1] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-12 00:39:31.877 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-12 00:41:52.484 [http-nio-8083-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/login.html", parameters={}
+2025-08-12 00:41:52.487 [http-nio-8083-exec-4] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-12 00:41:52.547 [http-nio-8083-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-12 00:44:25.714 [Thread-7] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:44:25.714 [Thread-7] INFO  [] [] org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-12 00:44:25.716 [Thread-7] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-08-12 00:44:25.720 [Thread-7] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:44:25.723 [Thread-7] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:44:25.730 [Thread-7] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-12 00:44:25.741 [Thread-7] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-12 00:44:25.860 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 24420 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-12 00:44:25.860 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-12 00:44:25.861 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-12 00:44:26.137 [restartedMain] WARN  [] [] org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.greenhouse.mapper]' package. Please check your configuration.
+2025-08-12 00:44:26.241 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:44:26.243 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-12 00:44:26.244 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-12 00:44:26.273 [restartedMain] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-12 00:44:26.329 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 00:44:26.335 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2025-08-12 00:44:26.369 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2025-08-12 00:44:26.370 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-12 00:44:26.391 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 00:44:26.421 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 00:44:26.474 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-12 00:44:26.500 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 2 mappings in 'requestMappingHandlerMapping'
+2025-08-12 00:44:26.514 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-08-12 00:44:26.527 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-12 00:44:26.581 [restartedMain] WARN  [] [] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'
+2025-08-12 00:44:26.585 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2025-08-12 00:44:26.588 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2025-08-12 00:44:26.590 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-12 00:44:26.627 [restartedMain] ERROR [] [] org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:921)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.greenhouse.GreenhouseApplication.main(GreenhouseApplication.java:17)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 24 common frames omitted
+Caused by: java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:575)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.afterPropertiesSet(MybatisSqlSessionFactoryBean.java:444)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.getObject(MybatisSqlSessionFactoryBean.java:608)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration.sqlSessionFactory(MybatisPlusAutoConfiguration.java:224)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 25 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.greenhouse.entity.AlertRecord'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.AlertRecord
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:95)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:573)
+	... 33 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.greenhouse.entity.AlertRecord'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.AlertRecord
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:102)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:138)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:131)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:121)
+	... 35 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.greenhouse.entity.AlertRecord'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.AlertRecord
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:128)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116)
+	... 39 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.AlertRecord
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:196)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:124)
+	... 41 common frames omitted
+2025-08-12 00:44:29.840 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 24420 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-12 00:44:29.840 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-12 00:44:29.841 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-12 00:44:30.309 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:44:30.310 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-12 00:44:30.310 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-12 00:44:30.344 [restartedMain] INFO  [] [] o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-12 00:44:30.361 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+2025-08-12 00:44:30.368 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+2025-08-12 00:44:30.395 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 00:44:30.401 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-12 00:44:30.424 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 00:44:30.867 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 00:44:30.932 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-12 00:44:30.975 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 102 mappings in 'requestMappingHandlerMapping'
+2025-08-12 00:44:30.986 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-12 00:44:30.995 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-12 00:44:31.043 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:44:31.056 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Started GreenhouseApplication in 1.271 seconds (JVM running for 391.261)
+2025-08-12 00:44:31.058 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting simulation system initialization...
+2025-08-12 00:44:31.058 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Initializing simulated devices...
+2025-08-12 00:44:31.165 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully initialized simulated devices
+2025-08-12 00:44:31.166 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting scheduled tasks...
+2025-08-12 00:44:31.167 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully started scheduled tasks
+2025-08-12 00:44:31.167 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Simulation system initialization completed successfully
+2025-08-12 00:44:33.291 [background-preinit] INFO  [] [] org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-12 00:44:33.294 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 30136 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-12 00:44:33.294 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-12 00:44:33.295 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-12 00:44:34.969 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:44:34.972 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-12 00:44:34.972 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-12 00:44:35.078 [restartedMain] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-12 00:44:35.171 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-12 00:44:35.401 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-12 00:44:35.489 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 00:44:35.551 [restartedMain] INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-12 00:44:35.744 [restartedMain] INFO  [] [] org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-12 00:44:35.875 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-12 00:44:36.146 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 00:44:36.907 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 00:44:37.049 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-12 00:44:37.156 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 102 mappings in 'requestMappingHandlerMapping'
+2025-08-12 00:44:37.180 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-12 00:44:37.194 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-12 00:44:37.291 [restartedMain] WARN  [] [] o.s.b.d.autoconfigure.OptionalLiveReloadServer - Unable to start LiveReload server
+2025-08-12 00:44:37.310 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:44:37.315 [restartedMain] WARN  [] [] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8083 is already in use
+2025-08-12 00:44:37.322 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-12 00:44:37.330 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-12 00:44:37.332 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:44:37.333 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-12 00:44:37.339 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:44:37.341 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:44:37.372 [restartedMain] ERROR [] [] o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8083 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8083 or configure this application to listen on another port.
+
+2025-08-12 00:47:59.651 [background-preinit] INFO  [] [] org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-12 00:47:59.656 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 25108 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-12 00:47:59.656 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-12 00:47:59.657 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-12 00:48:01.401 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:48:01.404 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-12 00:48:01.405 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-12 00:48:01.521 [restartedMain] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-12 00:48:01.604 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-12 00:48:01.838 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-12 00:48:01.915 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 00:48:01.973 [restartedMain] INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-12 00:48:02.176 [restartedMain] INFO  [] [] org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-12 00:48:02.305 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-12 00:48:02.568 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 00:48:03.361 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 00:48:03.493 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-12 00:48:03.601 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 102 mappings in 'requestMappingHandlerMapping'
+2025-08-12 00:48:03.624 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-12 00:48:03.637 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-12 00:48:03.752 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:48:03.798 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Started GreenhouseApplication in 4.774 seconds (JVM running for 5.351)
+2025-08-12 00:48:03.800 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting simulation system initialization...
+2025-08-12 00:48:03.800 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Initializing simulated devices...
+2025-08-12 00:48:04.091 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully initialized simulated devices
+2025-08-12 00:48:04.091 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting scheduled tasks...
+2025-08-12 00:48:04.093 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully started scheduled tasks
+2025-08-12 00:48:04.093 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Simulation system initialization completed successfully
+2025-08-12 00:49:56.310 [http-nio-8083-exec-1] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-12 00:49:56.310 [http-nio-8083-exec-1] INFO  [] [] org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-12 00:49:56.310 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2025-08-12 00:49:56.311 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2025-08-12 00:49:56.311 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2025-08-12 00:49:56.312 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@3e0a7086
+2025-08-12 00:49:56.312 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@19e95af0
+2025-08-12 00:49:56.313 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-08-12 00:49:56.313 [http-nio-8083-exec-1] INFO  [] [] org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-08-12 00:49:56.327 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-12 00:49:56.344 [http-nio-8083-exec-1] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-12 00:49:56.453 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-12 00:56:09.389 [Thread-7] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:56:09.391 [Thread-7] INFO  [] [] org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-12 00:56:09.392 [Thread-7] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-08-12 00:56:09.395 [Thread-7] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:56:09.397 [Thread-7] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:56:09.404 [Thread-7] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-12 00:56:09.417 [Thread-7] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-12 00:56:09.542 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 25108 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-12 00:56:09.543 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-12 00:56:09.543 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-12 00:56:09.784 [restartedMain] WARN  [] [] org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.greenhouse.mapper]' package. Please check your configuration.
+2025-08-12 00:56:09.884 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:56:09.884 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-12 00:56:09.885 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-12 00:56:09.952 [restartedMain] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-12 00:56:10.008 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 00:56:10.015 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2025-08-12 00:56:10.023 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2025-08-12 00:56:10.024 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-12 00:56:10.054 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 00:56:10.085 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 00:56:10.167 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-12 00:56:10.199 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 2 mappings in 'requestMappingHandlerMapping'
+2025-08-12 00:56:10.219 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-08-12 00:56:10.235 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-12 00:56:10.300 [restartedMain] WARN  [] [] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.lang.NoClassDefFoundError: com/greenhouse/entity/DeviceStatus
+2025-08-12 00:56:10.304 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2025-08-12 00:56:10.308 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2025-08-12 00:56:10.309 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-12 00:56:10.351 [restartedMain] ERROR [] [] org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.lang.NoClassDefFoundError: com/greenhouse/entity/DeviceStatus
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:921)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.greenhouse.GreenhouseApplication.main(GreenhouseApplication.java:17)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.lang.NoClassDefFoundError: com/greenhouse/entity/DeviceStatus
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 24 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/greenhouse/entity/DeviceStatus
+	at java.base/java.lang.Class.getDeclaringClass0(Native Method)
+	at java.base/java.lang.Class.isMemberClass(Class.java:1780)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.lambda$buildSqlSessionFactory$3(MybatisSqlSessionFactoryBean.java:496)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:178)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.HashMap$KeySpliterator.forEachRemaining(HashMap.java:1707)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:496)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.afterPropertiesSet(MybatisSqlSessionFactoryBean.java:444)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.getObject(MybatisSqlSessionFactoryBean.java:608)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration.sqlSessionFactory(MybatisPlusAutoConfiguration.java:224)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 25 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.greenhouse.entity.DeviceStatus
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:467)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:145)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	... 47 common frames omitted
+2025-08-12 00:56:13.144 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 25108 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-12 00:56:13.145 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-12 00:56:13.145 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-12 00:56:13.624 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:56:13.625 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-12 00:56:13.626 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-12 00:56:13.657 [restartedMain] INFO  [] [] o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-12 00:56:13.675 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+2025-08-12 00:56:13.683 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+2025-08-12 00:56:13.709 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 00:56:13.714 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-12 00:56:13.736 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 00:56:14.161 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 00:56:14.223 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-12 00:56:14.267 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 102 mappings in 'requestMappingHandlerMapping'
+2025-08-12 00:56:14.280 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-12 00:56:14.289 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-12 00:56:14.343 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:56:14.356 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Started GreenhouseApplication in 1.274 seconds (JVM running for 495.909)
+2025-08-12 00:56:14.357 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting simulation system initialization...
+2025-08-12 00:56:14.358 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Initializing simulated devices...
+2025-08-12 00:56:14.465 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully initialized simulated devices
+2025-08-12 00:56:14.465 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting scheduled tasks...
+2025-08-12 00:56:14.466 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully started scheduled tasks
+2025-08-12 00:56:14.467 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Simulation system initialization completed successfully
+2025-08-12 00:56:16.231 [background-preinit] INFO  [] [] org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-12 00:56:16.235 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 24192 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-12 00:56:16.236 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-12 00:56:16.237 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-12 00:56:17.868 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:56:17.871 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-12 00:56:17.871 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-12 00:56:17.978 [restartedMain] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-12 00:56:18.058 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-12 00:56:18.263 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-12 00:56:18.338 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 00:56:18.395 [restartedMain] INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-12 00:56:18.581 [restartedMain] INFO  [] [] org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-12 00:56:18.706 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-12 00:56:18.996 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 00:56:19.781 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 00:56:19.923 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-12 00:56:20.034 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 102 mappings in 'requestMappingHandlerMapping'
+2025-08-12 00:56:20.056 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-12 00:56:20.069 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-12 00:56:20.163 [restartedMain] WARN  [] [] o.s.b.d.autoconfigure.OptionalLiveReloadServer - Unable to start LiveReload server
+2025-08-12 00:56:20.179 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:56:20.183 [restartedMain] WARN  [] [] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8083 is already in use
+2025-08-12 00:56:20.190 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-12 00:56:20.197 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-12 00:56:20.199 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:56:20.200 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-12 00:56:20.204 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:56:20.204 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:56:20.235 [restartedMain] ERROR [] [] o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8083 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8083 or configure this application to listen on another port.
+
+2025-08-12 00:59:24.207 [background-preinit] INFO  [] [] org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-12 00:59:24.212 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 25900 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-12 00:59:24.212 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-12 00:59:24.213 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-12 00:59:25.874 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:59:25.877 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-12 00:59:25.878 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-12 00:59:26.038 [restartedMain] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-12 00:59:26.138 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-12 00:59:26.353 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-12 00:59:26.432 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 00:59:26.493 [restartedMain] INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-12 00:59:26.696 [restartedMain] INFO  [] [] org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-12 00:59:26.825 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-12 00:59:27.098 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 00:59:27.825 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 00:59:27.958 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-12 00:59:28.073 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 102 mappings in 'requestMappingHandlerMapping'
+2025-08-12 00:59:28.098 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-12 00:59:28.112 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-12 00:59:28.229 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2025-08-12 00:59:28.274 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Started GreenhouseApplication in 4.668 seconds (JVM running for 5.233)
+2025-08-12 00:59:28.277 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting simulation system initialization...
+2025-08-12 00:59:28.277 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Initializing simulated devices...
+2025-08-12 00:59:28.547 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully initialized simulated devices
+2025-08-12 00:59:28.547 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting scheduled tasks...
+2025-08-12 00:59:28.548 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully started scheduled tasks
+2025-08-12 00:59:28.549 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Simulation system initialization completed successfully
+2025-08-12 01:01:36.841 [http-nio-8083-exec-1] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-12 01:01:36.841 [http-nio-8083-exec-1] INFO  [] [] org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-12 01:01:36.843 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2025-08-12 01:01:36.843 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2025-08-12 01:01:36.843 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2025-08-12 01:01:36.846 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@7a01b4b2
+2025-08-12 01:01:36.846 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@656e6aa4
+2025-08-12 01:01:36.846 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-08-12 01:01:36.847 [http-nio-8083-exec-1] INFO  [] [] org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2025-08-12 01:01:36.857 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-12 01:01:36.873 [http-nio-8083-exec-1] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-12 01:01:36.960 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-12 01:07:27.010 [http-nio-8083-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-12 01:07:27.013 [http-nio-8083-exec-4] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-12 01:07:27.016 [http-nio-8083-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-12 01:07:27.533 [http-nio-8083-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/favicon.ico", parameters={}
+2025-08-12 01:07:27.535 [http-nio-8083-exec-5] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-12 01:07:27.538 [http-nio-8083-exec-5] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-12 01:07:27.538 [http-nio-8083-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-12 01:07:27.546 [http-nio-8083-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-12 01:07:27.549 [http-nio-8083-exec-5] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-12 01:07:27.582 [http-nio-8083-exec-5] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-12 01:07:27.583 [http-nio-8083-exec-5] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Tue Aug 12 01:07:27 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-12 01:07:27.640 [http-nio-8083-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-12 01:13:35.376 [Thread-7] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8083"]
+2025-08-12 01:13:35.376 [Thread-7] INFO  [] [] org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-12 01:13:35.378 [Thread-7] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-08-12 01:13:35.382 [Thread-7] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8083"]
+2025-08-12 01:13:35.385 [Thread-7] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8083"]
+2025-08-12 01:13:35.391 [Thread-7] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-12 01:13:35.403 [Thread-7] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-12 01:13:35.514 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 25900 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-12 01:13:35.514 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-12 01:13:35.515 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-12 01:13:35.825 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2025-08-12 01:13:35.825 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-12 01:13:35.825 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-12 01:13:35.849 [restartedMain] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-12 01:13:35.895 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 01:13:35.900 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2025-08-12 01:13:35.905 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2025-08-12 01:13:35.906 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-12 01:13:35.924 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 01:13:35.949 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 01:13:36.009 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-12 01:13:36.027 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 2 mappings in 'requestMappingHandlerMapping'
+2025-08-12 01:13:36.039 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-08-12 01:13:36.047 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-12 01:13:36.230 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2025-08-12 01:13:36.242 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Started GreenhouseApplication in 0.787 seconds (JVM running for 853.201)
+2025-08-12 01:13:37.665 [Thread-9] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8083"]
+2025-08-12 01:13:37.665 [Thread-9] INFO  [] [] org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-12 01:13:37.668 [Thread-9] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8083"]
+2025-08-12 01:13:37.670 [Thread-9] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8083"]
+2025-08-12 01:13:37.673 [Thread-9] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2025-08-12 01:13:37.675 [Thread-9] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2025-08-12 01:13:37.768 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 25900 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-12 01:13:37.769 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-12 01:13:37.769 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-12 01:13:38.075 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2025-08-12 01:13:38.075 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-12 01:13:38.075 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-12 01:13:38.096 [restartedMain] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-12 01:13:38.114 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+2025-08-12 01:13:38.121 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+2025-08-12 01:13:38.140 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 01:13:38.144 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-12 01:13:38.163 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 01:13:38.469 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 01:13:38.505 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-12 01:13:38.531 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 102 mappings in 'requestMappingHandlerMapping'
+2025-08-12 01:13:38.539 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-12 01:13:38.544 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-12 01:13:38.581 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2025-08-12 01:13:38.591 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Started GreenhouseApplication in 0.864 seconds (JVM running for 855.55)
+2025-08-12 01:13:38.593 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting simulation system initialization...
+2025-08-12 01:13:38.593 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Initializing simulated devices...
+2025-08-12 01:13:38.671 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully initialized simulated devices
+2025-08-12 01:13:38.671 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting scheduled tasks...
+2025-08-12 01:13:38.671 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully started scheduled tasks
+2025-08-12 01:13:38.671 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Simulation system initialization completed successfully
+2025-08-12 01:13:40.062 [background-preinit] INFO  [] [] org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-12 01:13:40.067 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 29628 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-12 01:13:40.067 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-12 01:13:40.068 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-12 01:13:41.481 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2025-08-12 01:13:41.485 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-12 01:13:41.486 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-12 01:13:41.572 [restartedMain] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-12 01:13:41.642 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-12 01:13:41.820 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-12 01:13:41.890 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 01:13:41.954 [restartedMain] INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-12 01:13:42.112 [restartedMain] INFO  [] [] org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-12 01:13:42.225 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-12 01:13:42.452 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 01:13:43.066 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 01:13:43.181 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-12 01:13:43.273 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 102 mappings in 'requestMappingHandlerMapping'
+2025-08-12 01:13:43.296 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-12 01:13:43.307 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-12 01:13:43.383 [restartedMain] WARN  [] [] o.s.b.d.autoconfigure.OptionalLiveReloadServer - Unable to start LiveReload server
+2025-08-12 01:13:43.397 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2025-08-12 01:13:43.403 [restartedMain] WARN  [] [] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8083 is already in use
+2025-08-12 01:13:43.407 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-12 01:13:43.415 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-12 01:13:43.417 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8083"]
+2025-08-12 01:13:43.417 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-12 01:13:43.420 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8083"]
+2025-08-12 01:13:43.422 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8083"]
+2025-08-12 01:13:43.447 [restartedMain] ERROR [] [] o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8083 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8083 or configure this application to listen on another port.
+
+2025-08-12 01:15:16.056 [http-nio-8083-exec-1] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-12 01:15:16.056 [http-nio-8083-exec-1] INFO  [] [] org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-12 01:15:16.056 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2025-08-12 01:15:16.056 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2025-08-12 01:15:16.056 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2025-08-12 01:15:16.057 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@142e3c3a
+2025-08-12 01:15:16.058 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@32d5142c
+2025-08-12 01:15:16.058 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-08-12 01:15:16.058 [http-nio-8083-exec-1] INFO  [] [] org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-08-12 01:15:16.060 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-12 01:15:16.061 [http-nio-8083-exec-1] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-12 01:15:16.146 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-12 08:54:06.369 [HikariPool-3 housekeeper] WARN  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-3 - Thread starvation or clock leap detected (housekeeper delta=7h37m58s90ms758µs).
+2025-08-12 09:01:10.920 [background-preinit] INFO  [] [] org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-12 09:01:10.924 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 30812 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-12 09:01:10.924 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-12 09:01:10.924 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-12 09:01:12.278 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2025-08-12 09:01:12.282 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-12 09:01:12.283 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-12 09:01:12.375 [restartedMain] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-12 09:01:12.441 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-12 09:01:12.610 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-12 09:01:12.683 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 09:01:12.745 [restartedMain] INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-12 09:01:12.906 [restartedMain] INFO  [] [] org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-12 09:01:13.015 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-12 09:01:13.229 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 09:01:13.821 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 09:01:13.929 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-12 09:01:14.020 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 102 mappings in 'requestMappingHandlerMapping'
+2025-08-12 09:01:14.039 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-12 09:01:14.050 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-12 09:01:14.148 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2025-08-12 09:01:14.182 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Started GreenhouseApplication in 3.752 seconds (JVM running for 4.197)
+2025-08-12 09:01:14.185 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting simulation system initialization...
+2025-08-12 09:01:14.185 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Initializing simulated devices...
+2025-08-12 09:01:14.400 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully initialized simulated devices
+2025-08-12 09:01:14.401 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting scheduled tasks...
+2025-08-12 09:01:14.401 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully started scheduled tasks
+2025-08-12 09:01:14.401 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Simulation system initialization completed successfully
+2025-08-12 09:09:56.321 [HikariPool-1 housekeeper] WARN  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m43s469ms135µs800ns).
+2025-08-12 10:25:25.779 [HikariPool-1 housekeeper] WARN  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m58s258ms301µs100ns).
+2025-08-12 10:34:58.049 [http-nio-8083-exec-1] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-12 10:34:58.050 [http-nio-8083-exec-1] INFO  [] [] org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-12 10:34:58.054 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2025-08-12 10:34:58.055 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2025-08-12 10:34:58.056 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2025-08-12 10:34:58.081 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@4dd08b6f
+2025-08-12 10:34:58.083 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@4d5f245d
+2025-08-12 10:34:58.083 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-08-12 10:34:58.083 [http-nio-8083-exec-1] INFO  [] [] org.springframework.web.servlet.DispatcherServlet - Completed initialization in 33 ms
+2025-08-12 10:34:58.113 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-12 10:34:58.152 [http-nio-8083-exec-1] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-12 10:34:58.195 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-12 10:35:46.062 [http-nio-8083-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/login.html", parameters={}
+2025-08-12 10:35:46.066 [http-nio-8083-exec-2] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-12 10:35:46.159 [http-nio-8083-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-12 11:47:14.407 [HikariPool-1 housekeeper] WARN  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m45s963ms896µs100ns).
+2025-08-12 11:57:07.115 [HikariPool-1 housekeeper] WARN  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m22s571ms298µs500ns).
+2025-08-12 12:01:47.066 [HikariPool-1 housekeeper] WARN  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m38s896ms122µs600ns).
+2025-08-12 12:25:03.660 [http-nio-8083-exec-6] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-12 12:25:03.688 [http-nio-8083-exec-6] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-12 12:25:03.782 [http-nio-8083-exec-6] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-12 12:25:04.039 [http-nio-8083-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/favicon.ico", parameters={}
+2025-08-12 12:25:04.041 [http-nio-8083-exec-7] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-12 12:25:04.054 [http-nio-8083-exec-7] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-12 12:25:04.056 [http-nio-8083-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-12 12:25:04.115 [http-nio-8083-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-12 12:25:04.143 [http-nio-8083-exec-7] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-12 12:25:04.306 [http-nio-8083-exec-7] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-12 12:25:04.311 [http-nio-8083-exec-7] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Tue Aug 12 12:25:04 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-12 12:25:04.422 [http-nio-8083-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-12 12:25:17.299 [http-nio-8083-exec-8] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/login.html", parameters={}
+2025-08-12 12:25:17.301 [http-nio-8083-exec-8] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-12 12:25:17.362 [http-nio-8083-exec-8] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-12 15:13:33.691 [Thread-7] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8083"]
+2025-08-12 15:13:33.696 [Thread-7] INFO  [] [] org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-12 15:13:33.708 [Thread-7] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-08-12 15:13:33.735 [Thread-7] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8083"]
+2025-08-12 15:13:33.743 [Thread-7] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8083"]
+2025-08-12 15:13:33.804 [Thread-7] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-12 15:13:33.812 [Thread-7] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-12 15:13:34.202 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 30812 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-12 15:13:34.202 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-12 15:13:34.202 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-12 15:13:34.688 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2025-08-12 15:13:34.688 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-12 15:13:34.688 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-12 15:13:34.723 [restartedMain] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-12 15:13:34.808 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 15:13:34.816 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2025-08-12 15:13:34.824 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2025-08-12 15:13:34.824 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-12 15:13:34.891 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 15:13:34.913 [restartedMain] WARN  [] [] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'environmentController': Unsatisfied dependency expressed through field 'environmentService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.greenhouse.service.EnvironmentService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2025-08-12 15:13:34.917 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2025-08-12 15:13:34.917 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2025-08-12 15:13:34.921 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-12 15:13:34.978 [restartedMain] ERROR [] [] o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field environmentService in com.greenhouse.controller.EnvironmentController required a bean of type 'com.greenhouse.service.EnvironmentService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.greenhouse.service.EnvironmentService' in your configuration.
+
+2025-08-12 15:13:36.537 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 30812 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-12 15:13:36.537 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-12 15:13:36.537 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-12 15:13:37.020 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2025-08-12 15:13:37.020 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-12 15:13:37.020 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-12 15:13:37.045 [restartedMain] INFO  [] [] o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-12 15:13:37.070 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+2025-08-12 15:13:37.074 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+2025-08-12 15:13:37.105 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 15:13:37.112 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-12 15:13:37.136 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 15:13:37.605 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 15:13:37.666 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-12 15:13:37.721 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 102 mappings in 'requestMappingHandlerMapping'
+2025-08-12 15:13:37.734 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-12 15:13:37.742 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-12 15:13:37.789 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2025-08-12 15:13:37.802 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Started GreenhouseApplication in 1.35 seconds (JVM running for 22347.817)
+2025-08-12 15:13:37.803 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting simulation system initialization...
+2025-08-12 15:13:37.803 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Initializing simulated devices...
+2025-08-12 15:13:37.889 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully initialized simulated devices
+2025-08-12 15:13:37.889 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting scheduled tasks...
+2025-08-12 15:13:37.890 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully started scheduled tasks
+2025-08-12 15:13:37.890 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Simulation system initialization completed successfully
+2025-08-12 15:13:39.002 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 1768 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-12 15:13:39.002 [background-preinit] INFO  [] [] org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-12 15:13:39.004 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-12 15:13:39.004 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-12 15:13:40.369 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2025-08-12 15:13:40.373 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-12 15:13:40.373 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-12 15:13:40.467 [restartedMain] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-12 15:13:40.538 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-12 15:13:40.719 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-12 15:13:40.792 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 15:13:40.854 [restartedMain] INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-12 15:13:41.024 [restartedMain] INFO  [] [] org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-12 15:13:41.141 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-12 15:13:41.383 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 15:13:41.994 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 15:13:42.102 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-12 15:13:42.192 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 102 mappings in 'requestMappingHandlerMapping'
+2025-08-12 15:13:42.211 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-12 15:13:42.222 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-12 15:13:42.299 [restartedMain] WARN  [] [] o.s.b.d.autoconfigure.OptionalLiveReloadServer - Unable to start LiveReload server
+2025-08-12 15:13:42.311 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2025-08-12 15:13:42.319 [restartedMain] WARN  [] [] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8083 is already in use
+2025-08-12 15:13:42.323 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-12 15:13:42.331 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-12 15:13:42.333 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8083"]
+2025-08-12 15:13:42.333 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-12 15:13:42.338 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8083"]
+2025-08-12 15:13:42.338 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8083"]
+2025-08-12 15:13:42.363 [restartedMain] ERROR [] [] o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8083 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8083 or configure this application to listen on another port.
+
+2025-08-12 17:07:11.987 [background-preinit] INFO  [] [] org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-12 17:07:11.987 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 15284 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-12 17:07:11.989 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-12 17:07:11.990 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-12 17:07:13.379 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2025-08-12 17:07:13.381 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-12 17:07:13.381 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-12 17:07:13.471 [restartedMain] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-12 17:07:13.543 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-12 17:07:13.714 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-12 17:07:13.787 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-12 17:07:13.851 [restartedMain] INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-12 17:07:14.029 [restartedMain] INFO  [] [] org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-12 17:07:14.147 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-12 17:07:14.400 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-12 17:07:15.012 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-12 17:07:15.119 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-12 17:07:15.202 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 102 mappings in 'requestMappingHandlerMapping'
+2025-08-12 17:07:15.220 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-12 17:07:15.230 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-12 17:07:15.304 [restartedMain] WARN  [] [] o.s.b.d.autoconfigure.OptionalLiveReloadServer - Unable to start LiveReload server
+2025-08-12 17:07:15.316 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2025-08-12 17:07:15.345 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Started GreenhouseApplication in 3.873 seconds (JVM running for 4.352)
+2025-08-12 17:07:15.347 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting simulation system initialization...
+2025-08-12 17:07:15.347 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Initializing simulated devices...
+2025-08-12 17:07:15.598 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully initialized simulated devices
+2025-08-12 17:07:15.599 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting scheduled tasks...
+2025-08-12 17:07:15.599 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully started scheduled tasks
+2025-08-12 17:07:15.599 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Simulation system initialization completed successfully
+2025-08-12 17:07:29.587 [http-nio-8083-exec-1] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-12 17:07:29.588 [http-nio-8083-exec-1] INFO  [] [] org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-12 17:07:29.588 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2025-08-12 17:07:29.588 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2025-08-12 17:07:29.588 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2025-08-12 17:07:29.589 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@2823eca9
+2025-08-12 17:07:29.590 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@69cdb3e7
+2025-08-12 17:07:29.590 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-08-12 17:07:29.591 [http-nio-8083-exec-1] INFO  [] [] org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-08-12 17:07:29.602 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/login.html", parameters={}
+2025-08-12 17:07:29.616 [http-nio-8083-exec-1] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-12 17:07:29.710 [http-nio-8083-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-12 18:06:38.103 [HikariPool-1 housekeeper] WARN  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m53s475ms932µs700ns).
+2025-08-12 20:55:22.911 [HikariPool-1 housekeeper] WARN  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h45m14s742ms644µs500ns).

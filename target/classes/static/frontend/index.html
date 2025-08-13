@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>温室数字化监控系统</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/charts.css">
+</head>
+
+<body>
+    <!-- 顶部状态栏 -->
+    <header class="header">
+        <div class="header-left">
+            <h1 class="system-title">温室数字化监控系统</h1>
+        </div>
+        <div class="header-right">
+            <div class="system-status">
+                <span class="status-indicator online"></span>
+                <span class="status-text">系统正常</span>
+            </div>
+            <div class="current-time" id="currentTime"></div>
+        </div>
+    </header>
+
+    <!-- 主体内容区域 -->
+    <div class="main-container">
+        <!-- 左侧导航栏 -->
+        <nav class="sidebar">
+            <div class="nav-menu">
+                <div class="nav-item active" data-module="dashboard">
+                    <i class="icon-dashboard"></i>
+                    <span>系统概览</span>
+                </div>
+                <div class="nav-item" data-module="temperature">
+                    <i class="icon-temperature"></i>
+                    <span>温度监控</span>
+                </div>
+                <div class="nav-item" data-module="humidity">
+                    <i class="icon-humidity"></i>
+                    <span>湿度控制</span>
+                </div>
+                <div class="nav-item" data-module="lighting">
+                    <i class="icon-light"></i>
+                    <span>光照管理</span>
+                </div>
+                <div class="nav-item" data-module="ventilation">
+                    <i class="icon-fan"></i>
+                    <span>通风系统</span>
+                </div>
+                <div class="nav-item" data-module="scheduled-tasks">
+                    <i class="icon-clock"></i>
+                    <span>定时任务</span>
+                </div>
+                <div class="nav-item" data-module="alerts">
+                    <i class="icon-alert"></i>
+                    <span>报警通知</span>
+                    <span class="alert-badge" id="alertBadge">0</span>
+                </div>
+                <div class="nav-item" data-module="analytics">
+                    <i class="icon-chart"></i>
+                    <span>数据分析</span>
+                </div>
+                <div class="nav-item" data-module="control">
+                    <i class="icon-control"></i>
+                    <span>远程控制</span>
+                </div>
+                <div class="nav-item" data-module="history">
+                    <i class="icon-history"></i>
+                    <span>历史记录</span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- 右侧内容区域 -->
+        <main class="content">
+            <div class="content-header">
+                <h2 id="contentTitle">系统概览</h2>
+                <div class="content-actions">
+                    <button class="btn btn-refresh" id="refreshBtn">
+                        <i class="icon-refresh"></i>
+                        刷新数据
+                    </button>
+                </div>
+            </div>
+
+            <div class="content-body" id="contentBody">
+                <!-- 动态内容将在这里加载 -->
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>正在加载数据...</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 底部信息栏 -->
+    <footer class="footer">
+        <div class="footer-left">
+            <span>温室数字化监控系统 v1.0</span>
+        </div>
+        <div class="footer-right">
+            <span>© 2024 温室管理系统</span>
+        </div>
+    </footer>
+
+    <!-- 全局提示框 -->
+    <div class="toast" id="toast">
+        <div class="toast-content">
+            <span class="toast-message"></span>
+        </div>
+    </div>
+
+    <!-- 确认对话框 -->
+    <div class="modal" id="confirmModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>确认操作</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="confirmMessage">确定要执行此操作吗？</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancelBtn">取消</button>
+                <button class="btn btn-primary" id="confirmBtn">确认</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript文件 -->
+    <!-- 工具函数 -->
+    <script src="js/utils/helpers.js"></script>
+    <script src="js/utils/format.js"></script>
+    <script src="js/utils/validation.js"></script>
+    <script src="js/utils/chart.js"></script>
+    <script src="js/utils/data.js"></script>
+    <script src="js/utils/error.js"></script>
+    <script src="js/utils/notification.js"></script>
+    <script src="js/utils/ui.js"></script>
+    <script src="js/utils/realtime.js"></script>
+    <script src="js/utils/storage.js"></script>
+
+    <!-- 服务层 -->
+    <script src="js/services/api.js"></script>
+    <script src="js/services/websocket.js"></script>
+    <script src="js/components/dashboard.js"></script>
+    <script src="js/components/temperature.js"></script>
+    <script src="js/components/humidity.js"></script>
+    <script src="js/components/lighting.js"></script>
+    <script src="js/components/ventilation.js"></script>
+    <script src="js/components/alerts.js"></script>
+    <script src="js/components/analytics.js"></script>
+    <script src="js/components/control.js"></script>
+    <script src="js/components/history.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

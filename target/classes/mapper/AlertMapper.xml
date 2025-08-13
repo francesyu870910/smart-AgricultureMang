@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.greenhouse.mapper.AlertMapper">
+
+    <!-- 根据报警类型查询报警记录 -->
+    <select id="selectByAlertType" resultType="com.greenhouse.entity.AlertRecord">
+        SELECT * FROM alert_records
+        WHERE alert_type = #{alertType}
+        ORDER BY created_at DESC
+    </select>
+
+    <!-- 根据严重程度查询报警记录 -->
+    <select id="selectBySeverity" resultType="com.greenhouse.entity.AlertRecord">
+        SELECT * FROM alert_records
+        WHERE severity = #{severity}
+        ORDER BY created_at DESC
+    </select>
+
+    <!-- 查询指定时间范围内的报警记录 -->
+    <select id="selectByTimeRange" resultType="com.greenhouse.entity.AlertRecord">
+        SELECT * FROM alert_records
+        WHERE 1=1
+        <if test="startTime != null">
+            AND created_at >= #{startTime}
+        </if>
+        <if test="endTime != null">
+            AND created_at &lt;= #{endTime}
+        </if>
+        ORDER BY created_at DESC
+    </select>
+
+    <!-- 批量标记报警为已解决 -->
+    <update id="batchMarkAsResolved">
+        UPDATE alert_records 
+        SET is_resolved = true, resolved_at = NOW()
+        WHERE id IN
+        <foreach collection="alertIds" item="alertId" open="(" separator="," close=")">
+            #{alertId}
+        </foreach>
+    </update>
+
+    <!-- 分页查询报警记录 -->
+    <select id="selectAlertPage" resultType="com.greenhouse.entity.AlertRecord">
+        SELECT * FROM alert_records
+        <where>
+            <if test="alertType != null">
+                AND alert_type = #{alertType}
+            </if>
+            <if test="severity != null">
+                AND severity = #{severity}
+            </if>
+            <if test="isResolved != null">
+                AND is_resolved = #{isResolved}
+            </if>
+            <if test="startTime != null">
+                AND created_at >= #{startTime}
+            </if>
+            <if test="endTime != null">
+                AND created_at &lt;= #{endTime}
+            </if>
+        </where>
+        ORDER BY created_at DESC
+    </select>
+
+    <!-- 获取报警类型统计 -->
+    <select id="selectAlertTypeStatistics" resultType="map">
+        SELECT 
+            alert_type,
+            COUNT(*) as alert_count,
+            SUM(CASE WHEN is_resolved = false THEN 1 ELSE 0 END) as unresolved_count,
+            SUM(CASE WHEN severity = 'critical' THEN 1 ELSE 0 END) as critical_count,
+            SUM(CASE WHEN severity = 'high' THEN 1 ELSE 0 END) as high_count
+        FROM alert_records
+        WHERE 1=1
+        <if test="startTime != null">
+            AND created_at >= #{startTime}
+        </if>
+        <if test="endTime != null">
+            AND created_at &lt;= #{endTime}
+        </if>
+        GROUP BY alert_type
+        ORDER BY alert_count DESC
+    </select>
+
+    <!-- 获取报警严重程度统计 -->
+    <select id="selectSeverityStatistics" resultType="map">
+        SELECT 
+            severity,
+            COUNT(*) as alert_count,
+            SUM(CASE WHEN is_resolved = false THEN 1 ELSE 0 END) as unresolved_count,
+            ROUND(COUNT(*) * 100.0 / (
+                SELECT COUNT(*) FROM alert_records 
+                WHERE 1=1
+                <if test="startTime != null">
+                    AND created_at >= #{startTime}
+                </if>
+                <if test="endTime != null">
+                    AND created_at &lt;= #{endTime}
+                </if>
+            ), 2) as percentage
+        FROM alert_records
+        WHERE 1=1
+        <if test="startTime != null">
+            AND created_at >= #{startTime}
+        </if>
+        <if test="endTime != null">
+            AND created_at &lt;= #{endTime}
+        </if>
+        GROUP BY severity
+        ORDER BY 
+            CASE severity 
+                WHEN 'critical' THEN 1 
+                WHEN 'high' THEN 2 
+                WHEN 'medium' THEN 3 
+                WHEN 'low' THEN 4 
+            END
+    </select>
+
+    <!-- 获取每日报警统计 -->
+    <select id="selectDailyAlertStatistics" resultType="map">
+        SELECT 
+            DATE(created_at) as date,
+            COUNT(*) as total_alerts,
+            SUM(CASE WHEN severity = 'critical' THEN 1 ELSE 0 END) as critical_alerts,
+            SUM(CASE WHEN severity = 'high' THEN 1 ELSE 0 END) as high_alerts,
+            SUM(CASE WHEN severity = 'medium' THEN 1 ELSE 0 END) as medium_alerts,
+            SUM(CASE WHEN severity = 'low' THEN 1 ELSE 0 END) as low_alerts,
+            SUM(CASE WHEN is_resolved = true THEN 1 ELSE 0 END) as resolved_alerts
+        FROM alert_records
+        WHERE 1=1
+        <if test="startTime != null">
+            AND created_at >= #{startTime}
+        </if>
+        <if test="endTime != null">
+            AND created_at &lt;= #{endTime}
+        </if>
+        GROUP BY DATE(created_at)
+        ORDER BY date
+    </select>
+
+    <!-- 获取设备报警统计 -->
+    <select id="selectDeviceAlertStatistics" resultType="map">
+        SELECT 
+            device_id,
+            COUNT(*) as alert_count,
+            SUM(CASE WHEN is_resolved = false THEN 1 ELSE 0 END) as unresolved_count,
+            SUM(CASE WHEN severity IN ('critical', 'high') THEN 1 ELSE 0 END) as high_priority_count,
+            MAX(created_at) as last_alert_time
+        FROM alert_records
+        WHERE device_id IS NOT NULL
+        <if test="startTime != null">
+            AND created_at >= #{startTime}
+        </if>
+        <if test="endTime != null">
+            AND created_at &lt;= #{endTime}
+        </if>
+        GROUP BY device_id
+        ORDER BY alert_count DESC
+    </select>
+
+    <!-- 删除指定时间之前的已解决报警记录 -->
+    <delete id="deleteResolvedBeforeTime">
+        DELETE FROM alert_records
+        WHERE is_resolved = true AND resolved_at &lt; #{beforeTime}
+    </delete>
+
+</mapper>

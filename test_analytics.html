@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据分析模块测试</title>
+    <link rel="stylesheet" href="src/main/resources/static/frontend/css/main.css">
+    <link rel="stylesheet" href="src/main/resources/static/frontend/css/components.css">
+    <link rel="stylesheet" href="src/main/resources/static/frontend/css/charts.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>智能温室环境监控系统 - 数据分析模块测试</h1>
+        </div>
+        
+        <div class="main-content">
+            <div id="analyticsContent">
+                <!-- 数据分析组件内容将在这里渲染 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入依赖脚本 -->
+    <script src="src/main/resources/static/frontend/js/utils/format.js"></script>
+    <script src="src/main/resources/static/frontend/js/utils/validation.js"></script>
+    <script src="src/main/resources/static/frontend/js/utils/chart.js"></script>
+    <script src="src/main/resources/static/frontend/js/services/api.js"></script>
+    <script src="src/main/resources/static/frontend/js/components/analytics.js"></script>
+
+    <script>
+        // 模拟通知工具
+        const notificationUtils = {
+            showLoading: (message) => {
+                console.log('Loading:', message);
+                return document.createElement('div');
+            },
+            hideLoading: (element) => {
+                console.log('Hide loading');
+            },
+            success: (message) => {
+                console.log('Success:', message);
+            },
+            error: (message) => {
+                console.error('Error:', message);
+            },
+            info: (message) => {
+                console.log('Info:', message);
+            },
+            warning: (message) => {
+                console.warn('Warning:', message);
+            },
+            showApiError: (error, operation) => {
+                console.error(`API Error in ${operation}:`, error);
+            }
+        };
+
+        // 模拟错误处理工具
+        const errorUtils = {
+            handleApiError: (error, context) => {
+                console.error('API Error:', error, context);
+            }
+        };
+
+        // 模拟存储服务
+        const storageService = {
+            getCache: (key) => {
+                const item = localStorage.getItem(`cache_${key}`);
+                if (item) {
+                    const data = JSON.parse(item);
+                    if (data.expiry > Date.now()) {
+                        return data.value;
+                    }
+                    localStorage.removeItem(`cache_${key}`);
+                }
+                return null;
+            },
+            setCache: (key, value, ttl = 5 * 60 * 1000) => {
+                const data = {
+                    value: value,
+                    expiry: Date.now() + ttl
+                };
+                localStorage.setItem(`cache_${key}`, JSON.stringify(data));
+            },
+            remove: (key) => {
+                localStorage.removeItem(key);
+            }
+        };
+
+        // 模拟API数据
+        const mockAnalyticsData = {
+            summary: {
+                success: true,
+                data: {
+                    totalDataPoints: 15432,
+                    dataPointsGrowth: 12.5,
+                    avgTemperature: 24.8,
+                    temperatureTrend: 1.2,
+                    avgHumidity: 65.3,
+                    humidityTrend: -2.1,
+                    anomalyCount: 3,
+                    anomalyChange: 1,
+                    temperatureDistribution: {
+                        low: 15,
+                        optimal: 70,
+                        high: 15
+                    },
+                    humidityDistribution: {
+                        low: 20,
+                        optimal: 65,
+                        high: 15
+                    },
+                    maxTemperature: 32.5,
+                    minTemperature: 18.2,
+                    temperatureStdDev: 3.2,
+                    maxHumidity: 85.0,
+                    minHumidity: 45.0,
+                    humidityStdDev: 8.5
+                }
+            },
+            trends: {
+                success: true,
+                data: {
+                    timePoints: Array.from({length: 24}, (_, i) => 
+                        new Date(Date.now() - (23-i) * 60 * 60 * 1000).toISOString()
+                    ),
+                    temperature: Array.from({length: 24}, () => 20 + Math.random() * 10),
+                    humidity: Array.from({length: 24}, () => 50 + Math.random() * 30),
+                    lightIntensity: Array.from({length: 24}, () => 1000 + Math.random() * 2000),
+                    co2Level: Array.from({length: 24}, () => 400 + Math.random() * 200)
+                }
+            },
+            reports: {
+                success: true,
+                data: {
+                    correlation: {
+                        matrix: {
+                            'temperature-humidity': -0.65,
+                            'temperature-light': 0.42,
+                            'humidity-light': -0.38,
+                            'temperature-co2': 0.23,
+                            'humidity-co2': -0.15,
+                            'light-co2': 0.31
+                        },
+                        temperatureHumidity: Array.from({length: 50}, () => ({
+                            x: Math.random() * 100,
+                            y: Math.random() * 100
+                        }))
+                    },
+                    anomalies: [
+                        {
+                            type: '温度异常',
+                            severity: 'high',
+                            timestamp: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
+                            description: '检测到温度在短时间内快速上升，可能存在设备故障',
+                            parameters: ['温度', '加热器状态'],
+                            score: 0.85,
+                            suggestion: '建议检查加热器设备状态，确认是否正常工作'
+                        },
+                        {
+                            type: '湿度波动',
+                            severity: 'medium',
+                            timestamp: new Date(Date.now() - 4 * 60 * 60 * 1000).toISOString(),
+                            description: '湿度出现异常波动，可能影响作物生长',
+                            parameters: ['湿度', '通风系统'],
+                            score: 0.62,
+                            suggestion: '建议调整通风系统参数，稳定湿度水平'
+                        }
+                    ],
+                    predictions: {
+                        temperature: {
+                            nextHour: 25.2,
+                            confidence: 0.87,
+                            historical: Array.from({length: 12}, () => 20 + Math.random() * 10),
+                            predicted: Array.from({length: 6}, () => 24 + Math.random() * 3)
+                        },
+                        humidity: {
+                            nextHour: 63.5,
+                            confidence: 0.82
+                        },
+                        trend: {
+                            direction: '上升',
+                            accuracy: 0.78
+                        }
+                    }
+                }
+            }
+        };
+
+        // 重写API服务方法以返回模拟数据
+        apiService.getAnalyticsSummary = async (params) => {
+            await new Promise(resolve => setTimeout(resolve, 500)); // 模拟网络延迟
+            return mockAnalyticsData.summary;
+        };
+
+        apiService.getAnalyticsTrends = async (params) => {
+            await new Promise(resolve => setTimeout(resolve, 500));
+            return mockAnalyticsData.trends;
+        };
+
+        apiService.getAnalyticsReports = async (params) => {
+            await new Promise(resolve => setTimeout(resolve, 500));
+            return mockAnalyticsData.reports;
+        };
+
+        // 初始化组件
+        let analyticsComponent;
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                analyticsComponent = new AnalyticsComponent();
+                
+                // 渲染组件
+                const content = await analyticsComponent.render();
+                document.getElementById('analyticsContent').innerHTML = content;
+                
+                // 初始化组件
+                await analyticsComponent.init();
+                
+                console.log('数据分析组件测试页面加载完成');
+            } catch (error) {
+                console.error('组件初始化失败:', error);
+                document.getElementById('analyticsContent').innerHTML = `
+                    <div class="error-message">
+                        <h3>组件加载失败</h3>
+                        <p>${error.message}</p>
+                    </div>
+                `;
+            }
+        });
+
+        // 清理函数
+        window.addEventListener('beforeunload', () => {
+            if (analyticsComponent) {
+                analyticsComponent.destroy();
+            }
+        });
+    </script>
+
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        .main-content {
+            background-color: var(--bg-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .error-message {
+            text-align: center;
+            padding: 40px;
+            color: var(--danger-color);
+        }
+
+        .error-message h3 {
+            margin-bottom: 10px;
+        }
+    </style>
+</body>
+</html>

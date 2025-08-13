@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>报警管理 - 温室数字化监控系统</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .nav {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+        
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .nav a:hover, .nav a.active {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .alert-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .summary-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .summary-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .summary-count {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .summary-label {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .critical-card .summary-count { color: #dc3545; }
+        .high-card .summary-count { color: #fd7e14; }
+        .medium-card .summary-count { color: #ffc107; }
+        .low-card .summary-count { color: #28a745; }
+        
+        .controls {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .control-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background: #4CAF50;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #45a049;
+        }
+        
+        .btn-warning {
+            background: #ffc107;
+            color: #212529;
+        }
+        
+        .btn-warning:hover {
+            background: #e0a800;
+        }
+        
+        .btn-danger {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .btn-danger:hover {
+            background: #c82333;
+        }
+        
+        .alerts-container {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .alert-item {
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+        }
+        
+        .alert-item:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .alert-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        
+        .alert-severity {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .severity-critical {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .severity-high {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .severity-medium {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+        
+        .severity-low {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .alert-title {
+            font-weight: bold;
+            color: #333;
+            flex: 1;
+        }
+        
+        .alert-time {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .alert-message {
+            color: #666;
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+        
+        .alert-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .btn-sm {
+            padding: 6px 12px;
+            font-size: 12px;
+        }
+        
+        .btn-success {
+            background: #28a745;
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background: #218838;
+        }
+        
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+        
+        .no-alerts {
+            text-align: center;
+            color: #666;
+            padding: 40px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>报警管理</h1>
+            <nav class="nav">
+                <a href="/dashboard.html">返回首页</a>
+                <a href="environment.html">环境监控</a>
+                <a href="devices.html">设备控制</a>
+                <a href="alerts.html" class="active">报警管理</a>
+                <a href="scheduled-tasks.html">定时任务</a>
+            </nav>
+        </header>
+
+        <!-- 报警统计 -->
+        <div class="alert-summary">
+            <div class="summary-card critical-card">
+                <div class="summary-icon">🚨</div>
+                <div class="summary-count" id="criticalCount">2</div>
+                <div class="summary-label">严重报警</div>
+            </div>
+            
+            <div class="summary-card high-card">
+                <div class="summary-icon">⚠️</div>
+                <div class="summary-count" id="highCount">5</div>
+                <div class="summary-label">高级报警</div>
+            </div>
+            
+            <div class="summary-card medium-card">
+                <div class="summary-icon">⚡</div>
+                <div class="summary-count" id="mediumCount">8</div>
+                <div class="summary-label">中级报警</div>
+            </div>
+            
+            <div class="summary-card low-card">
+                <div class="summary-icon">ℹ️</div>
+                <div class="summary-count" id="lowCount">3</div>
+                <div class="summary-label">低级报警</div>
+            </div>
+        </div>
+
+        <!-- 控制面板 -->
+        <div class="controls">
+            <h2 style="margin-bottom: 20px;">控制面板</h2>
+            <div class="control-buttons">
+                <button class="btn btn-primary" onclick="refreshAlerts()">刷新报警</button>
+                <button class="btn btn-warning" onclick="generateTestAlert()">生成测试报警</button>
+                <button class="btn btn-danger" onclick="clearResolvedAlerts()">清除已解决</button>
+                <button class="btn btn-primary" onclick="exportAlerts()">导出报警</button>
+            </div>
+        </div>
+
+        <!-- 报警列表 -->
+        <div class="alerts-container">
+            <h2 style="margin-bottom: 20px;">报警列表</h2>
+            
+            <div id="alertsList">
+                <div class="alert-item">
+                    <div class="alert-header">
+                        <div style="display: flex; align-items: center; flex: 1;">
+                            <span class="alert-severity severity-critical">严重</span>
+                            <span class="alert-title">温度过高报警</span>
+                        </div>
+                        <span class="alert-time">10分钟前</span>
+                    </div>
+                    <div class="alert-message">温室温度达到38.5°C，超过安全阈值35°C，请立即检查冷却系统</div>
+                    <div class="alert-actions">
+                        <button class="btn btn-success btn-sm">标记已解决</button>
+                        <button class="btn btn-secondary btn-sm">查看详情</button>
+                    </div>
+                </div>
+                
+                <div class="alert-item">
+                    <div class="alert-header">
+                        <div style="display: flex; align-items: center; flex: 1;">
+                            <span class="alert-severity severity-high">高级</span>
+                            <span class="alert-title">设备故障报警</span>
+                        </div>
+                        <span class="alert-time">25分钟前</span>
+                    </div>
+                    <div class="alert-message">循环风扇(FAN_003)出现故障，设备已停止运行</div>
+                    <div class="alert-actions">
+                        <button class="btn btn-success btn-sm">标记已解决</button>
+                        <button class="btn btn-secondary btn-sm">查看详情</button>
+                    </div>
+                </div>
+                
+                <div class="alert-item">
+                    <div class="alert-header">
+                        <div style="display: flex; align-items: center; flex: 1;">
+                            <span class="alert-severity severity-medium">中级</span>
+                            <span class="alert-title">湿度偏低警告</span>
+                        </div>
+                        <span class="alert-time">45分钟前</span>
+                    </div>
+                    <div class="alert-message">当前湿度为28%，低于推荐范围30-80%</div>
+                    <div class="alert-actions">
+                        <button class="btn btn-success btn-sm">标记已解决</button>
+                        <button class="btn btn-secondary btn-sm">查看详情</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 刷新报警
+        function refreshAlerts() {
+            showMessage('报警信息已刷新', '#155724', '#d4edda');
+        }
+
+        // 生成测试报警
+        function generateTestAlert() {
+            showMessage('测试报警已生成', '#155724', '#d4edda');
+        }
+
+        // 清除已解决的报警
+        function clearResolvedAlerts() {
+            if (confirm('确定要清除所有已解决的报警吗？')) {
+                showMessage('已解决的报警已清除', '#155724', '#d4edda');
+            }
+        }
+
+        // 导出报警
+        function exportAlerts() {
+            showMessage('报警数据已导出', '#155724', '#d4edda');
+        }
+
+        // 显示消息
+        function showMessage(message, color, background) {
+            const div = document.createElement('div');
+            div.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${background};
+                color: ${color};
+                padding: 15px 20px;
+                border-radius: 5px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                z-index: 1000;
+                max-width: 300px;
+            `;
+            div.textContent = message;
+            document.body.appendChild(div);
+            
+            setTimeout(() => {
+                if (document.body.contains(div)) {
+                    document.body.removeChild(div);
+                }
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

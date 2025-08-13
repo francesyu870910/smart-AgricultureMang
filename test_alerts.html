@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>报警通知模块测试</title>
+    <link rel="stylesheet" href="src/main/resources/static/frontend/css/main.css">
+    <link rel="stylesheet" href="src/main/resources/static/frontend/css/components.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="content">
+            <div class="content-header">
+                <h2>报警通知模块测试</h2>
+            </div>
+            <div class="content-body" id="content-body">
+                <!-- 报警组件将在这里渲染 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 加载工具类 -->
+    <script src="src/main/resources/static/frontend/js/utils/format.js"></script>
+    <script src="src/main/resources/static/frontend/js/utils/notification.js"></script>
+    <script src="src/main/resources/static/frontend/js/utils/validation.js"></script>
+    <script src="src/main/resources/static/frontend/js/utils/storage.js"></script>
+    <script src="src/main/resources/static/frontend/js/utils/error.js"></script>
+    <script src="src/main/resources/static/frontend/js/utils/helpers.js"></script>
+    
+    <!-- 加载API服务 -->
+    <script src="src/main/resources/static/frontend/js/services/api.js"></script>
+    
+    <!-- 加载报警组件 -->
+    <script src="src/main/resources/static/frontend/js/components/alerts.js"></script>
+
+    <script>
+        // 测试报警组件
+        async function testAlertsComponent() {
+            const alertsComponent = new AlertsComponent();
+            const contentBody = document.getElementById('content-body');
+            
+            try {
+                // 渲染组件
+                const html = await alertsComponent.render();
+                contentBody.innerHTML = html;
+                
+                // 初始化组件
+                await alertsComponent.init();
+                
+                console.log('报警通知组件测试成功');
+            } catch (error) {
+                console.error('报警通知组件测试失败:', error);
+                contentBody.innerHTML = `
+                    <div class="data-card">
+                        <div class="card-header">
+                            <h3 class="card-title">测试失败</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>错误信息: ${error.message}</p>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // 页面加载完成后运行测试
+        document.addEventListener('DOMContentLoaded', testAlertsComponent);
+    </script>
+</body>
+</html>

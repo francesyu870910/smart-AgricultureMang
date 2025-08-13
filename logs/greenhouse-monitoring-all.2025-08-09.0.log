@@ -1,0 +1,910 @@
+2025-08-09 10:56:38.506 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 18968 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-09 10:56:38.511 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-09 10:56:38.511 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-09 10:56:38.771 [restartedMain] WARN  [] [] org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.greenhouse.mapper]' package. Please check your configuration.
+2025-08-09 10:56:38.863 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-09 10:56:38.867 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-09 10:56:38.891 [restartedMain] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-09 10:56:38.949 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-09 10:56:38.957 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2025-08-09 10:56:38.969 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2025-08-09 10:56:38.972 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-09 10:56:39.003 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-09 10:56:39.028 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-09 10:56:39.098 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-09 10:56:39.123 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 2 mappings in 'requestMappingHandlerMapping'
+2025-08-09 10:56:39.140 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-08-09 10:56:39.152 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-09 10:56:39.222 [restartedMain] WARN  [] [] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'
+2025-08-09 10:56:39.226 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2025-08-09 10:56:39.228 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2025-08-09 10:56:39.230 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-09 10:56:39.242 [restartedMain] ERROR [] [] org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:921)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.greenhouse.GreenhouseApplication.main(GreenhouseApplication.java:17)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 24 common frames omitted
+Caused by: java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:575)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.afterPropertiesSet(MybatisSqlSessionFactoryBean.java:444)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.getObject(MybatisSqlSessionFactoryBean.java:608)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration.sqlSessionFactory(MybatisPlusAutoConfiguration.java:224)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 25 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.greenhouse.entity.AlertRecord'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.AlertRecord
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:95)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:573)
+	... 33 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.greenhouse.entity.AlertRecord'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.AlertRecord
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:102)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:138)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:131)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:121)
+	... 35 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.greenhouse.entity.AlertRecord'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.AlertRecord
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:128)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116)
+	... 39 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.AlertRecord
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:196)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:124)
+	... 41 common frames omitted
+2025-08-09 10:56:42.008 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 18968 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-09 10:56:42.008 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-09 10:56:42.008 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-09 10:56:42.388 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-09 10:56:42.388 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-09 10:56:42.437 [restartedMain] INFO  [] [] o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-09 10:56:42.455 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+2025-08-09 10:56:42.460 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+2025-08-09 10:56:42.485 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-09 10:56:42.489 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-09 10:56:42.521 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-09 10:56:42.858 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-09 10:56:42.907 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-09 10:56:42.948 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 92 mappings in 'requestMappingHandlerMapping'
+2025-08-09 10:56:42.958 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-09 10:56:42.963 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-09 10:56:43.003 [restartedMain] WARN  [] [] o.s.b.d.autoconfigure.OptionalLiveReloadServer - Unable to start LiveReload server
+2025-08-09 10:56:43.035 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Started GreenhouseApplication in 1.079 seconds (JVM running for 2621.912)
+2025-08-09 10:56:45.645 [main] INFO  [] [] com.greenhouse.common.GlobalExceptionHandlerTest - Starting GlobalExceptionHandlerTest using Java 17.0.15 on TH111401 with PID 32280 (started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-09 10:56:45.647 [main] DEBUG [] [] com.greenhouse.common.GlobalExceptionHandlerTest - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-09 10:56:45.647 [main] INFO  [] [] com.greenhouse.common.GlobalExceptionHandlerTest - No active profile set, falling back to 1 default profile: "default"
+2025-08-09 10:56:45.659 [background-preinit] INFO  [] [] org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-09 10:56:45.692 [main] DEBUG [] [] o.s.w.context.support.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@56f2bbea
+2025-08-09 10:56:47.234 [main] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-09 10:56:47.546 [main] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-09 10:56:47.754 [main] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-09 10:56:47.836 [main] INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-09 10:56:48.068 [main] INFO  [] [] org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-09 10:56:48.334 [main] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-09 10:56:48.662 [main] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-09 10:56:49.979 [main] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-09 10:56:50.319 [main] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-09 10:56:50.502 [main] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 92 mappings in 'requestMappingHandlerMapping'
+2025-08-09 10:56:50.556 [main] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-09 10:56:50.575 [main] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-09 10:56:50.798 [main] INFO  [] [] com.greenhouse.common.GlobalExceptionHandlerTest - Started GlobalExceptionHandlerTest in 5.761 seconds (JVM running for 7.006)
+2025-08-09 10:56:51.249 [main] WARN  [c3d290f00cdf4468] [] com.greenhouse.common.GlobalExceptionHandler - TraceId: c3d290f00cdf4468 | 设备异常: 设备[TEST_DEVICE]: 设备离线 | 请求信息 - Method: , URI: , RemoteAddr: 127.0.0.1
+2025-08-09 10:56:51.282 [main] WARN  [c3d290f00cdf4468] [] com.greenhouse.common.GlobalExceptionHandler - TraceId: c3d290f00cdf4468 | 业务异常: 设备不存在 | 请求信息 - Method: GET, URI: /api/test, RemoteAddr: 127.0.0.1
+2025-08-09 10:56:51.328 [SpringApplicationShutdownHook] DEBUG [] [] o.s.w.context.support.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@56f2bbea, started on Sat Aug 09 10:56:45 CST 2025
+2025-08-09 10:56:51.336 [SpringApplicationShutdownHook] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-09 10:56:51.346 [SpringApplicationShutdownHook] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-09 11:03:36.958 [Thread-5] INFO  [] [] org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-09 11:03:36.964 [Thread-5] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+2025-08-09 11:03:36.968 [Thread-5] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
+2025-08-09 11:03:37.094 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 18968 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-09 11:03:37.094 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-09 11:03:37.094 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-09 11:03:37.289 [restartedMain] WARN  [] [] org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.greenhouse.mapper]' package. Please check your configuration.
+2025-08-09 11:03:37.366 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-09 11:03:37.368 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-09 11:03:37.396 [restartedMain] INFO  [] [] o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-09 11:03:37.447 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-09 11:03:37.455 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Starting...
+2025-08-09 11:03:37.460 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Start completed.
+2025-08-09 11:03:37.460 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-09 11:03:37.489 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-09 11:03:37.513 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-09 11:03:37.567 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-09 11:03:37.590 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 2 mappings in 'requestMappingHandlerMapping'
+2025-08-09 11:03:37.600 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-08-09 11:03:37.610 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-09 11:03:37.655 [restartedMain] WARN  [] [] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'
+2025-08-09 11:03:37.657 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown initiated...
+2025-08-09 11:03:37.659 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown completed.
+2025-08-09 11:03:37.659 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-09 11:03:37.669 [restartedMain] ERROR [] [] org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:921)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.greenhouse.GreenhouseApplication.main(GreenhouseApplication.java:17)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 24 common frames omitted
+Caused by: java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:575)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.afterPropertiesSet(MybatisSqlSessionFactoryBean.java:444)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.getObject(MybatisSqlSessionFactoryBean.java:608)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration.sqlSessionFactory(MybatisPlusAutoConfiguration.java:224)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 25 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.greenhouse.entity.AlertRecord'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.AlertRecord
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:95)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:573)
+	... 33 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.greenhouse.entity.AlertRecord'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.AlertRecord
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:102)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:138)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:131)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:121)
+	... 35 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.greenhouse.entity.AlertRecord'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.AlertRecord
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:128)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116)
+	... 39 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.AlertRecord
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:196)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:124)
+	... 41 common frames omitted
+2025-08-09 11:03:39.133 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 18968 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-09 11:03:39.137 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-09 11:03:39.137 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-09 11:03:39.358 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-09 11:03:39.358 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-09 11:03:39.404 [restartedMain] INFO  [] [] o.a.c.c.ContainerBase.[Tomcat-2].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-09 11:03:39.437 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-09 11:03:39.446 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Starting...
+2025-08-09 11:03:39.450 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Start completed.
+2025-08-09 11:03:39.450 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-09 11:03:39.470 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-09 11:03:39.489 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-09 11:03:39.524 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-09 11:03:39.536 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 2 mappings in 'requestMappingHandlerMapping'
+2025-08-09 11:03:39.540 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-08-09 11:03:39.549 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-09 11:03:39.633 [restartedMain] WARN  [] [] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\EnvironmentMapper.xml]'
+2025-08-09 11:03:39.633 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown initiated...
+2025-08-09 11:03:39.633 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown completed.
+2025-08-09 11:03:39.637 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-09 11:03:39.641 [restartedMain] ERROR [] [] org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\EnvironmentMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:921)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.greenhouse.GreenhouseApplication.main(GreenhouseApplication.java:17)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\EnvironmentMapper.xml]'
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 24 common frames omitted
+Caused by: java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\EnvironmentMapper.xml]'
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:575)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.afterPropertiesSet(MybatisSqlSessionFactoryBean.java:444)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.getObject(MybatisSqlSessionFactoryBean.java:608)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration.sqlSessionFactory(MybatisPlusAutoConfiguration.java:224)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 25 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\EnvironmentMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.greenhouse.entity.EnvironmentData'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.EnvironmentData
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:95)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:573)
+	... 33 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.greenhouse.entity.EnvironmentData'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.EnvironmentData
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:102)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:138)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:131)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:121)
+	... 35 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.greenhouse.entity.EnvironmentData'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.EnvironmentData
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:128)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116)
+	... 39 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.EnvironmentData
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:196)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:124)
+	... 41 common frames omitted
+2025-08-09 11:04:40.381 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 18968 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-09 11:04:40.381 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-09 11:04:40.383 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-09 11:04:40.560 [restartedMain] WARN  [] [] org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.greenhouse.mapper]' package. Please check your configuration.
+2025-08-09 11:04:40.615 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-09 11:04:40.615 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-09 11:04:40.641 [restartedMain] INFO  [] [] o.a.c.c.ContainerBase.[Tomcat-3].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-09 11:04:40.683 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-09 11:04:40.687 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Starting...
+2025-08-09 11:04:40.691 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Start completed.
+2025-08-09 11:04:40.695 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-09 11:04:40.715 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-09 11:04:40.736 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-09 11:04:40.787 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-09 11:04:40.805 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 2 mappings in 'requestMappingHandlerMapping'
+2025-08-09 11:04:40.821 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-08-09 11:04:40.827 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-09 11:04:40.871 [restartedMain] WARN  [] [] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'
+2025-08-09 11:04:40.875 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown initiated...
+2025-08-09 11:04:40.876 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown completed.
+2025-08-09 11:04:40.876 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-09 11:04:40.888 [restartedMain] ERROR [] [] org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:921)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.greenhouse.GreenhouseApplication.main(GreenhouseApplication.java:17)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 24 common frames omitted
+Caused by: java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:575)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.afterPropertiesSet(MybatisSqlSessionFactoryBean.java:444)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.getObject(MybatisSqlSessionFactoryBean.java:608)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration.sqlSessionFactory(MybatisPlusAutoConfiguration.java:224)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 25 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.greenhouse.entity.AlertRecord'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.AlertRecord
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:95)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:573)
+	... 33 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.greenhouse.entity.AlertRecord'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.AlertRecord
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:102)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:138)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:131)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:121)
+	... 35 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.greenhouse.entity.AlertRecord'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.AlertRecord
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:128)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116)
+	... 39 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.AlertRecord
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:196)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:124)
+	... 41 common frames omitted
+2025-08-09 11:04:43.630 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 18968 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-09 11:04:43.630 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-09 11:04:43.630 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-09 11:04:43.960 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-09 11:04:43.960 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-09 11:04:43.982 [restartedMain] INFO  [] [] o.a.c.c.ContainerBase.[Tomcat-4].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-09 11:04:43.998 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Starting...
+2025-08-09 11:04:44.002 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Start completed.
+2025-08-09 11:04:44.018 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-09 11:04:44.022 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-09 11:04:44.055 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-09 11:04:44.345 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-09 11:04:44.378 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-09 11:04:44.403 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 93 mappings in 'requestMappingHandlerMapping'
+2025-08-09 11:04:44.408 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-09 11:04:44.415 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-09 11:04:44.439 [restartedMain] WARN  [] [] o.s.b.d.autoconfigure.OptionalLiveReloadServer - Unable to start LiveReload server
+2025-08-09 11:04:44.459 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Started GreenhouseApplication in 0.877 seconds (JVM running for 3103.337)
+2025-08-09 11:12:16.024 [Thread-38] INFO  [] [] org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-09 11:12:16.028 [Thread-38] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown initiated...
+2025-08-09 11:12:16.032 [Thread-38] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown completed.
+2025-08-09 11:12:16.126 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 18968 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-09 11:12:16.128 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-09 11:12:16.128 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-09 11:12:16.314 [restartedMain] WARN  [] [] org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.greenhouse.mapper]' package. Please check your configuration.
+2025-08-09 11:12:16.385 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-09 11:12:16.385 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-09 11:12:16.410 [restartedMain] INFO  [] [] o.a.c.c.ContainerBase.[Tomcat-4].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-09 11:12:16.460 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-09 11:12:16.464 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Starting...
+2025-08-09 11:12:16.472 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Start completed.
+2025-08-09 11:12:16.474 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-09 11:12:16.515 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-09 11:12:16.539 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-09 11:12:16.594 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-09 11:12:16.617 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 2 mappings in 'requestMappingHandlerMapping'
+2025-08-09 11:12:16.627 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-08-09 11:12:16.637 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-09 11:12:16.687 [restartedMain] WARN  [] [] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'
+2025-08-09 11:12:16.689 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Shutdown initiated...
+2025-08-09 11:12:16.693 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Shutdown completed.
+2025-08-09 11:12:16.693 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-09 11:12:16.701 [restartedMain] ERROR [] [] org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:921)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.greenhouse.GreenhouseApplication.main(GreenhouseApplication.java:17)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 24 common frames omitted
+Caused by: java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:575)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.afterPropertiesSet(MybatisSqlSessionFactoryBean.java:444)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.getObject(MybatisSqlSessionFactoryBean.java:608)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration.sqlSessionFactory(MybatisPlusAutoConfiguration.java:224)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 25 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.greenhouse.entity.AlertRecord'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.AlertRecord
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:95)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:573)
+	... 33 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.greenhouse.entity.AlertRecord'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.AlertRecord
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:102)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:138)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:131)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:121)
+	... 35 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.greenhouse.entity.AlertRecord'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.AlertRecord
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:128)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116)
+	... 39 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.AlertRecord
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:196)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:124)
+	... 41 common frames omitted
+2025-08-09 11:12:19.859 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 18968 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-09 11:12:19.859 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-09 11:12:19.859 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-09 11:12:20.218 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-09 11:12:20.218 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-09 11:12:20.248 [restartedMain] INFO  [] [] o.a.c.c.ContainerBase.[Tomcat-5].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-09 11:12:20.267 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Starting...
+2025-08-09 11:12:20.272 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Start completed.
+2025-08-09 11:12:20.295 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-09 11:12:20.299 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-09 11:12:20.324 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-09 11:12:20.637 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-09 11:12:20.675 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-09 11:12:20.703 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 93 mappings in 'requestMappingHandlerMapping'
+2025-08-09 11:12:20.712 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-09 11:12:20.716 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-09 11:12:20.750 [restartedMain] WARN  [] [] o.s.b.d.autoconfigure.OptionalLiveReloadServer - Unable to start LiveReload server
+2025-08-09 11:12:20.766 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Started GreenhouseApplication in 0.949 seconds (JVM running for 3559.644)
+2025-08-09 11:12:58.140 [Thread-59] INFO  [] [] org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-09 11:12:58.145 [Thread-59] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Shutdown initiated...
+2025-08-09 11:12:58.149 [Thread-59] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Shutdown completed.
+2025-08-09 11:12:58.233 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 18968 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-09 11:12:58.233 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-09 11:12:58.233 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-09 11:12:58.393 [restartedMain] WARN  [] [] org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.greenhouse.mapper]' package. Please check your configuration.
+2025-08-09 11:12:58.451 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-09 11:12:58.451 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-09 11:12:58.476 [restartedMain] INFO  [] [] o.a.c.c.ContainerBase.[Tomcat-5].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-09 11:12:58.518 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-09 11:12:58.522 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Starting...
+2025-08-09 11:12:58.530 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Start completed.
+2025-08-09 11:12:58.530 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-09 11:12:58.551 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-09 11:12:58.580 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-09 11:12:58.617 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-09 11:12:58.635 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 2 mappings in 'requestMappingHandlerMapping'
+2025-08-09 11:12:58.643 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-08-09 11:12:58.651 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-09 11:12:58.691 [restartedMain] WARN  [] [] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'
+2025-08-09 11:12:58.693 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Shutdown initiated...
+2025-08-09 11:12:58.695 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Shutdown completed.
+2025-08-09 11:12:58.695 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-09 11:12:58.703 [restartedMain] ERROR [] [] org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:921)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.greenhouse.GreenhouseApplication.main(GreenhouseApplication.java:17)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 24 common frames omitted
+Caused by: java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:575)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.afterPropertiesSet(MybatisSqlSessionFactoryBean.java:444)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.getObject(MybatisSqlSessionFactoryBean.java:608)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration.sqlSessionFactory(MybatisPlusAutoConfiguration.java:224)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 25 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.greenhouse.entity.AlertRecord'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.AlertRecord
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:95)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:573)
+	... 33 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.greenhouse.entity.AlertRecord'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.AlertRecord
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:102)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:138)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:131)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:121)
+	... 35 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.greenhouse.entity.AlertRecord'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.AlertRecord
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:128)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116)
+	... 39 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.AlertRecord
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:196)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:124)
+	... 41 common frames omitted
+2025-08-09 11:13:01.884 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 18968 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-09 11:13:01.884 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-09 11:13:01.884 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-09 11:13:02.205 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-09 11:13:02.205 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-09 11:13:02.230 [restartedMain] INFO  [] [] o.a.c.c.ContainerBase.[Tomcat-6].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-09 11:13:02.243 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Starting...
+2025-08-09 11:13:02.251 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Start completed.
+2025-08-09 11:13:02.266 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-09 11:13:02.272 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-09 11:13:02.293 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-09 11:13:02.576 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-09 11:13:02.615 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-09 11:13:02.638 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 93 mappings in 'requestMappingHandlerMapping'
+2025-08-09 11:13:02.646 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-09 11:13:02.654 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-09 11:13:02.683 [restartedMain] WARN  [] [] o.s.b.d.autoconfigure.OptionalLiveReloadServer - Unable to start LiveReload server
+2025-08-09 11:13:02.704 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Started GreenhouseApplication in 0.861 seconds (JVM running for 3601.58)
+2025-08-09 11:35:18.216 [HikariPool-11 housekeeper] WARN  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-11 - Thread starvation or clock leap detected (housekeeper delta=6m45s605ms889µs200ns).
+2025-08-09 11:52:51.518 [HikariPool-11 housekeeper] WARN  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-11 - Thread starvation or clock leap detected (housekeeper delta=4m33s76ms904µs600ns).
+2025-08-09 16:37:56.220 [HikariPool-11 housekeeper] WARN  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-11 - Thread starvation or clock leap detected (housekeeper delta=4h42m1s707ms206µs600ns).
+2025-08-09 16:59:05.366 [HikariPool-11 housekeeper] WARN  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-11 - Thread starvation or clock leap detected (housekeeper delta=10m38s990ms206µs600ns).
+2025-08-09 17:20:20.392 [HikariPool-11 housekeeper] WARN  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-11 - Thread starvation or clock leap detected (housekeeper delta=6m44s795ms813µs).
+2025-08-09 17:25:20.440 [Thread-70] INFO  [] [] org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-09 17:25:20.457 [Thread-70] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Shutdown initiated...
+2025-08-09 17:25:20.467 [Thread-70] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Shutdown completed.
+2025-08-09 17:25:20.665 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 18968 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-09 17:25:20.665 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-09 17:25:20.665 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-09 17:25:20.851 [restartedMain] WARN  [] [] org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.greenhouse.mapper]' package. Please check your configuration.
+2025-08-09 17:25:20.925 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-09 17:25:20.925 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-09 17:25:20.950 [restartedMain] INFO  [] [] o.a.c.c.ContainerBase.[Tomcat-6].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-09 17:25:20.999 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-09 17:25:21.009 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Starting...
+2025-08-09 17:25:21.017 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Start completed.
+2025-08-09 17:25:21.017 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-09 17:25:21.048 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-09 17:25:21.073 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-09 17:25:21.134 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-09 17:25:21.156 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 2 mappings in 'requestMappingHandlerMapping'
+2025-08-09 17:25:21.172 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-08-09 17:25:21.180 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-09 17:25:21.282 [restartedMain] WARN  [] [] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'
+2025-08-09 17:25:21.282 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Shutdown initiated...
+2025-08-09 17:25:21.286 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Shutdown completed.
+2025-08-09 17:25:21.286 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-09 17:25:21.298 [restartedMain] ERROR [] [] org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:921)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.greenhouse.GreenhouseApplication.main(GreenhouseApplication.java:17)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 24 common frames omitted
+Caused by: java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:575)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.afterPropertiesSet(MybatisSqlSessionFactoryBean.java:444)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.getObject(MybatisSqlSessionFactoryBean.java:608)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration.sqlSessionFactory(MybatisPlusAutoConfiguration.java:224)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 25 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.greenhouse.entity.AlertRecord'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.AlertRecord
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:95)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:573)
+	... 33 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.greenhouse.entity.AlertRecord'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.AlertRecord
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:102)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:138)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:131)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:121)
+	... 35 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.greenhouse.entity.AlertRecord'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.AlertRecord
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:128)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116)
+	... 39 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.AlertRecord
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:196)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:124)
+	... 41 common frames omitted
+2025-08-09 17:25:24.067 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 18968 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-09 17:25:24.067 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-09 17:25:24.067 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-09 17:25:24.423 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-09 17:25:24.423 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-09 17:25:24.443 [restartedMain] INFO  [] [] o.a.c.c.ContainerBase.[Tomcat-7].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-09 17:25:24.459 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-13 - Starting...
+2025-08-09 17:25:24.485 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-13 - Start completed.
+2025-08-09 17:25:24.502 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-09 17:25:24.508 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-09 17:25:24.524 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-09 17:25:24.837 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-09 17:25:24.883 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-09 17:25:24.911 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 93 mappings in 'requestMappingHandlerMapping'
+2025-08-09 17:25:24.919 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-09 17:25:24.927 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-09 17:25:24.958 [restartedMain] WARN  [] [] o.s.b.d.autoconfigure.OptionalLiveReloadServer - Unable to start LiveReload server
+2025-08-09 17:25:24.976 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Started GreenhouseApplication in 0.947 seconds (JVM running for 25943.856)
+2025-08-09 17:25:27.065 [background-preinit] INFO  [] [] org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-09 17:25:27.073 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 38348 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-09 17:25:27.074 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-09 17:25:27.074 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-09 17:25:28.798 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-08-09 17:25:28.798 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-09 17:25:28.798 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-09 17:25:28.913 [restartedMain] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-09 17:25:28.995 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-09 17:25:29.212 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-09 17:25:29.300 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-09 17:25:29.381 [restartedMain] INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-09 17:25:29.597 [restartedMain] INFO  [] [] org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-09 17:25:29.757 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-09 17:25:30.061 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-09 17:25:30.824 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-09 17:25:30.977 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-09 17:25:31.112 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 93 mappings in 'requestMappingHandlerMapping'
+2025-08-09 17:25:31.132 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-09 17:25:31.141 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-09 17:25:31.258 [restartedMain] WARN  [] [] o.s.b.d.autoconfigure.OptionalLiveReloadServer - Unable to start LiveReload server
+2025-08-09 17:25:31.273 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-08-09 17:25:31.281 [restartedMain] WARN  [] [] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2025-08-09 17:25:31.281 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-09 17:25:31.297 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-09 17:25:31.297 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-08-09 17:25:31.297 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-09 17:25:31.303 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-08-09 17:25:31.305 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+2025-08-09 17:25:31.330 [restartedMain] ERROR [] [] o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2025-08-09 18:38:43.568 [background-preinit] INFO  [] [] org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-09 18:38:43.583 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 34332 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-09 18:38:43.584 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-09 18:38:43.584 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-09 18:38:45.361 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-08-09 18:38:45.361 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-09 18:38:45.361 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-09 18:38:45.492 [restartedMain] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-09 18:38:45.586 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-09 18:38:45.817 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-09 18:38:45.900 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-09 18:38:45.981 [restartedMain] INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-09 18:38:46.202 [restartedMain] INFO  [] [] org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-09 18:38:46.355 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-09 18:38:46.663 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-09 18:38:47.440 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-09 18:38:47.581 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-09 18:38:47.703 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 93 mappings in 'requestMappingHandlerMapping'
+2025-08-09 18:38:47.728 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-09 18:38:47.736 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-09 18:38:47.836 [restartedMain] WARN  [] [] o.s.b.d.autoconfigure.OptionalLiveReloadServer - Unable to start LiveReload server
+2025-08-09 18:38:47.852 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-08-09 18:38:47.902 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Started GreenhouseApplication in 5.004 seconds (JVM running for 5.629)
+2025-08-09 18:43:17.255 [Thread-1] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-08-09 18:43:17.255 [Thread-1] INFO  [] [] org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-09 18:43:17.261 [Thread-1] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-08-09 18:43:17.264 [Thread-1] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+2025-08-09 18:43:17.291 [Thread-1] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-09 18:43:17.304 [Thread-1] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-09 18:43:17.412 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 34332 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-09 18:43:17.412 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-09 18:43:17.412 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-09 18:43:17.646 [restartedMain] WARN  [] [] org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.greenhouse.mapper]' package. Please check your configuration.
+2025-08-09 18:43:17.737 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-08-09 18:43:17.737 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-09 18:43:17.739 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-09 18:43:17.788 [restartedMain] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-09 18:43:17.843 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-09 18:43:17.853 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2025-08-09 18:43:17.867 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2025-08-09 18:43:17.867 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-09 18:43:17.896 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-09 18:43:17.923 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-09 18:43:17.986 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-09 18:43:18.013 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 2 mappings in 'requestMappingHandlerMapping'
+2025-08-09 18:43:18.023 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-08-09 18:43:18.037 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-09 18:43:18.089 [restartedMain] WARN  [] [] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'
+2025-08-09 18:43:18.094 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2025-08-09 18:43:18.094 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2025-08-09 18:43:18.094 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-09 18:43:18.159 [restartedMain] ERROR [] [] org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:921)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.greenhouse.GreenhouseApplication.main(GreenhouseApplication.java:17)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 24 common frames omitted
+Caused by: java.io.IOException: Failed to parse mapping resource: 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:575)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.afterPropertiesSet(MybatisSqlSessionFactoryBean.java:444)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.getObject(MybatisSqlSessionFactoryBean.java:608)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration.sqlSessionFactory(MybatisPlusAutoConfiguration.java:224)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 25 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\Space\smart-AgricultureMang\target\classes\mapper\AlertMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.greenhouse.entity.AlertRecord'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.AlertRecord
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:95)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:573)
+	... 33 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.greenhouse.entity.AlertRecord'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.AlertRecord
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:102)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:138)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:131)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:121)
+	... 35 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.greenhouse.entity.AlertRecord'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.AlertRecord
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:128)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116)
+	... 39 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.greenhouse.entity.AlertRecord
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:196)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:124)
+	... 41 common frames omitted
+2025-08-09 18:43:20.909 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 34332 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-09 18:43:20.909 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-09 18:43:20.915 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-09 18:43:21.290 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-08-09 18:43:21.298 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-09 18:43:21.298 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-09 18:43:21.347 [restartedMain] INFO  [] [] o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-09 18:43:21.364 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+2025-08-09 18:43:21.372 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+2025-08-09 18:43:21.389 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-09 18:43:21.389 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-09 18:43:21.419 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-09 18:43:21.757 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-09 18:43:21.796 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-09 18:43:21.820 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 93 mappings in 'requestMappingHandlerMapping'
+2025-08-09 18:43:21.829 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-09 18:43:21.837 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-09 18:43:21.853 [restartedMain] WARN  [] [] o.s.b.d.autoconfigure.OptionalLiveReloadServer - Unable to start LiveReload server
+2025-08-09 18:43:21.862 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-08-09 18:43:21.871 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Started GreenhouseApplication in 1.019 seconds (JVM running for 279.603)
