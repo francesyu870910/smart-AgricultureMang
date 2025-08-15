@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>维护计划管理测试</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f8f9fa; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header { background: white; padding: 20px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .maintenance-center { background: white; border-radius: 15px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .btn { padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; margin: 5px; }
+        .btn-primary { background: #27AE60; color: white; }
+        .btn-secondary { background: #3498DB; color: white; }
+        .maintenance-list { margin-top: 20px; background: #f8f9fa; border-radius: 8px; overflow: hidden; }
+        .list-header { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1.5fr; background: #34495E; color: white; font-weight: 600; font-size: 13px; }
+        .list-item { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1.5fr; border-bottom: 1px solid rgba(0,0,0,0.1); background: white; }
+        .cell { padding: 15px; text-align: center; display: flex; align-items: center; justify-content: center; }
+        .cell:first-child { text-align: left; }
+        .status-badge { padding: 4px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+        .btn-small { padding: 4px 8px; border: none; border-radius: 6px; cursor: pointer; font-size: 11px; margin: 2px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔧 维护计划管理测试页面</h1>
+            <p>测试维护计划的创建、查看和编辑功能</p>
+        </div>
+
+        <div class="maintenance-center">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h3 style="margin: 0; color: #333; display: flex; align-items: center;">
+                    <span style="margin-right: 10px;">🔧</span>维护管理中心
+                </h3>
+                <div>
+                    <button class="btn btn-primary" onclick="createMaintenancePlan()">+ 创建维护计划</button>
+                    <button class="btn btn-secondary" onclick="refreshMaintenanceData()">🔄 刷新</button>
+                </div>
+            </div>
+
+            <!-- 统计数据 -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 30px;">
+                <div style="background: #f8f9fa; border-radius: 10px; padding: 15px; text-align: center; border-left: 4px solid #E74C3C;">
+                    <div style="font-size: 24px; font-weight: bold; color: #E74C3C; margin-bottom: 5px;" id="overdueCount">2</div>
+                    <div style="font-size: 14px; color: #666;">已过期</div>
+                </div>
+                <div style="background: #f8f9fa; border-radius: 10px; padding: 15px; text-align: center; border-left: 4px solid #F39C12;">
+                    <div style="font-size: 24px; font-weight: bold; color: #F39C12; margin-bottom: 5px;" id="upcomingCount">4</div>
+                    <div style="font-size: 14px; color: #666;">即将到期</div>
+                </div>
+                <div style="background: #f8f9fa; border-radius: 10px; padding: 15px; text-align: center; border-left: 4px solid #27AE60;">
+                    <div style="font-size: 24px; font-weight: bold; color: #27AE60; margin-bottom: 5px;" id="completedCount">0</div>
+                    <div style="font-size: 14px; color: #666;">已完成</div>
+                </div>
+                <div style="background: #f8f9fa; border-radius: 10px; padding: 15px; text-align: center; border-left: 4px solid #3498DB;">
+                    <div style="font-size: 24px; font-weight: bold; color: #3498DB; margin-bottom: 5px;" id="totalPlansCount">6</div>
+                    <div style="font-size: 14px; color: #666;">总计划数</div>
+                </div>
+            </div>
+
+            <!-- 维护计划列表 -->
+            <div>
+                <h4 style="margin-bottom: 15px; color: #333;">📋 维护计划列表</h4>
+                <div class="maintenance-list">
+                    <div class="list-header">
+                        <div class="cell">设备名称</div>
+                        <div class="cell">维护类型</div>
+                        <div class="cell">计划日期</div>
+                        <div class="cell">状态</div>
+                        <div class="cell">负责人</div>
+                        <div class="cell">操作</div>
+                    </div>
+                    <div id="maintenancePlansContainer">
+                        <!-- 维护计划数据将在这里动态生成 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 维护计划数据存储
+        let maintenancePlans = [
+            { id: 1, deviceName: '温度控制器', deviceIcon: '🌡️', type: '定期检查', plannedDate: '2024-01-16', status: '待执行', assignee: '张工程师', priority: 'normal', description: '检查温度传感器精度，清洁设备外壳' },
+            { id: 2, deviceName: '灌溉系统', deviceIcon: '💧', type: '深度清洁', plannedDate: '2024-01-15', status: '已过期', assignee: '李技师', priority: 'high', description: '清理管道堵塞，更换老化密封圈' },
+            { id: 3, deviceName: '补光灯', deviceIcon: '💡', type: '灯泡更换', plannedDate: '2024-01-18', status: '待执行', assignee: '王师傅', priority: 'normal', description: '更换老化LED灯泡，检查电路连接' },
+            { id: 4, deviceName: '通风系统', deviceIcon: '🌪️', type: '滤网清洗', plannedDate: '2024-01-17', status: '待执行', assignee: '陈技师', priority: 'normal', description: '清洗进风口滤网，检查风扇运转' },
+            { id: 5, deviceName: '加热器', deviceIcon: '🔥', type: '安全检查', plannedDate: '2024-01-14', status: '已过期', assignee: '刘工程师', priority: 'high', description: '检查加热元件和温控系统安全性' },
+            { id: 6, deviceName: '湿度传感器', deviceIcon: '💨', type: '校准检测', plannedDate: '2024-01-19', status: '待执行', assignee: '赵技师', priority: 'low', description: '重新校准传感器，提升检测精度' }
+        ];
+
+        // 创建维护计划
+        function createMaintenancePlan() {
+            console.log('createMaintenancePlan called');
+            showMaintenancePlanModal();
+        }
+
+        // 显示维护计划创建弹窗
+        function showMaintenancePlanModal(planData = null) {
+            const isEdit = planData !== null;
+            const modalTitle = isEdit ? '编辑维护计划' : '创建维护计划';
+            
+            // 创建遮罩层
+            const overlay = document.createElement('div');
+            overlay.style.cssText = \`
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 10001;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                animation: fadeIn 0.3s ease;
+            \`;
+
+            // 创建弹窗
+            const modal = document.createElement('div');
+            modal.style.cssText = \`
+                background: white;
+                border-radius: 15px;
+                width: 90%;
+                max-width: 600px;
+                max-height: 90vh;
+                overflow-y: auto;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            \`;
+
+            modal.innerHTML = \`
+                <div style="padding: 25px; border-bottom: 1px solid #eee;">
+                    <h3 style="margin: 0; color: #333; font-size: 20px; display: flex; align-items: center;">
+                        <span style="margin-right: 10px;">📋</span>\${modalTitle}
+                    </h3>
+                </div>
+                
+                <form id="maintenancePlanForm" style="padding: 25px;">
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #555;">设备名称 *</label>
+                        <select name="deviceName" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;">
+                            <option value="">请选择设备</option>
+                            <option value="温度控制器">🌡️ 温度控制器</option>
+                            <option value="湿度控制器">💨 湿度控制器</option>
+                            <option value="补光灯系统">💡 补光灯系统</option>
+                            <option value="通风系统">🌪️ 通风系统</option>
+                            <option value="灌溉系统">💧 灌溉系统</option>
+                            <option value="加热器">🔥 加热器</option>
+                        </select>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #555;">维护类型 *</label>
+                        <select name="type" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;">
+                            <option value="">请选择类型</option>
+                            <option value="定期保养">定期保养</option>
+                            <option value="故障维修">故障维修</option>
+                            <option value="预防性维护">预防性维护</option>
+                            <option value="紧急维修">紧急维修</option>
+                        </select>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #555;">计划日期 *</label>
+                        <input type="date" name="plannedDate" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;">
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #555;">负责人 *</label>
+                        <select name="assignee" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;">
+                            <option value="">请选择负责人</option>
+                            <option value="张工程师">张工程师</option>
+                            <option value="李技师">李技师</option>
+                            <option value="王师傅">王师傅</option>
+                            <option value="陈技师">陈技师</option>
+                        </select>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #555;">维护描述</label>
+                        <textarea name="description" rows="3" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; resize: vertical;"></textarea>
+                    </div>
+                </form>
+                
+                <div style="padding: 20px 25px; border-top: 1px solid #eee; display: flex; justify-content: flex-end; gap: 10px;">
+                    <button type="button" onclick="closeMaintenancePlanModal()" style="padding: 10px 20px; background: #95A5A6; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">取消</button>
+                    <button type="button" onclick="saveMaintenancePlan(\${isEdit ? planData?.id : 'null'})" style="padding: 10px 20px; background: #27AE60; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">\${isEdit ? '更新计划' : '创建计划'}</button>
+                </div>
+            \`;
+
+            overlay.appendChild(modal);
+            document.body.appendChild(overlay);
+            
+            // 设置默认日期为明天
+            if (!isEdit) {
+                const tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                const dateInput = modal.querySelector('input[name="plannedDate"]');
+                dateInput.value = tomorrow.toISOString().split('T')[0];
+            }
+
+            // 点击遮罩层关闭弹窗
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                    closeMaintenancePlanModal();
+                }
+            });
+
+            // 保存弹窗引用
+            window.currentMaintenancePlanModal = overlay;
+        }
+
+        // 关闭维护计划弹窗
+        function closeMaintenancePlanModal() {
+            if (window.currentMaintenancePlanModal) {
+                document.body.removeChild(window.currentMaintenancePlanModal);
+                window.currentMaintenancePlanModal = null;
+            }
+        }
+
+        // 保存维护计划
+        function saveMaintenancePlan(editId = null) {
+            const form = document.getElementById('maintenancePlanForm');
+            const formData = new FormData(form);
+            
+            // 验证必填字段
+            const requiredFields = ['deviceName', 'type', 'plannedDate', 'assignee'];
+            for (let field of requiredFields) {
+                if (!formData.get(field)) {
+                    alert(\`请填写\${getFieldLabel(field)}\`);
+                    return;
+                }
+            }
+            
+            // 获取设备图标
+            const deviceIcons = {
+                '温度控制器': '🌡️',
+                '湿度控制器': '💨',
+                '补光灯系统': '💡',
+                '通风系统': '🌪️',
+                '灌溉系统': '💧',
+                '加热器': '🔥'
+            };
+            
+            const planData = {
+                deviceName: formData.get('deviceName'),
+                deviceIcon: deviceIcons[formData.get('deviceName')] || '⚙️',
+                type: formData.get('type'),
+                plannedDate: formData.get('plannedDate'),
+                priority: 'normal',
+                assignee: formData.get('assignee'),
+                description: formData.get('description') || '',
+                status: '待执行',
+                createdAt: new Date().toISOString()
+            };
+            
+            if (editId && editId !== 'null') {
+                // 编辑现有计划
+                const index = maintenancePlans.findIndex(p => p.id == editId);
+                if (index !== -1) {
+                    maintenancePlans[index] = { ...maintenancePlans[index], ...planData };
+                    alert('维护计划更新成功');
+                }
+            } else {
+                // 创建新计划
+                planData.id = Date.now();
+                maintenancePlans.unshift(planData);
+                alert('维护计划创建成功');
+            }
+            
+            // 关闭弹窗
+            closeMaintenancePlanModal();
+            
+            // 刷新列表
+            refreshMaintenanceData();
+        }
+
+        // 获取字段标签
+        function getFieldLabel(field) {
+            const labels = {
+                'deviceName': '设备名称',
+                'type': '维护类型',
+                'plannedDate': '计划日期',
+                'assignee': '负责人'
+            };
+            return labels[field] || field;
+        }
+
+        // 查看维护计划详情
+        function viewMaintenancePlan(planId) {
+            const plan = maintenancePlans.find(p => p.id == planId);
+            if (!plan) {
+                alert('未找到维护计划');
+                return;
+            }
+            
+            alert(\`设备：\${plan.deviceName}\\n类型：\${plan.type}\\n日期：\${plan.plannedDate}\\n负责人：\${plan.assignee}\\n描述：\${plan.description || '无'}\`);
+        }
+
+        // 刷新维护数据
+        function refreshMaintenanceData() {
+            generateMaintenancePlansHTML();
+            updateMaintenanceStats();
+            alert('维护数据已刷新');
+        }
+
+        // 生成维护计划HTML
+        function generateMaintenancePlansHTML() {
+            const container = document.getElementById('maintenancePlansContainer');
+            if (!container) return;
+
+            container.innerHTML = maintenancePlans.map(plan => {
+                const statusColor = plan.status === '已过期' ? '#E74C3C' : plan.status === '执行中' ? '#F39C12' : plan.status === '已完成' ? '#27AE60' : '#3498DB';
+                
+                return \`
+                <div class="list-item">
+                    <div class="cell" style="text-align: left;">
+                        <span style="margin-right: 8px; font-size: 16px;">\${plan.deviceIcon}</span>
+                        <span style="font-weight: 600;">\${plan.deviceName}</span>
+                    </div>
+                    <div class="cell">\${plan.type}</div>
+                    <div class="cell">\${plan.plannedDate}</div>
+                    <div class="cell">
+                        <span class="status-badge" style="background: \${statusColor}; color: white;">\${plan.status}</span>
+                    </div>
+                    <div class="cell">\${plan.assignee}</div>
+                    <div class="cell">
+                        <button class="btn-small" style="background: #3498DB; color: white;" onclick="viewMaintenancePlan(\${plan.id})">查看</button>
+                        <button class="btn-small" style="background: #27AE60; color: white;" onclick="alert('执行维护功能')">执行</button>
+                    </div>
+                </div>
+                \`;
+            }).join('');
+        }
+
+        // 更新维护统计数据
+        function updateMaintenanceStats() {
+            const overdueCount = maintenancePlans.filter(p => {
+                const planDate = new Date(p.plannedDate);
+                const today = new Date();
+                return planDate < today && p.status === '待执行';
+            }).length;
+            
+            const upcomingCount = maintenancePlans.filter(p => {
+                const planDate = new Date(p.plannedDate);
+                const today = new Date();
+                const nextWeek = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
+                return planDate >= today && planDate <= nextWeek && p.status === '待执行';
+            }).length;
+            
+            const completedCount = maintenancePlans.filter(p => p.status === '已完成').length;
+            const totalCount = maintenancePlans.length;
+            
+            document.getElementById('overdueCount').textContent = overdueCount;
+            document.getElementById('upcomingCount').textContent = upcomingCount;
+            document.getElementById('completedCount').textContent = completedCount;
+            document.getElementById('totalPlansCount').textContent = totalCount;
+        }
+
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            generateMaintenancePlansHTML();
+            updateMaintenanceStats();
+        });
+    </script>
+</body>
+</html>

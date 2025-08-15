@@ -1,0 +1,1165 @@
+2025-08-14 10:54:15.234 [background-preinit] INFO  [] [] org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-14 10:54:15.245 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 21812 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-14 10:54:15.245 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-14 10:54:15.247 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-14 10:54:16.632 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+2025-08-14 10:54:16.634 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-14 10:54:16.634 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-14 10:54:16.726 [restartedMain] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-14 10:54:16.799 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-14 10:54:17.973 [restartedMain] ERROR [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Exception during pool initialization.
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:111)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at com.greenhouse.config.DatabaseConfig.dataSource(DatabaseConfig.java:53)
+	at com.greenhouse.config.DatabaseConfig$$EnhancerBySpringCGLIB$$cd32799c.CGLIB$dataSource$0(<generated>)
+	at com.greenhouse.config.DatabaseConfig$$EnhancerBySpringCGLIB$$cd32799c$$FastClassBySpringCGLIB$$45be8a80.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.greenhouse.config.DatabaseConfig$$EnhancerBySpringCGLIB$$cd32799c.dataSource(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:541)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1157)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:911)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.greenhouse.GreenhouseApplication.main(GreenhouseApplication.java:17)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: com.mysql.cj.exceptions.UnableToConnectException: Public Key Retrieval is not allowed
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:86)
+	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:130)
+	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:49)
+	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.proceedHandshakeWithPluggableAuthentication(NativeAuthenticationProvider.java:443)
+	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.connect(NativeAuthenticationProvider.java:213)
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1430)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:134)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:945)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815)
+	... 62 common frames omitted
+2025-08-14 10:54:17.975 [restartedMain] WARN  [] [] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/greenhouse/config/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Public Key Retrieval is not allowed
+2025-08-14 10:54:17.979 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-14 10:54:18.008 [restartedMain] ERROR [] [] org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/greenhouse/config/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Public Key Retrieval is not allowed
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:541)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1157)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:911)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.greenhouse.GreenhouseApplication.main(GreenhouseApplication.java:17)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/greenhouse/config/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Public Key Retrieval is not allowed
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 26 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Public Key Retrieval is not allowed
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 40 common frames omitted
+Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Public Key Retrieval is not allowed
+	at com.zaxxer.hikari.pool.HikariPool.throwPoolInitializationException(HikariPool.java:596)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:582)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at com.greenhouse.config.DatabaseConfig.dataSource(DatabaseConfig.java:53)
+	at com.greenhouse.config.DatabaseConfig$$EnhancerBySpringCGLIB$$cd32799c.CGLIB$dataSource$0(<generated>)
+	at com.greenhouse.config.DatabaseConfig$$EnhancerBySpringCGLIB$$cd32799c$$FastClassBySpringCGLIB$$45be8a80.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.greenhouse.config.DatabaseConfig$$EnhancerBySpringCGLIB$$cd32799c.dataSource(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 41 common frames omitted
+Caused by: java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:111)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	... 54 common frames omitted
+Caused by: com.mysql.cj.exceptions.UnableToConnectException: Public Key Retrieval is not allowed
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:86)
+	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:130)
+	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:49)
+	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.proceedHandshakeWithPluggableAuthentication(NativeAuthenticationProvider.java:443)
+	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.connect(NativeAuthenticationProvider.java:213)
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1430)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:134)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:945)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815)
+	... 62 common frames omitted
+2025-08-14 10:57:15.233 [background-preinit] INFO  [] [] org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-14 10:57:15.238 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 13356 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-14 10:57:15.238 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-14 10:57:15.242 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-14 10:57:16.510 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+2025-08-14 10:57:16.513 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-14 10:57:16.513 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-14 10:57:16.599 [restartedMain] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-14 10:57:16.660 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-14 10:57:16.835 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-14 10:57:16.908 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-14 10:57:16.972 [restartedMain] INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-14 10:57:17.154 [restartedMain] INFO  [] [] org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-14 10:57:17.286 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-14 10:57:17.550 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-14 10:57:18.194 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-14 10:57:18.305 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-14 10:57:18.390 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 105 mappings in 'requestMappingHandlerMapping'
+2025-08-14 10:57:18.405 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-14 10:57:18.418 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-14 10:57:18.509 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+2025-08-14 10:57:18.547 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Started GreenhouseApplication in 3.786 seconds (JVM running for 4.192)
+2025-08-14 10:57:18.549 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting simulation system initialization...
+2025-08-14 10:57:18.549 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Initializing simulated devices...
+2025-08-14 10:57:18.805 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully initialized simulated devices
+2025-08-14 10:57:18.805 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting scheduled tasks...
+2025-08-14 10:57:18.807 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully started scheduled tasks
+2025-08-14 10:57:18.807 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Simulation system initialization completed successfully
+2025-08-14 11:01:58.056 [SpringApplicationShutdownHook] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-14 11:01:58.067 [SpringApplicationShutdownHook] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-14 11:02:18.507 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 28472 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-14 11:02:18.506 [background-preinit] INFO  [] [] org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-14 11:02:18.507 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-14 11:02:18.507 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-14 11:02:19.751 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+2025-08-14 11:02:19.755 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-14 11:02:19.755 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-14 11:02:19.829 [restartedMain] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-14 11:02:19.885 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-14 11:02:20.028 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-14 11:02:20.082 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-14 11:02:20.119 [restartedMain] INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-14 11:02:20.248 [restartedMain] INFO  [] [] org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-14 11:02:20.338 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-14 11:02:20.526 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-14 11:02:21.075 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-14 11:02:21.169 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-14 11:02:21.247 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 105 mappings in 'requestMappingHandlerMapping'
+2025-08-14 11:02:21.263 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-14 11:02:21.271 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-14 11:02:21.353 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+2025-08-14 11:02:21.386 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Started GreenhouseApplication in 3.333 seconds (JVM running for 3.73)
+2025-08-14 11:02:21.386 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting simulation system initialization...
+2025-08-14 11:02:21.386 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Initializing simulated devices...
+2025-08-14 11:02:21.574 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully initialized simulated devices
+2025-08-14 11:02:21.574 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting scheduled tasks...
+2025-08-14 11:02:21.574 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully started scheduled tasks
+2025-08-14 11:02:21.574 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Simulation system initialization completed successfully
+2025-08-14 11:04:08.274 [http-nio-9090-exec-1] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-14 11:04:08.274 [http-nio-9090-exec-1] INFO  [] [] org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-14 11:04:08.274 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2025-08-14 11:04:08.275 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2025-08-14 11:04:08.275 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2025-08-14 11:04:08.276 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@522f9465
+2025-08-14 11:04:08.276 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@758391ba
+2025-08-14 11:04:08.277 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-08-14 11:04:08.277 [http-nio-9090-exec-1] INFO  [] [] org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-08-14 11:04:08.290 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/", parameters={}
+2025-08-14 11:04:08.297 [http-nio-9090-exec-1] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.greenhouse.controller.IndexController#index()
+2025-08-14 11:04:08.339 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.view.RedirectView - View name 'redirect:', model {}
+2025-08-14 11:04:08.339 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 302 FOUND
+2025-08-14 11:04:08.349 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/login.html", parameters={}
+2025-08-14 11:04:08.361 [http-nio-9090-exec-2] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 11:04:08.451 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 11:04:09.055 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/favicon.ico", parameters={}
+2025-08-14 11:04:09.057 [http-nio-9090-exec-3] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 11:04:09.057 [http-nio-9090-exec-3] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 11:04:09.058 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 11:04:09.064 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 11:04:09.065 [http-nio-9090-exec-3] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 11:04:09.088 [http-nio-9090-exec-3] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 11:04:09.089 [http-nio-9090-exec-3] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 11:04:09 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 11:04:09.145 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 11:04:18.804 [http-nio-9090-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 11:04:18.807 [http-nio-9090-exec-4] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 11:04:18.892 [http-nio-9090-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 11:04:29.434 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/.well-known/appspecific/com.chrome.devtools.json", parameters={}
+2025-08-14 11:04:29.437 [http-nio-9090-exec-5] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 11:04:29.438 [http-nio-9090-exec-5] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 11:04:29.438 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 11:04:29.439 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 11:04:29.440 [http-nio-9090-exec-5] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 11:04:29.441 [http-nio-9090-exec-5] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 11:04:29.441 [http-nio-9090-exec-5] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 11:04:29 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 11:04:29.443 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 11:04:53.648 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 11:04:53.649 [http-nio-9090-exec-7] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 11:04:53.654 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 11:04:53.858 [http-nio-9090-exec-6] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/favicon.ico", parameters={}
+2025-08-14 11:04:53.861 [http-nio-9090-exec-6] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 11:04:53.862 [http-nio-9090-exec-6] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 11:04:53.864 [http-nio-9090-exec-6] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 11:04:53.865 [http-nio-9090-exec-6] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 11:04:53.865 [http-nio-9090-exec-6] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 11:04:53.866 [http-nio-9090-exec-6] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 11:04:53.866 [http-nio-9090-exec-6] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 11:04:53 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 11:04:53.867 [http-nio-9090-exec-6] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 11:04:58.990 [http-nio-9090-exec-8] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/.well-known/appspecific/com.chrome.devtools.json", parameters={}
+2025-08-14 11:04:58.990 [http-nio-9090-exec-8] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 11:04:58.990 [http-nio-9090-exec-8] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 11:04:58.992 [http-nio-9090-exec-8] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 11:04:58.992 [http-nio-9090-exec-8] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 11:04:58.993 [http-nio-9090-exec-8] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 11:04:58.993 [http-nio-9090-exec-8] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 11:04:58.994 [http-nio-9090-exec-8] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 11:04:58 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 11:04:58.996 [http-nio-9090-exec-8] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 11:09:41.571 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 11:09:41.574 [http-nio-9090-exec-2] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 11:09:41.579 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 11:09:41.598 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/.well-known/appspecific/com.chrome.devtools.json", parameters={}
+2025-08-14 11:09:41.599 [http-nio-9090-exec-3] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 11:09:41.600 [http-nio-9090-exec-3] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 11:09:41.601 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 11:09:41.602 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 11:09:41.603 [http-nio-9090-exec-3] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 11:09:41.605 [http-nio-9090-exec-3] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 11:09:41.605 [http-nio-9090-exec-3] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 11:09:41 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 11:09:41.607 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 11:09:48.386 [SpringApplicationShutdownHook] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-14 11:09:48.398 [SpringApplicationShutdownHook] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-14 11:10:00.146 [background-preinit] INFO  [] [] org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-14 11:10:00.151 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 26192 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-14 11:10:00.152 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-14 11:10:00.153 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-14 11:10:01.354 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+2025-08-14 11:10:01.359 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-14 11:10:01.359 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-14 11:10:01.446 [restartedMain] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-14 11:10:01.507 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-14 11:10:01.668 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-14 11:10:01.729 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-14 11:10:01.791 [restartedMain] INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-14 11:10:01.938 [restartedMain] INFO  [] [] org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-14 11:10:02.045 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-14 11:10:02.254 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-14 11:10:02.804 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-14 11:10:02.906 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-14 11:10:02.982 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 105 mappings in 'requestMappingHandlerMapping'
+2025-08-14 11:10:02.998 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-14 11:10:03.008 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-14 11:10:03.093 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+2025-08-14 11:10:03.125 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Started GreenhouseApplication in 3.454 seconds (JVM running for 3.846)
+2025-08-14 11:10:03.126 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting simulation system initialization...
+2025-08-14 11:10:03.127 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Initializing simulated devices...
+2025-08-14 11:10:03.335 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully initialized simulated devices
+2025-08-14 11:10:03.335 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting scheduled tasks...
+2025-08-14 11:10:03.336 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully started scheduled tasks
+2025-08-14 11:10:03.336 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Simulation system initialization completed successfully
+2025-08-14 11:10:26.931 [http-nio-9090-exec-1] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-14 11:10:26.931 [http-nio-9090-exec-1] INFO  [] [] org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-14 11:10:26.933 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2025-08-14 11:10:26.933 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2025-08-14 11:10:26.933 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2025-08-14 11:10:26.934 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@15971175
+2025-08-14 11:10:26.934 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@219fa9ee
+2025-08-14 11:10:26.935 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-08-14 11:10:26.935 [http-nio-9090-exec-1] INFO  [] [] org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2025-08-14 11:10:26.947 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/", parameters={}
+2025-08-14 11:10:26.953 [http-nio-9090-exec-1] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.greenhouse.controller.IndexController#index()
+2025-08-14 11:10:26.990 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.view.RedirectView - View name 'redirect:', model {}
+2025-08-14 11:10:26.991 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 302 FOUND
+2025-08-14 11:10:26.999 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/login.html", parameters={}
+2025-08-14 11:10:27.010 [http-nio-9090-exec-3] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 11:10:27.013 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 11:10:27.153 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/favicon.ico", parameters={}
+2025-08-14 11:10:27.156 [http-nio-9090-exec-2] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 11:10:27.157 [http-nio-9090-exec-2] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 11:10:27.157 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 11:10:27.164 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 11:10:27.165 [http-nio-9090-exec-2] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 11:10:27.191 [http-nio-9090-exec-2] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 11:10:27.192 [http-nio-9090-exec-2] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 11:10:27 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 11:10:27.249 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 11:10:48.852 [http-nio-9090-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/.well-known/appspecific/com.chrome.devtools.json", parameters={}
+2025-08-14 11:10:48.853 [http-nio-9090-exec-4] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 11:10:48.854 [http-nio-9090-exec-4] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 11:10:48.854 [http-nio-9090-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 11:10:48.855 [http-nio-9090-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 11:10:48.855 [http-nio-9090-exec-4] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 11:10:48.857 [http-nio-9090-exec-4] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 11:10:48.857 [http-nio-9090-exec-4] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 11:10:48 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 11:10:48.858 [http-nio-9090-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 11:21:44.163 [HikariPool-1 housekeeper] WARN  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m11s310ms458µs600ns).
+2025-08-14 11:22:36.562 [http-nio-9090-exec-6] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 11:22:36.567 [http-nio-9090-exec-6] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 11:22:36.668 [http-nio-9090-exec-6] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 11:22:36.680 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard_fix.js", parameters={}
+2025-08-14 11:22:36.681 [http-nio-9090-exec-7] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 11:22:36.682 [http-nio-9090-exec-7] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 11:22:36.682 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 11:22:36.684 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 11:22:36.684 [http-nio-9090-exec-7] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 11:22:36.685 [http-nio-9090-exec-7] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 11:22:36.685 [http-nio-9090-exec-7] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 11:22:36 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 11:22:36.686 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 11:31:31.546 [http-nio-9090-exec-10] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 11:31:31.547 [http-nio-9090-exec-10] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 11:31:31.549 [http-nio-9090-exec-10] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 11:31:31.603 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard_fix.js", parameters={}
+2025-08-14 11:31:31.605 [http-nio-9090-exec-1] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 11:31:31.610 [http-nio-9090-exec-1] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 11:31:31.610 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 11:31:31.611 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 11:31:31.612 [http-nio-9090-exec-1] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 11:31:31.613 [http-nio-9090-exec-1] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 11:31:31.614 [http-nio-9090-exec-1] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 11:31:31 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 11:31:31.616 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 13:42:20.538 [HikariPool-1 housekeeper] WARN  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h53m35s955ms785µs300ns).
+2025-08-14 13:56:24.311 [http-nio-9090-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 13:56:24.312 [http-nio-9090-exec-4] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 13:56:24.313 [http-nio-9090-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 13:56:24.340 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard_fix.js", parameters={}
+2025-08-14 13:56:24.341 [http-nio-9090-exec-5] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 13:56:24.341 [http-nio-9090-exec-5] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 13:56:24.341 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 13:56:24.343 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 13:56:24.343 [http-nio-9090-exec-5] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 13:56:24.345 [http-nio-9090-exec-5] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 13:56:24.346 [http-nio-9090-exec-5] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 13:56:24 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 13:56:24.347 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 13:56:56.698 [SpringApplicationShutdownHook] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-14 13:56:56.703 [SpringApplicationShutdownHook] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-14 13:57:11.064 [background-preinit] INFO  [] [] org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-14 13:57:11.066 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 15832 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-14 13:57:11.066 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-14 13:57:11.067 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-14 13:57:12.425 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+2025-08-14 13:57:12.429 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-14 13:57:12.429 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-14 13:57:12.521 [restartedMain] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-14 13:57:12.601 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-14 13:57:12.765 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-14 13:57:12.826 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-14 13:57:12.884 [restartedMain] INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-14 13:57:13.041 [restartedMain] INFO  [] [] org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-14 13:57:13.162 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-14 13:57:13.375 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-14 13:57:14.005 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-14 13:57:14.109 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-14 13:57:14.190 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 105 mappings in 'requestMappingHandlerMapping'
+2025-08-14 13:57:14.216 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-14 13:57:14.232 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-14 13:57:14.315 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+2025-08-14 13:57:14.350 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Started GreenhouseApplication in 3.796 seconds (JVM running for 4.29)
+2025-08-14 13:57:14.351 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting simulation system initialization...
+2025-08-14 13:57:14.351 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Initializing simulated devices...
+2025-08-14 13:57:14.548 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully initialized simulated devices
+2025-08-14 13:57:14.548 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting scheduled tasks...
+2025-08-14 13:57:14.549 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully started scheduled tasks
+2025-08-14 13:57:14.549 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Simulation system initialization completed successfully
+2025-08-14 13:57:16.901 [http-nio-9090-exec-1] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-14 13:57:16.902 [http-nio-9090-exec-1] INFO  [] [] org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-14 13:57:16.902 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2025-08-14 13:57:16.902 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2025-08-14 13:57:16.902 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2025-08-14 13:57:16.905 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@522f9465
+2025-08-14 13:57:16.905 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@758391ba
+2025-08-14 13:57:16.905 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-08-14 13:57:16.906 [http-nio-9090-exec-1] INFO  [] [] org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2025-08-14 13:57:16.917 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/", parameters={}
+2025-08-14 13:57:16.926 [http-nio-9090-exec-1] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.greenhouse.controller.IndexController#index()
+2025-08-14 13:57:16.958 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.view.RedirectView - View name 'redirect:', model {}
+2025-08-14 13:57:16.959 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 302 FOUND
+2025-08-14 13:57:16.965 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/login.html", parameters={}
+2025-08-14 13:57:16.972 [http-nio-9090-exec-2] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 13:57:16.974 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 13:57:17.103 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/favicon.ico", parameters={}
+2025-08-14 13:57:17.104 [http-nio-9090-exec-3] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 13:57:17.106 [http-nio-9090-exec-3] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 13:57:17.106 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 13:57:17.110 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 13:57:17.111 [http-nio-9090-exec-3] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 13:57:17.127 [http-nio-9090-exec-3] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 13:57:17.128 [http-nio-9090-exec-3] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 13:57:17 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 13:57:17.162 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 13:57:26.123 [http-nio-9090-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard_fix.js", parameters={}
+2025-08-14 13:57:26.124 [http-nio-9090-exec-4] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 13:57:26.126 [http-nio-9090-exec-4] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 13:57:26.126 [http-nio-9090-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 13:57:26.126 [http-nio-9090-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 13:57:26.127 [http-nio-9090-exec-4] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 13:57:26.128 [http-nio-9090-exec-4] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 13:57:26.128 [http-nio-9090-exec-4] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 13:57:26 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 13:57:26.130 [http-nio-9090-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 13:57:39.335 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/.well-known/appspecific/com.chrome.devtools.json", parameters={}
+2025-08-14 13:57:39.336 [http-nio-9090-exec-5] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 13:57:39.337 [http-nio-9090-exec-5] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 13:57:39.339 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 13:57:39.339 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 13:57:39.340 [http-nio-9090-exec-5] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 13:57:39.341 [http-nio-9090-exec-5] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 13:57:39.342 [http-nio-9090-exec-5] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 13:57:39 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 13:57:39.343 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 14:14:02.779 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 14:14:02.781 [http-nio-9090-exec-7] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 14:14:02.883 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 14:14:02.897 [http-nio-9090-exec-8] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard-emergency-fix.js", parameters={}
+2025-08-14 14:14:02.898 [http-nio-9090-exec-8] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 14:14:02.931 [http-nio-9090-exec-8] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 14:42:26.993 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 14:42:26.994 [http-nio-9090-exec-1] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 14:42:26.996 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 14:42:27.011 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard-emergency-fix.js", parameters={}
+2025-08-14 14:42:27.012 [http-nio-9090-exec-2] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 14:42:27.013 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 14:42:27.964 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 14:42:27.964 [http-nio-9090-exec-3] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 14:42:27.965 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 14:58:33.735 [http-nio-9090-exec-6] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 14:58:33.736 [http-nio-9090-exec-6] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 14:58:33.737 [http-nio-9090-exec-6] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 14:58:33.756 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard-emergency-fix.js", parameters={}
+2025-08-14 14:58:33.757 [http-nio-9090-exec-7] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 14:58:33.758 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 15:07:18.315 [http-nio-9090-exec-10] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:07:18.316 [http-nio-9090-exec-10] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:07:18.319 [http-nio-9090-exec-10] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 15:07:18.335 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard-emergency-fix.js", parameters={}
+2025-08-14 15:07:18.335 [http-nio-9090-exec-1] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:07:18.336 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 15:07:25.394 [SpringApplicationShutdownHook] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-14 15:07:25.398 [SpringApplicationShutdownHook] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-14 15:07:38.610 [background-preinit] INFO  [] [] org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-14 15:07:38.615 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 29900 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-14 15:07:38.615 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-14 15:07:38.615 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-14 15:07:40.008 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+2025-08-14 15:07:40.011 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-14 15:07:40.012 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-14 15:07:40.099 [restartedMain] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-14 15:07:40.159 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-14 15:07:40.324 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-14 15:07:40.390 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-14 15:07:40.462 [restartedMain] INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-14 15:07:40.634 [restartedMain] INFO  [] [] org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-14 15:07:40.758 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-14 15:07:40.995 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-14 15:07:41.758 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-14 15:07:41.884 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-14 15:07:41.972 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 105 mappings in 'requestMappingHandlerMapping'
+2025-08-14 15:07:41.990 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-14 15:07:42.001 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-14 15:07:42.095 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+2025-08-14 15:07:42.133 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Started GreenhouseApplication in 4.035 seconds (JVM running for 4.52)
+2025-08-14 15:07:42.135 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting simulation system initialization...
+2025-08-14 15:07:42.135 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Initializing simulated devices...
+2025-08-14 15:07:42.323 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully initialized simulated devices
+2025-08-14 15:07:42.323 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting scheduled tasks...
+2025-08-14 15:07:42.324 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully started scheduled tasks
+2025-08-14 15:07:42.324 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Simulation system initialization completed successfully
+2025-08-14 15:07:45.015 [http-nio-9090-exec-1] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-14 15:07:45.015 [http-nio-9090-exec-1] INFO  [] [] org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-14 15:07:45.017 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2025-08-14 15:07:45.017 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2025-08-14 15:07:45.017 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2025-08-14 15:07:45.018 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@2823eca9
+2025-08-14 15:07:45.018 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@69cdb3e7
+2025-08-14 15:07:45.018 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-08-14 15:07:45.018 [http-nio-9090-exec-1] INFO  [] [] org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-08-14 15:07:45.028 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:07:45.042 [http-nio-9090-exec-1] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:07:45.167 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 15:07:45.900 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:07:45.902 [http-nio-9090-exec-2] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:07:45.904 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 15:07:46.652 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:07:46.653 [http-nio-9090-exec-3] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:07:46.655 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 15:07:47.227 [http-nio-9090-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:07:47.228 [http-nio-9090-exec-4] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:07:47.231 [http-nio-9090-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 15:07:47.452 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:07:47.453 [http-nio-9090-exec-5] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:07:47.454 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 15:07:47.660 [http-nio-9090-exec-6] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:07:47.661 [http-nio-9090-exec-6] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:07:47.661 [http-nio-9090-exec-6] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 15:07:47.851 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:07:47.852 [http-nio-9090-exec-7] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:07:47.852 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 15:07:48.084 [http-nio-9090-exec-8] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:07:48.085 [http-nio-9090-exec-8] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:07:48.085 [http-nio-9090-exec-8] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 15:07:48.555 [http-nio-9090-exec-9] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:07:48.556 [http-nio-9090-exec-9] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:07:48.556 [http-nio-9090-exec-9] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 15:07:48.994 [http-nio-9090-exec-10] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:07:48.998 [http-nio-9090-exec-10] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:07:48.998 [http-nio-9090-exec-10] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 15:07:49.657 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:07:49.659 [http-nio-9090-exec-1] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:07:49.660 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 15:07:50.122 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:07:50.123 [http-nio-9090-exec-2] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:07:50.124 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 15:07:50.313 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:07:50.314 [http-nio-9090-exec-3] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:07:50.315 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 15:08:13.759 [http-nio-9090-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:08:13.761 [http-nio-9090-exec-4] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:08:13.761 [http-nio-9090-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 15:08:32.591 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:08:32.593 [http-nio-9090-exec-5] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:08:32.593 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 15:08:33.399 [http-nio-9090-exec-6] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:08:33.400 [http-nio-9090-exec-6] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:08:33.402 [http-nio-9090-exec-6] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 15:08:33.966 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:08:33.967 [http-nio-9090-exec-7] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:08:33.968 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 15:08:34.422 [http-nio-9090-exec-8] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:08:34.424 [http-nio-9090-exec-8] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:08:34.425 [http-nio-9090-exec-8] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 15:08:34.702 [http-nio-9090-exec-9] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:08:34.703 [http-nio-9090-exec-9] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:08:34.705 [http-nio-9090-exec-9] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 15:08:47.156 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/favicon.ico", parameters={}
+2025-08-14 15:08:47.157 [http-nio-9090-exec-1] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:08:47.157 [http-nio-9090-exec-1] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 15:08:47.159 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 15:08:47.162 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 15:08:47.164 [http-nio-9090-exec-1] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 15:08:47.192 [http-nio-9090-exec-1] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 15:08:47.193 [http-nio-9090-exec-1] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 15:08:47 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 15:08:47.252 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 15:08:57.432 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:08:57.434 [http-nio-9090-exec-2] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:08:57.434 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 15:09:23.049 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/.well-known/appspecific/com.chrome.devtools.json", parameters={}
+2025-08-14 15:09:23.050 [http-nio-9090-exec-3] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:09:23.051 [http-nio-9090-exec-3] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 15:09:23.051 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 15:09:23.051 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 15:09:23.051 [http-nio-9090-exec-3] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 15:09:23.053 [http-nio-9090-exec-3] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 15:09:23.054 [http-nio-9090-exec-3] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 15:09:23 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 15:09:23.055 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 15:14:30.032 [http-nio-9090-exec-6] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:14:30.034 [http-nio-9090-exec-6] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:14:30.034 [http-nio-9090-exec-6] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 15:14:30.047 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard-emergency-fix.js", parameters={}
+2025-08-14 15:14:30.048 [http-nio-9090-exec-7] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:14:30.049 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 15:14:39.909 [http-nio-9090-exec-8] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/.well-known/appspecific/com.chrome.devtools.json", parameters={}
+2025-08-14 15:14:39.911 [http-nio-9090-exec-8] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:14:39.912 [http-nio-9090-exec-8] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 15:14:39.912 [http-nio-9090-exec-8] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 15:14:39.912 [http-nio-9090-exec-8] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 15:14:39.913 [http-nio-9090-exec-8] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 15:14:39.914 [http-nio-9090-exec-8] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 15:14:39.915 [http-nio-9090-exec-8] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 15:14:39 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 15:14:39.916 [http-nio-9090-exec-8] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 15:14:43.407 [http-nio-9090-exec-9] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:14:43.408 [http-nio-9090-exec-9] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:14:43.415 [http-nio-9090-exec-9] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 15:14:43.425 [http-nio-9090-exec-10] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard-emergency-fix.js", parameters={}
+2025-08-14 15:14:43.427 [http-nio-9090-exec-10] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:14:43.429 [http-nio-9090-exec-10] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 15:14:43.435 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/.well-known/appspecific/com.chrome.devtools.json", parameters={}
+2025-08-14 15:14:43.439 [http-nio-9090-exec-1] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:14:43.440 [http-nio-9090-exec-1] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 15:14:43.441 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 15:14:43.442 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 15:14:43.443 [http-nio-9090-exec-1] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 15:14:43.445 [http-nio-9090-exec-1] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 15:14:43.445 [http-nio-9090-exec-1] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 15:14:43 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 15:14:43.447 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 15:14:44.867 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:14:44.868 [http-nio-9090-exec-2] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:14:44.872 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 15:14:44.887 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard-emergency-fix.js", parameters={}
+2025-08-14 15:14:44.888 [http-nio-9090-exec-3] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:14:44.891 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 15:14:44.895 [http-nio-9090-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/.well-known/appspecific/com.chrome.devtools.json", parameters={}
+2025-08-14 15:14:44.896 [http-nio-9090-exec-4] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:14:44.897 [http-nio-9090-exec-4] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 15:14:44.897 [http-nio-9090-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 15:14:44.898 [http-nio-9090-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 15:14:44.900 [http-nio-9090-exec-4] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 15:14:44.900 [http-nio-9090-exec-4] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 15:14:44.900 [http-nio-9090-exec-4] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 15:14:44 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 15:14:44.902 [http-nio-9090-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 15:14:45.554 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:14:45.555 [http-nio-9090-exec-5] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:14:45.558 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 15:14:45.579 [http-nio-9090-exec-6] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/.well-known/appspecific/com.chrome.devtools.json", parameters={}
+2025-08-14 15:14:45.580 [http-nio-9090-exec-6] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:14:45.582 [http-nio-9090-exec-6] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 15:14:45.583 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard-emergency-fix.js", parameters={}
+2025-08-14 15:14:45.586 [http-nio-9090-exec-6] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 15:14:45.586 [http-nio-9090-exec-6] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 15:14:45.586 [http-nio-9090-exec-7] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:14:45.588 [http-nio-9090-exec-6] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 15:14:45.589 [http-nio-9090-exec-6] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 15:14:45.590 [http-nio-9090-exec-6] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 15:14:45 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 15:14:45.590 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 15:14:45.591 [http-nio-9090-exec-6] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 15:14:46.113 [http-nio-9090-exec-8] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:14:46.115 [http-nio-9090-exec-8] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:14:46.120 [http-nio-9090-exec-8] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 15:14:46.136 [http-nio-9090-exec-10] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard-emergency-fix.js", parameters={}
+2025-08-14 15:14:46.136 [http-nio-9090-exec-9] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/.well-known/appspecific/com.chrome.devtools.json", parameters={}
+2025-08-14 15:14:46.138 [http-nio-9090-exec-10] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:14:46.142 [http-nio-9090-exec-9] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:14:46.142 [http-nio-9090-exec-10] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 15:14:46.145 [http-nio-9090-exec-9] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 15:14:46.145 [http-nio-9090-exec-9] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 15:14:46.146 [http-nio-9090-exec-9] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 15:14:46.146 [http-nio-9090-exec-9] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 15:14:46.148 [http-nio-9090-exec-9] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 15:14:46.148 [http-nio-9090-exec-9] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 15:14:46 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 15:14:46.149 [http-nio-9090-exec-9] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 15:14:46.410 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:14:46.411 [http-nio-9090-exec-1] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:14:46.414 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 15:14:46.428 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/.well-known/appspecific/com.chrome.devtools.json", parameters={}
+2025-08-14 15:14:46.428 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard-emergency-fix.js", parameters={}
+2025-08-14 15:14:46.430 [http-nio-9090-exec-2] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:14:46.430 [http-nio-9090-exec-3] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:14:46.432 [http-nio-9090-exec-2] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 15:14:46.432 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 15:14:46.432 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 15:14:46.433 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 15:14:46.433 [http-nio-9090-exec-2] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 15:14:46.433 [http-nio-9090-exec-2] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 15:14:46.434 [http-nio-9090-exec-2] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 15:14:46 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 15:14:46.434 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 15:14:53.009 [SpringApplicationShutdownHook] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-14 15:14:53.018 [SpringApplicationShutdownHook] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-14 15:15:05.832 [background-preinit] INFO  [] [] org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-14 15:15:05.843 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 30468 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-14 15:15:05.843 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-14 15:15:05.844 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-14 15:15:07.045 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+2025-08-14 15:15:07.047 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-14 15:15:07.047 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-14 15:15:07.129 [restartedMain] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-14 15:15:07.193 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-14 15:15:07.340 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-14 15:15:07.401 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-14 15:15:07.440 [restartedMain] INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-14 15:15:07.574 [restartedMain] INFO  [] [] org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-14 15:15:07.661 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-14 15:15:07.848 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-14 15:15:08.404 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-14 15:15:08.508 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-14 15:15:08.596 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 105 mappings in 'requestMappingHandlerMapping'
+2025-08-14 15:15:08.612 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-14 15:15:08.620 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-14 15:15:08.704 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+2025-08-14 15:15:08.731 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Started GreenhouseApplication in 3.413 seconds (JVM running for 3.819)
+2025-08-14 15:15:08.734 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting simulation system initialization...
+2025-08-14 15:15:08.734 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Initializing simulated devices...
+2025-08-14 15:15:08.928 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully initialized simulated devices
+2025-08-14 15:15:08.928 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting scheduled tasks...
+2025-08-14 15:15:08.928 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully started scheduled tasks
+2025-08-14 15:15:08.928 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Simulation system initialization completed successfully
+2025-08-14 15:17:15.936 [http-nio-9090-exec-1] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-14 15:17:15.937 [http-nio-9090-exec-1] INFO  [] [] org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-14 15:17:15.937 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2025-08-14 15:17:15.937 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2025-08-14 15:17:15.937 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2025-08-14 15:17:15.938 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@3bb2ad76
+2025-08-14 15:17:15.939 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@7da288f1
+2025-08-14 15:17:15.939 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-08-14 15:17:15.939 [http-nio-9090-exec-1] INFO  [] [] org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-08-14 15:17:15.953 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/", parameters={}
+2025-08-14 15:17:15.959 [http-nio-9090-exec-1] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.greenhouse.controller.IndexController#index()
+2025-08-14 15:17:16.003 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.view.RedirectView - View name 'redirect:', model {}
+2025-08-14 15:17:16.006 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 302 FOUND
+2025-08-14 15:17:16.902 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/favicon.ico", parameters={}
+2025-08-14 15:17:16.912 [http-nio-9090-exec-2] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:17:16.913 [http-nio-9090-exec-2] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 15:17:16.914 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 15:17:16.920 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 15:17:16.921 [http-nio-9090-exec-2] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 15:17:16.946 [http-nio-9090-exec-2] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 15:17:16.948 [http-nio-9090-exec-2] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 15:17:16 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 15:17:17.009 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 15:17:25.667 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:17:25.673 [http-nio-9090-exec-3] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:17:25.799 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 15:17:39.605 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/.well-known/appspecific/com.chrome.devtools.json", parameters={}
+2025-08-14 15:17:39.607 [http-nio-9090-exec-5] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:17:39.609 [http-nio-9090-exec-5] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 15:17:39.609 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 15:17:39.609 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 15:17:39.609 [http-nio-9090-exec-5] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 15:17:39.610 [http-nio-9090-exec-5] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 15:17:39.612 [http-nio-9090-exec-5] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 15:17:39 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 15:17:39.613 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 15:31:59.835 [HikariPool-1 housekeeper] WARN  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=11m22s294ms422µs200ns).
+2025-08-14 15:41:27.103 [HikariPool-1 housekeeper] WARN  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m57s241ms697µs601ns).
+2025-08-14 15:43:54.077 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:43:54.079 [http-nio-9090-exec-7] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:43:54.084 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 15:43:54.104 [http-nio-9090-exec-8] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard-emergency-fix.js", parameters={}
+2025-08-14 15:43:54.105 [http-nio-9090-exec-9] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/.well-known/appspecific/com.chrome.devtools.json", parameters={}
+2025-08-14 15:43:54.106 [http-nio-9090-exec-8] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:43:54.106 [http-nio-9090-exec-9] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:43:54.107 [http-nio-9090-exec-9] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 15:43:54.107 [http-nio-9090-exec-9] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 15:43:54.107 [http-nio-9090-exec-8] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 15:43:54.108 [http-nio-9090-exec-9] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 15:43:54.109 [http-nio-9090-exec-9] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 15:43:54.109 [http-nio-9090-exec-9] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 15:43:54.111 [http-nio-9090-exec-9] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 15:43:54 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 15:43:54.112 [http-nio-9090-exec-9] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 15:43:56.182 [http-nio-9090-exec-10] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:43:56.183 [http-nio-9090-exec-10] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:43:56.189 [http-nio-9090-exec-10] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 15:43:56.209 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/.well-known/appspecific/com.chrome.devtools.json", parameters={}
+2025-08-14 15:43:56.209 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard-emergency-fix.js", parameters={}
+2025-08-14 15:43:56.210 [http-nio-9090-exec-1] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:43:56.211 [http-nio-9090-exec-2] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:43:56.211 [http-nio-9090-exec-1] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 15:43:56.211 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 15:43:56.213 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 15:43:56.213 [http-nio-9090-exec-1] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 15:43:56.214 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 15:43:56.215 [http-nio-9090-exec-1] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 15:43:56.215 [http-nio-9090-exec-1] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 15:43:56 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 15:43:56.216 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 15:43:59.654 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:43:59.655 [http-nio-9090-exec-3] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:43:59.663 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 15:43:59.678 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard-emergency-fix.js", parameters={}
+2025-08-14 15:43:59.682 [http-nio-9090-exec-5] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:43:59.682 [http-nio-9090-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/.well-known/appspecific/com.chrome.devtools.json", parameters={}
+2025-08-14 15:43:59.686 [http-nio-9090-exec-4] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:43:59.687 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 15:43:59.689 [http-nio-9090-exec-4] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 15:43:59.690 [http-nio-9090-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 15:43:59.693 [http-nio-9090-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 15:43:59.694 [http-nio-9090-exec-4] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 15:43:59.695 [http-nio-9090-exec-4] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 15:43:59.696 [http-nio-9090-exec-4] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 15:43:59 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 15:43:59.697 [http-nio-9090-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 15:44:00.243 [http-nio-9090-exec-6] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:44:00.244 [http-nio-9090-exec-6] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:44:00.249 [http-nio-9090-exec-6] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 15:44:00.260 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/.well-known/appspecific/com.chrome.devtools.json", parameters={}
+2025-08-14 15:44:00.264 [http-nio-9090-exec-7] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:44:00.265 [http-nio-9090-exec-7] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 15:44:00.265 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 15:44:00.265 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 15:44:00.267 [http-nio-9090-exec-7] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 15:44:00.267 [http-nio-9090-exec-8] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard-emergency-fix.js", parameters={}
+2025-08-14 15:44:00.267 [http-nio-9090-exec-7] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 15:44:00.268 [http-nio-9090-exec-7] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 15:44:00 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 15:44:00.268 [http-nio-9090-exec-8] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:44:00.269 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 15:44:00.269 [http-nio-9090-exec-8] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 15:44:00.468 [http-nio-9090-exec-9] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:44:00.469 [http-nio-9090-exec-9] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:44:00.472 [http-nio-9090-exec-9] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 15:44:00.487 [http-nio-9090-exec-10] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/.well-known/appspecific/com.chrome.devtools.json", parameters={}
+2025-08-14 15:44:00.489 [http-nio-9090-exec-10] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:44:00.489 [http-nio-9090-exec-10] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 15:44:00.489 [http-nio-9090-exec-10] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 15:44:00.490 [http-nio-9090-exec-10] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 15:44:00.490 [http-nio-9090-exec-10] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 15:44:00.491 [http-nio-9090-exec-10] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 15:44:00.491 [http-nio-9090-exec-10] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 15:44:00 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 15:44:00.492 [http-nio-9090-exec-10] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 15:44:00.493 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard-emergency-fix.js", parameters={}
+2025-08-14 15:44:00.495 [http-nio-9090-exec-2] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:44:00.497 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 15:44:00.676 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:44:00.678 [http-nio-9090-exec-1] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:44:00.682 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 15:44:00.699 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/.well-known/appspecific/com.chrome.devtools.json", parameters={}
+2025-08-14 15:44:00.700 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard-emergency-fix.js", parameters={}
+2025-08-14 15:44:00.700 [http-nio-9090-exec-3] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:44:00.702 [http-nio-9090-exec-3] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 15:44:00.702 [http-nio-9090-exec-5] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:44:00.702 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 15:44:00.702 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 15:44:00.703 [http-nio-9090-exec-3] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 15:44:00.703 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 15:44:00.703 [http-nio-9090-exec-3] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 15:44:00.704 [http-nio-9090-exec-3] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 15:44:00 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 15:44:00.705 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 15:44:03.167 [http-nio-9090-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 15:44:03.169 [http-nio-9090-exec-4] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:44:03.173 [http-nio-9090-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 15:44:03.184 [http-nio-9090-exec-6] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/.well-known/appspecific/com.chrome.devtools.json", parameters={}
+2025-08-14 15:44:03.184 [http-nio-9090-exec-6] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:44:03.186 [http-nio-9090-exec-6] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 15:44:03.186 [http-nio-9090-exec-6] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 15:44:03.187 [http-nio-9090-exec-6] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 15:44:03.188 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard-emergency-fix.js", parameters={}
+2025-08-14 15:44:03.189 [http-nio-9090-exec-6] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 15:44:03.190 [http-nio-9090-exec-7] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 15:44:03.192 [http-nio-9090-exec-6] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 15:44:03.192 [http-nio-9090-exec-6] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 15:44:03 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 15:44:03.193 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 15:44:03.193 [http-nio-9090-exec-6] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 16:06:59.860 [http-nio-9090-exec-10] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 16:06:59.862 [http-nio-9090-exec-10] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 16:06:59.866 [http-nio-9090-exec-10] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 16:06:59.880 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard-emergency-fix.js", parameters={}
+2025-08-14 16:06:59.880 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/.well-known/appspecific/com.chrome.devtools.json", parameters={}
+2025-08-14 16:06:59.881 [http-nio-9090-exec-1] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 16:06:59.881 [http-nio-9090-exec-2] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 16:06:59.881 [http-nio-9090-exec-2] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 16:06:59.882 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 16:06:59.882 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 16:06:59.882 [http-nio-9090-exec-2] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 16:06:59.884 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 16:06:59.884 [http-nio-9090-exec-2] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 16:06:59.885 [http-nio-9090-exec-2] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 16:06:59 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 16:06:59.885 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 16:19:29.557 [HikariPool-1 housekeeper] WARN  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m1s983ms634µs400ns).
+2025-08-14 16:57:54.195 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/", parameters={}
+2025-08-14 16:57:54.198 [http-nio-9090-exec-7] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.greenhouse.controller.IndexController#index()
+2025-08-14 16:57:54.213 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.view.RedirectView - View name 'redirect:', model {}
+2025-08-14 16:57:54.214 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 302 FOUND
+2025-08-14 16:57:54.221 [http-nio-9090-exec-9] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/login.html", parameters={}
+2025-08-14 16:57:54.222 [http-nio-9090-exec-9] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 16:57:54.225 [http-nio-9090-exec-9] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 16:57:55.382 [http-nio-9090-exec-8] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/favicon.ico", parameters={}
+2025-08-14 16:57:55.383 [http-nio-9090-exec-8] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 16:57:55.385 [http-nio-9090-exec-8] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 16:57:55.385 [http-nio-9090-exec-8] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 16:57:55.386 [http-nio-9090-exec-8] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 16:57:55.387 [http-nio-9090-exec-8] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 16:57:55.390 [http-nio-9090-exec-8] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 16:57:55.391 [http-nio-9090-exec-8] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 16:57:55 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 16:57:55.393 [http-nio-9090-exec-8] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 16:58:03.972 [http-nio-9090-exec-10] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 16:58:03.973 [http-nio-9090-exec-10] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 16:58:03.974 [http-nio-9090-exec-10] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 16:58:04.004 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard-emergency-fix.js", parameters={}
+2025-08-14 16:58:04.005 [http-nio-9090-exec-1] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 16:58:04.006 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 16:58:08.522 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 16:58:08.523 [http-nio-9090-exec-2] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 16:58:08.524 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 16:58:13.718 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 16:58:13.719 [http-nio-9090-exec-5] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 16:58:13.719 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 16:58:19.099 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/.well-known/appspecific/com.chrome.devtools.json", parameters={}
+2025-08-14 16:58:19.101 [http-nio-9090-exec-3] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 16:58:19.102 [http-nio-9090-exec-3] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 16:58:19.102 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 16:58:19.103 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 16:58:19.103 [http-nio-9090-exec-3] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 16:58:19.104 [http-nio-9090-exec-3] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 16:58:19.104 [http-nio-9090-exec-3] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 16:58:19 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 16:58:19.105 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 17:03:20.653 [SpringApplicationShutdownHook] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-14 17:03:20.656 [SpringApplicationShutdownHook] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-14 17:03:33.021 [background-preinit] INFO  [] [] org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-14 17:03:33.029 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 13524 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-14 17:03:33.030 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-14 17:03:33.030 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-14 17:03:34.343 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+2025-08-14 17:03:34.345 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-14 17:03:34.345 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-14 17:03:34.438 [restartedMain] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-14 17:03:34.501 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-14 17:03:34.670 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-14 17:03:34.736 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-14 17:03:34.798 [restartedMain] INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-14 17:03:34.959 [restartedMain] INFO  [] [] org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-14 17:03:35.068 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-14 17:03:35.307 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-14 17:03:35.935 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-14 17:03:36.039 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-14 17:03:36.122 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 105 mappings in 'requestMappingHandlerMapping'
+2025-08-14 17:03:36.142 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-14 17:03:36.153 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-14 17:03:36.243 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+2025-08-14 17:03:36.280 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Started GreenhouseApplication in 3.779 seconds (JVM running for 4.218)
+2025-08-14 17:03:36.282 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting simulation system initialization...
+2025-08-14 17:03:36.283 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Initializing simulated devices...
+2025-08-14 17:03:36.471 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully initialized simulated devices
+2025-08-14 17:03:36.472 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting scheduled tasks...
+2025-08-14 17:03:36.472 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully started scheduled tasks
+2025-08-14 17:03:36.472 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Simulation system initialization completed successfully
+2025-08-14 17:04:17.209 [http-nio-9090-exec-1] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-14 17:04:17.209 [http-nio-9090-exec-1] INFO  [] [] org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-14 17:04:17.209 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2025-08-14 17:04:17.209 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2025-08-14 17:04:17.209 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2025-08-14 17:04:17.210 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@6314ef27
+2025-08-14 17:04:17.212 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@7a81dd01
+2025-08-14 17:04:17.212 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-08-14 17:04:17.212 [http-nio-9090-exec-1] INFO  [] [] org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-08-14 17:04:17.221 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 17:04:17.234 [http-nio-9090-exec-1] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 17:04:17.347 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 17:04:17.382 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard-emergency-fix.js", parameters={}
+2025-08-14 17:04:17.385 [http-nio-9090-exec-2] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 17:04:17.389 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 17:04:25.451 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/", parameters={}
+2025-08-14 17:04:25.453 [http-nio-9090-exec-3] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.greenhouse.controller.IndexController#index()
+2025-08-14 17:04:25.475 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.view.RedirectView - View name 'redirect:', model {}
+2025-08-14 17:04:25.477 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 302 FOUND
+2025-08-14 17:04:25.481 [http-nio-9090-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/login.html", parameters={}
+2025-08-14 17:04:25.482 [http-nio-9090-exec-4] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 17:04:25.486 [http-nio-9090-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 17:04:25.522 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/favicon.ico", parameters={}
+2025-08-14 17:04:25.524 [http-nio-9090-exec-5] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 17:04:25.525 [http-nio-9090-exec-5] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 17:04:25.525 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 17:04:25.529 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 17:04:25.531 [http-nio-9090-exec-5] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 17:04:25.547 [http-nio-9090-exec-5] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 17:04:25.548 [http-nio-9090-exec-5] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 17:04:25 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 17:04:25.601 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 17:04:28.850 [http-nio-9090-exec-6] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/login.html", parameters={}
+2025-08-14 17:04:28.854 [http-nio-9090-exec-6] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 17:04:28.858 [http-nio-9090-exec-6] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 17:04:29.492 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/login.html", parameters={}
+2025-08-14 17:04:29.494 [http-nio-9090-exec-7] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 17:04:29.494 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 17:04:36.920 [http-nio-9090-exec-8] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 17:04:36.922 [http-nio-9090-exec-8] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 17:04:36.924 [http-nio-9090-exec-8] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 17:13:41.702 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 17:13:41.703 [http-nio-9090-exec-1] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 17:13:41.703 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 17:13:46.491 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 17:13:46.492 [http-nio-9090-exec-2] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 17:13:46.493 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 17:13:47.156 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 17:13:47.157 [http-nio-9090-exec-3] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 17:13:47.158 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 17:13:47.339 [http-nio-9090-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 17:13:47.341 [http-nio-9090-exec-4] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 17:13:47.341 [http-nio-9090-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 17:14:20.419 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/", parameters={}
+2025-08-14 17:14:20.420 [http-nio-9090-exec-5] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.greenhouse.controller.IndexController#index()
+2025-08-14 17:14:20.422 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.view.RedirectView - View name 'redirect:', model {}
+2025-08-14 17:14:20.422 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 302 FOUND
+2025-08-14 17:14:40.778 [http-nio-9090-exec-6] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 17:14:40.779 [http-nio-9090-exec-6] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 17:14:40.780 [http-nio-9090-exec-6] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 17:14:46.088 [SpringApplicationShutdownHook] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-14 17:14:46.096 [SpringApplicationShutdownHook] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-14 17:14:57.355 [background-preinit] INFO  [] [] org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-14 17:14:57.357 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 30752 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-14 17:14:57.358 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-14 17:14:57.358 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-14 17:14:58.583 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+2025-08-14 17:14:58.585 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-14 17:14:58.585 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-14 17:14:58.666 [restartedMain] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-14 17:14:58.739 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-14 17:14:58.889 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-14 17:14:58.946 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-14 17:14:58.988 [restartedMain] INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-14 17:14:59.123 [restartedMain] INFO  [] [] org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-14 17:14:59.214 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-14 17:14:59.401 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-14 17:14:59.965 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-14 17:15:00.069 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-14 17:15:00.150 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 105 mappings in 'requestMappingHandlerMapping'
+2025-08-14 17:15:00.167 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-14 17:15:00.177 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-14 17:15:00.263 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+2025-08-14 17:15:00.294 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Started GreenhouseApplication in 3.375 seconds (JVM running for 3.782)
+2025-08-14 17:15:00.295 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting simulation system initialization...
+2025-08-14 17:15:00.297 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Initializing simulated devices...
+2025-08-14 17:15:00.350 [http-nio-9090-exec-1] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-14 17:15:00.350 [http-nio-9090-exec-1] INFO  [] [] org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-14 17:15:00.350 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2025-08-14 17:15:00.351 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2025-08-14 17:15:00.351 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2025-08-14 17:15:00.353 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@6a5bc08b
+2025-08-14 17:15:00.353 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@6b383a97
+2025-08-14 17:15:00.353 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-08-14 17:15:00.353 [http-nio-9090-exec-1] INFO  [] [] org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-08-14 17:15:00.363 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/login.html", parameters={}
+2025-08-14 17:15:00.376 [http-nio-9090-exec-1] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 17:15:00.390 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 17:15:00.515 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully initialized simulated devices
+2025-08-14 17:15:00.519 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting scheduled tasks...
+2025-08-14 17:15:00.519 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully started scheduled tasks
+2025-08-14 17:15:00.520 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Simulation system initialization completed successfully
+2025-08-14 17:15:59.399 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/", parameters={}
+2025-08-14 17:15:59.400 [http-nio-9090-exec-5] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.greenhouse.controller.IndexController#index()
+2025-08-14 17:15:59.422 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.view.RedirectView - View name 'redirect:', model {}
+2025-08-14 17:15:59.423 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 302 FOUND
+2025-08-14 17:15:59.427 [http-nio-9090-exec-6] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/login.html", parameters={}
+2025-08-14 17:15:59.430 [http-nio-9090-exec-6] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 17:15:59.441 [http-nio-9090-exec-6] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 17:15:59.578 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/favicon.ico", parameters={}
+2025-08-14 17:15:59.580 [http-nio-9090-exec-7] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 17:15:59.580 [http-nio-9090-exec-7] DEBUG [] [] o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2025-08-14 17:15:59.581 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2025-08-14 17:15:59.583 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2025-08-14 17:15:59.585 [http-nio-9090-exec-7] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2025-08-14 17:15:59.597 [http-nio-9090-exec-7] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2025-08-14 17:15:59.598 [http-nio-9090-exec-7] DEBUG [] [] o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Thu Aug 14 17:15:59 CST 2025, status=404, error=Not Found, message=No message available,  (truncated)...]
+2025-08-14 17:15:59.633 [http-nio-9090-exec-7] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2025-08-14 17:16:07.877 [http-nio-9090-exec-8] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 17:16:07.884 [http-nio-9090-exec-8] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 17:16:07.995 [http-nio-9090-exec-8] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 17:16:08.014 [http-nio-9090-exec-9] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard-emergency-fix.js", parameters={}
+2025-08-14 17:16:08.014 [http-nio-9090-exec-9] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 17:16:08.017 [http-nio-9090-exec-9] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 17:28:50.074 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 17:28:50.075 [http-nio-9090-exec-3] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 17:28:50.076 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 17:31:51.645 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 17:31:51.647 [http-nio-9090-exec-5] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 17:31:51.648 [http-nio-9090-exec-5] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 304 NOT_MODIFIED
+2025-08-14 17:31:57.090 [SpringApplicationShutdownHook] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-14 17:31:57.096 [SpringApplicationShutdownHook] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-14 17:32:08.619 [background-preinit] INFO  [] [] org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-14 17:32:08.622 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Starting GreenhouseApplication using Java 17.0.15 on TH111401 with PID 23804 (D:\Space\smart-AgricultureMang\target\classes started by TH111401 in D:\Space\smart-AgricultureMang)
+2025-08-14 17:32:08.624 [restartedMain] DEBUG [] [] com.greenhouse.GreenhouseApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+2025-08-14 17:32:08.624 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-14 17:32:09.798 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+2025-08-14 17:32:09.800 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-14 17:32:09.801 [restartedMain] INFO  [] [] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+2025-08-14 17:32:09.882 [restartedMain] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-14 17:32:09.952 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-14 17:32:10.119 [restartedMain] INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-14 17:32:10.172 [restartedMain] INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-14 17:32:10.218 [restartedMain] INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-08-14 17:32:10.368 [restartedMain] INFO  [] [] org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-08-14 17:32:10.463 [restartedMain] INFO  [] [] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-08-14 17:32:10.665 [restartedMain] INFO  [] [] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-08-14 17:32:11.222 [restartedMain] WARN  [] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-14 17:32:11.315 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-14 17:32:11.392 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - 105 mappings in 'requestMappingHandlerMapping'
+2025-08-14 17:32:11.409 [restartedMain] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**, /frontend/**] in 'resourceHandlerMapping'
+2025-08-14 17:32:11.421 [restartedMain] DEBUG [] [] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-14 17:32:11.523 [restartedMain] INFO  [] [] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+2025-08-14 17:32:11.557 [restartedMain] INFO  [] [] com.greenhouse.GreenhouseApplication - Started GreenhouseApplication in 3.375 seconds (JVM running for 3.798)
+2025-08-14 17:32:11.559 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting simulation system initialization...
+2025-08-14 17:32:11.559 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Initializing simulated devices...
+2025-08-14 17:32:11.785 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully initialized simulated devices
+2025-08-14 17:32:11.785 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Starting scheduled tasks...
+2025-08-14 17:32:11.786 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Successfully started scheduled tasks
+2025-08-14 17:32:11.786 [restartedMain] INFO  [] [] com.greenhouse.config.SimulationStartupConfig - Simulation system initialization completed successfully
+2025-08-14 17:32:21.298 [http-nio-9090-exec-1] INFO  [] [] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-14 17:32:21.298 [http-nio-9090-exec-1] INFO  [] [] org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-14 17:32:21.298 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2025-08-14 17:32:21.299 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2025-08-14 17:32:21.299 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2025-08-14 17:32:21.300 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@15971175
+2025-08-14 17:32:21.300 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@219fa9ee
+2025-08-14 17:32:21.300 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-08-14 17:32:21.300 [http-nio-9090-exec-1] INFO  [] [] org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-08-14 17:32:21.314 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/", parameters={}
+2025-08-14 17:32:21.320 [http-nio-9090-exec-1] DEBUG [] [] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.greenhouse.controller.IndexController#index()
+2025-08-14 17:32:21.359 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.view.RedirectView - View name 'redirect:', model {}
+2025-08-14 17:32:21.361 [http-nio-9090-exec-1] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 302 FOUND
+2025-08-14 17:32:21.366 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/login.html", parameters={}
+2025-08-14 17:32:21.377 [http-nio-9090-exec-2] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 17:32:21.393 [http-nio-9090-exec-2] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 17:32:29.476 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard.html", parameters={}
+2025-08-14 17:32:29.479 [http-nio-9090-exec-3] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 17:32:29.594 [http-nio-9090-exec-3] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 17:32:29.612 [http-nio-9090-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - GET "/dashboard-emergency-fix.js", parameters={}
+2025-08-14 17:32:29.613 [http-nio-9090-exec-4] DEBUG [] [] o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [static/]]
+2025-08-14 17:32:29.616 [http-nio-9090-exec-4] DEBUG [] [] org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2025-08-14 17:47:27.916 [HikariPool-1 housekeeper] WARN  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m17s543ms552µs900ns).

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>温室数字化监控系统 - 入口页面</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+        }
+        .logo {
+            font-size: 72px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 32px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+        .button {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            margin: 10px;
+            transition: all 0.3s ease;
+            min-width: 200px;
+        }
+        .button:hover {
+            background: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+        }
+        .button.secondary {
+            background: #95a5a6;
+        }
+        .button.secondary:hover {
+            background: #7f8c8d;
+        }
+        .button.warning {
+            background: #e74c3c;
+        }
+        .button.warning:hover {
+            background: #c0392b;
+        }
+        .status {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 1px solid #c3e6cb;
+        }
+        .version-info {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🌱</div>
+        <h1>温室数字化监控系统</h1>
+        <div class="subtitle">智能农业管理平台</div>
+
+        <div class="status">
+            <strong>✅ 用户管理功能已修复</strong>
+            <br>现在使用修复版本的JavaScript文件
+        </div>
+
+        <div style="margin: 30px 0;">
+            <a href="dashboard.html" class="button">🚀 进入主系统</a>
+            <br>
+            <a href="final-test.html" class="button secondary">🧪 功能测试</a>
+            <br>
+            <a href="clear-cache.html" class="button warning">🔄 清除缓存</a>
+        </div>
+
+        <div class="version-info">
+            <strong>版本信息：</strong>
+            <br>• 用户管理模块：v2.0 (修复版)
+            <br>• 文件：user-management-fixed.js
+            <br>• 状态：已修复中文注释语法错误
+            <br>• 更新时间：2025-08-14
+        </div>
+
+        <div style="margin-top: 20px; font-size: 12px; color: #999;">
+            如果遇到缓存问题，请按 Ctrl+Shift+R 强制刷新页面
+        </div>
+    </div>
+
+    <script>
+        // 检测是否有缓存问题
+        console.log('系统入口页面加载完成');
+        console.log('当前时间:', new Date().toLocaleString());
+        
+        // 预加载关键资源
+        const preloadLinks = [
+            'dashboard-emergency-fix.js',
+            'user-management-fixed.js'
+        ];
+        
+        preloadLinks.forEach(src => {
+            const link = document.createElement('link');
+            link.rel = 'preload';
+            link.as = 'script';
+            link.href = src;
+            document.head.appendChild(link);
+        });
+    </script>
+</body>
+</html>

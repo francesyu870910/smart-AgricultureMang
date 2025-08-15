@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹窗功能测试</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .test-button {
+            background: #3498db;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+        }
+        .test-button:hover {
+            background: #2980b9;
+        }
+        .debug-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        .success {
+            color: #28a745;
+        }
+        .error {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🧪 弹窗功能测试</h1>
+        <p>这个页面专门用来测试添加用户弹窗功能</p>
+        
+        <div class="debug-info" id="debugInfo">
+            正在加载调试信息...
+        </div>
+        
+        <button class="test-button" onclick="testShowModal()">🔍 测试显示弹窗</button>
+        <button class="test-button" onclick="testCloseModal()">❌ 测试关闭弹窗</button>
+        <button class="test-button" onclick="checkModalExists()">📋 检查弹窗是否存在</button>
+        
+        <div id="user-container" style="margin-top: 30px;"></div>
+    </div>
+
+    <script src="user-manager-debug.js"></script>
+    <script>
+        function updateDebugInfo(message, type = 'info') {
+            const debugDiv = document.getElementById('debugInfo');
+            const timestamp = new Date().toLocaleTimeString();
+            const className = type === 'success' ? 'success' : (type === 'error' ? 'error' : '');
+            debugDiv.innerHTML += `<div class="${className}">[${timestamp}] ${message}</div>`;
+        }
+
+        function testShowModal() {
+            updateDebugInfo('测试显示弹窗...');
+            try {
+                if (typeof showAddUserModal === 'function') {
+                    showAddUserModal();
+                    updateDebugInfo('✅ showAddUserModal() 调用成功', 'success');
+                } else {
+                    updateDebugInfo('❌ showAddUserModal 函数不存在', 'error');
+                }
+            } catch (error) {
+                updateDebugInfo('❌ 调用出错: ' + error.message, 'error');
+            }
+        }
+
+        function testCloseModal() {
+            updateDebugInfo('测试关闭弹窗...');
+            try {
+                if (typeof closeAddUserModal === 'function') {
+                    closeAddUserModal();
+                    updateDebugInfo('✅ closeAddUserModal() 调用成功', 'success');
+                } else {
+                    updateDebugInfo('❌ closeAddUserModal 函数不存在', 'error');
+                }
+            } catch (error) {
+                updateDebugInfo('❌ 调用出错: ' + error.message, 'error');
+            }
+        }
+
+        function checkModalExists() {
+            updateDebugInfo('检查弹窗元素...');
+            const modal = document.getElementById('addUserModal');
+            if (modal) {
+                updateDebugInfo('✅ 弹窗元素存在', 'success');
+                updateDebugInfo('弹窗显示状态: ' + modal.style.display);
+                updateDebugInfo('弹窗位置: ' + modal.getBoundingClientRect().top);
+            } else {
+                updateDebugInfo('❌ 弹窗元素不存在', 'error');
+            }
+        }
+
+        // 页面加载完成后的初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            updateDebugInfo('页面加载完成');
+            
+            // 检查函数是否存在
+            const functions = ['loadUsersContent', 'showAddUserModal', 'closeAddUserModal', 'saveNewUser'];
+            functions.forEach(funcName => {
+                if (typeof window[funcName] === 'function') {
+                    updateDebugInfo(`✅ ${funcName} 函数存在`, 'success');
+                } else {
+                    updateDebugInfo(`❌ ${funcName} 函数不存在`, 'error');
+                }
+            });
+
+            // 加载用户管理内容
+            const container = document.getElementById('user-container');
+            if (typeof loadUsersContent === 'function') {
+                updateDebugInfo('正在加载用户管理内容...');
+                loadUsersContent(container);
+                updateDebugInfo('✅ 用户管理内容加载完成', 'success');
+            } else {
+                updateDebugInfo('❌ loadUsersContent 函数不存在', 'error');
+            }
+        });
+
+        // 监听弹窗状态变化
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.type === 'childList') {
+                    const modal = document.getElementById('addUserModal');
+                    if (modal) {
+                        updateDebugInfo('🔍 检测到弹窗元素变化');
+                    }
+                }
+            });
+        });
+
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+    </script>
+</body>
+</html>

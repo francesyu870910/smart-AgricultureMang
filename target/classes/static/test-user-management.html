@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户管理测试</title>
+    <script src="user-management.js"></script>
+</head>
+<body>
+    <div style="padding: 20px;">
+        <h1>用户管理功能测试</h1>
+        <div id="test-container"></div>
+        
+        <script>
+            // 等待页面加载完成后测试
+            document.addEventListener('DOMContentLoaded', function() {
+                console.log('Testing user management...');
+                
+                // 测试加载用户管理内容
+                const container = document.getElementById('test-container');
+                if (typeof loadUsersContent === 'function') {
+                    loadUsersContent(container);
+                    console.log('User management loaded successfully!');
+                } else {
+                    console.error('loadUsersContent function not found!');
+                    container.innerHTML = '<p style="color: red;">用户管理功能加载失败</p>';
+                }
+            });
+        </script>
+    </div>
+</body>
+</html>

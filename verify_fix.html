@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard 修复验证</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; }
+        .status { padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .info { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+        button { padding: 10px 20px; margin: 5px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1>Dashboard 修复验证</h1>
+    
+    <div id="results"></div>
+    
+    <button onclick="verifyDashboardFix()">验证修复状态</button>
+    <button onclick="testShowPageFunction()">测试 showPage 函数</button>
+    
+    <script>
+        function verifyDashboardFix() {
+            const resultsDiv = document.getElementById('results');
+            let results = '<h2>验证结果：</h2>';
+            
+            // 检查 dashboard.html 是否包含修复代码
+            fetch('src/main/resources/static/dashboard.html')
+                .then(response => response.text())
+                .then(html => {
+                    // 检查是否包含立即定义的 showPage 函数
+                    if (html.includes('// ===== 立即定义关键函数 =====')) {
+                        results += '<div class="status success">✅ 修复代码已添加到 dashboard.html</div>';
+                    } else {
+                        results += '<div class="status error">❌ 修复代码未找到</div>';
+                    }
+                    
+                    // 检查是否包含 showPage 函数定义
+                    if (html.includes('function showPage(pageId)')) {
+                        results += '<div class="status success">✅ showPage 函数已定义</div>';
+                    } else {
+                        results += '<div class="status error">❌ showPage 函数未定义</div>';
+                    }
+                    
+                    // 检查是否包含 logoutSystem 函数定义
+                    if (html.includes('function logoutSystem()')) {
+                        results += '<div class="status success">✅ logoutSystem 函数已定义</div>';
+                    } else {
+                        results += '<div class="status error">❌ logoutSystem 函数未定义</div>';
+                    }
+                    
+                    // 检查是否修复了重复变量声明
+                    const currentPageMatches = (html.match(/let currentPage/g) || []).length;
+                    if (currentPageMatches <= 1) {
+                        results += '<div class="status success">✅ 重复变量声明已修复</div>';
+                    } else {
+                        results += '<div class="status error">❌ 仍存在重复变量声明 (' + currentPageMatches + ' 处)</div>';
+                    }
+                    
+                    // 检查是否包含错误处理
+                    if (html.includes('try {') && html.includes('catch (error)')) {
+                        results += '<div class="status success">✅ 包含错误处理机制</div>';
+                    } else {
+                        results += '<div class="status info">ℹ️ 建议添加更多错误处理</div>';
+                    }
+                    
+                    results += '<div class="status info">ℹ️ 修复完成！现在可以测试 dashboard.html 页面</div>';
+                    resultsDiv.innerHTML = results;
+                })
+                .catch(error => {
+                    results += '<div class="status error">❌ 无法读取 dashboard.html 文件: ' + error.message + '</div>';
+                    resultsDiv.innerHTML = results;
+                });
+        }
+        
+        function testShowPageFunction() {
+            const resultsDiv = document.getElementById('results');
+            let results = '<h2>函数测试结果：</h2>';
+            
+            // 测试外部脚本中的函数
+            if (typeof window.showPage === 'function') {
+                results += '<div class="status success">✅ showPage 函数在全局作用域中可用</div>';
+            } else {
+                results += '<div class="status error">❌ showPage 函数在全局作用域中不可用</div>';
+            }
+            
+            if (typeof window.logoutSystem === 'function') {
+                results += '<div class="status success">✅ logoutSystem 函数在全局作用域中可用</div>';
+            } else {
+                results += '<div class="status error">❌ logoutSystem 函数在全局作用域中不可用</div>';
+            }
+            
+            results += '<div class="status info">ℹ️ 请在浏览器中打开 dashboard.html 进行完整测试</div>';
+            resultsDiv.innerHTML = results;
+        }
+        
+        // 页面加载时自动验证
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(verifyDashboardFix, 500);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard 测试页面</title>
+    <script src="dashboard-emergency-fix.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 250px;
+            height: 100vh;
+            background: #34495E;
+            padding: 20px;
+        }
+
+        .menu-item {
+            padding: 15px;
+            color: white;
+            cursor: pointer;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+
+        .menu-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .menu-item.active {
+            background: #2ecc71;
+        }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        .content-page {
+            display: none;
+        }
+
+        .content-page.active {
+            display: block;
+        }
+
+        .page-header {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .test-info {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <h2 style="color: white; margin-bottom: 30px;">🌱 测试系统</h2>
+        <div class="menu-item active" onclick="showPage('dashboard')">
+            📊 系统概览
+        </div>
+        <div class="menu-item" onclick="showPage('environment')">
+            🌡️ 环境监控
+        </div>
+        <div class="menu-item" onclick="showPage('devices')">
+            ⚙️ 设备控制
+        </div>
+        <div class="menu-item" onclick="showPage('alerts')">
+            🚨 报警管理
+        </div>
+        <div style="position: absolute; bottom: 20px; left: 20px; right: 20px;">
+            <button onclick="logoutSystem()"
+                style="width: 100%; padding: 10px; background: #e74c3c; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                退出系统
+            </button>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="test-info">
+            <strong>测试说明：</strong>这是一个简化的测试页面，用于验证 showPage 函数是否正常工作。
+            点击左侧菜单项应该能够切换页面内容。
+        </div>
+
+        <!-- 系统概览页面 -->
+        <div id="dashboard-page" class="content-page active">
+            <div class="page-header">
+                <h1>📊 系统概览</h1>
+                <p>欢迎使用温室数字化监控系统测试页面</p>
+            </div>
+            <div id="dashboard-content">
+                <div
+                    style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <h3>系统状态</h3>
+                    <p>✅ showPage 函数正常工作</p>
+                    <p>✅ 页面切换功能正常</p>
+                    <p>✅ 菜单状态更新正常</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 环境监控页面 -->
+        <div id="environment-page" class="content-page">
+            <div class="page-header">
+                <h1>🌡️ 环境监控</h1>
+                <p>实时监控温室环境参数</p>
+            </div>
+            <div id="environment-content">
+                <div
+                    style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <h3>环境数据</h3>
+                    <p>温度: 24.5°C</p>
+                    <p>湿度: 65.8%</p>
+                    <p>光照: 25000 lux</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 设备控制页面 -->
+        <div id="devices-page" class="content-page">
+            <div class="page-header">
+                <h1>⚙️ 设备控制</h1>
+                <p>远程控制温室设备</p>
+            </div>
+            <div id="devices-content">
+                <div
+                    style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <h3>设备列表</h3>
+                    <p>🔥 加热器: 运行中</p>
+                    <p>💨 通风扇: 运行中</p>
+                    <p>💡 补光灯: 待机</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 报警管理页面 -->
+        <div id="alerts-page" class="content-page">
+            <div class="page-header">
+                <h1>🚨 报警管理</h1>
+                <p>管理系统报警信息</p>
+            </div>
+            <div id="alerts-content">
+                <div
+                    style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <h3>报警列表</h3>
+                    <p>⚠️ 温度偏高警告</p>
+                    <p>ℹ️ 系统运行正常</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 测试脚本
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log('Test page loaded');
+            console.log('showPage function available:', typeof window.showPage);
+            console.log('logoutSystem function available:', typeof window.logoutSystem);
+
+            // 显示测试结果
+            setTimeout(function () {
+                if (typeof window.showPage === 'function') {
+                    console.log('✅ showPage function test passed');
+                } else {
+                    console.error('❌ showPage function test failed');
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+
+</html>

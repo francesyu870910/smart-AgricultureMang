@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>showPage 函数测试</title>
+    <script src="dashboard_fix.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-button { padding: 10px 20px; margin: 10px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        .test-button:hover { background: #0056b3; }
+        .content-page { display: none; padding: 20px; margin: 20px 0; border: 1px solid #ddd; border-radius: 5px; }
+        .content-page.active { display: block; background: #f8f9fa; }
+        .menu-item { display: inline-block; padding: 10px 15px; margin: 5px; background: #6c757d; color: white; cursor: pointer; border-radius: 3px; }
+        .menu-item.active { background: #28a745; }
+        #test-result { margin: 20px 0; padding: 15px; border-radius: 5px; }
+        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+    </style>
+</head>
+<body>
+    <h1>showPage 函数测试</h1>
+    
+    <div id="test-result"></div>
+    
+    <h2>测试按钮</h2>
+    <button class="test-button" onclick="testShowPageFunction()">测试 showPage 函数是否定义</button>
+    <button class="test-button" onclick="testPageSwitching()">测试页面切换功能</button>
+    
+    <h2>模拟菜单</h2>
+    <div class="menu-item active" onclick="showPage('dashboard')">系统概览</div>
+    <div class="menu-item" onclick="showPage('environment')">环境监控</div>
+    <div class="menu-item" onclick="showPage('devices')">设备控制</div>
+    
+    <h2>模拟页面内容</h2>
+    <div id="dashboard-page" class="content-page active">
+        <h3>系统概览页面</h3>
+        <p>这是系统概览页面的内容</p>
+    </div>
+    
+    <div id="environment-page" class="content-page">
+        <h3>环境监控页面</h3>
+        <div id="environment-content">环境监控内容加载中...</div>
+    </div>
+    
+    <div id="devices-page" class="content-page">
+        <h3>设备控制页面</h3>
+        <div id="devices-content">设备控制内容加载中...</div>
+    </div>
+
+    <script>
+        function testShowPageFunction() {
+            const resultDiv = document.getElementById('test-result');
+            
+            if (typeof showPage === 'function') {
+                resultDiv.innerHTML = '<div class="success">✅ 成功！showPage 函数已正确定义</div>';
+                console.log('showPage function test passed');
+            } else {
+                resultDiv.innerHTML = '<div class="error">❌ 错误！showPage 函数未定义</div>';
+                console.error('showPage function test failed');
+            }
+        }
+        
+        function testPageSwitching() {
+            const resultDiv = document.getElementById('test-result');
+            
+            try {
+                // 测试切换到环境监控页面
+                showPage('environment');
+                
+                // 检查页面是否正确切换
+                const environmentPage = document.getElementById('environment-page');
+                const dashboardPage = document.getElementById('dashboard-page');
+                
+                if (environmentPage.classList.contains('active') && !dashboardPage.classList.contains('active')) {
+                    resultDiv.innerHTML = '<div class="success">✅ 成功！页面切换功能正常工作</div>';
+                    console.log('Page switching test passed');
+                } else {
+                    resultDiv.innerHTML = '<div class="error">❌ 错误！页面切换功能异常</div>';
+                    console.error('Page switching test failed');
+                }
+            } catch (error) {
+                resultDiv.innerHTML = '<div class="error">❌ 错误！页面切换时发生异常: ' + error.message + '</div>';
+                console.error('Page switching test error:', error);
+            }
+        }
+        
+        // 页面加载完成后自动运行测试
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Test page loaded');
+            setTimeout(testShowPageFunction, 500);
+        });
+    </script>
+</body>
+</html>

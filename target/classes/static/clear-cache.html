@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清除缓存 - 温室数字化监控系统</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+        .icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        .description {
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        .steps {
+            text-align: left;
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .step {
+            margin: 15px 0;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .step:last-child {
+            border-bottom: none;
+        }
+        .step-number {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+        .button {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            margin: 10px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+        .button.secondary {
+            background: #95a5a6;
+        }
+        .button.secondary:hover {
+            background: #7f8c8d;
+        }
+        .alert {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px solid #c3e6cb;
+        }
+        .warning {
+            background: #fff3cd;
+            color: #856404;
+            border-color: #ffeaa7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">🔄</div>
+        <h1>清除浏览器缓存</h1>
+        <div class="description">
+            为了确保用户管理功能正常工作，请按照以下步骤清除浏览器缓存：
+        </div>
+
+        <div class="alert warning">
+            <strong>注意：</strong> 旧版本的JavaScript文件已被删除，现在使用修复版本。
+        </div>
+
+        <div class="steps">
+            <div class="step">
+                <span class="step-number">1</span>
+                <strong>按 Ctrl + Shift + R</strong> (Windows) 或 <strong>Cmd + Shift + R</strong> (Mac) 强制刷新页面
+            </div>
+            <div class="step">
+                <span class="step-number">2</span>
+                <strong>或者按 F12 打开开发者工具</strong>，右键点击刷新按钮，选择"清空缓存并硬性重新加载"
+            </div>
+            <div class="step">
+                <span class="step-number">3</span>
+                <strong>清除浏览器缓存：</strong>
+                <br>• Chrome: Ctrl + Shift + Delete
+                <br>• Firefox: Ctrl + Shift + Delete
+                <br>• Edge: Ctrl + Shift + Delete
+            </div>
+            <div class="step">
+                <span class="step-number">4</span>
+                <strong>重新打开系统</strong> 并测试用户管理功能
+            </div>
+        </div>
+
+        <div class="alert">
+            <strong>修复内容：</strong>
+            <br>• 删除了有问题的 user-management.js 文件
+            <br>• 现在使用 user-management-fixed.js 修复版本
+            <br>• 修复了中文注释导致的语法错误
+            <br>• 所有功能函数都已正确定义
+        </div>
+
+        <div style="margin-top: 30px;">
+            <button class="button" onclick="forceReload()">🔄 强制刷新当前页面</button>
+            <a href="dashboard.html" class="button">🏠 返回主系统</a>
+            <a href="final-test.html" class="button secondary">🧪 测试功能</a>
+        </div>
+
+        <div style="margin-top: 20px; font-size: 14px; color: #666;">
+            如果问题仍然存在，请尝试使用无痕/隐私浏览模式打开系统
+        </div>
+    </div>
+
+    <script>
+        function forceReload() {
+            // 清除所有缓存并重新加载
+            if ('caches' in window) {
+                caches.keys().then(function(names) {
+                    names.forEach(function(name) {
+                        caches.delete(name);
+                    });
+                });
+            }
+            
+            // 强制重新加载页面
+            window.location.reload(true);
+        }
+
+        // 显示当前时间戳，帮助确认页面是否为最新版本
+        document.addEventListener('DOMContentLoaded', function() {
+            const timestamp = new Date().toLocaleString();
+            console.log('页面加载时间:', timestamp);
+            
+            // 在页面底部显示时间戳
+            const timestampDiv = document.createElement('div');
+            timestampDiv.style.cssText = 'position: fixed; bottom: 10px; right: 10px; background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 5px; font-size: 12px;';
+            timestampDiv.textContent = '页面加载: ' + timestamp;
+            document.body.appendChild(timestampDiv);
+        });
+    </script>
+</body>
+</html>

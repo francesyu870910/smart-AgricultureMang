@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>重启服务器指南</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 32px;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 18px;
+        }
+        .alert {
+            background: #fff3cd;
+            color: #856404;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 1px solid #ffeaa7;
+            font-weight: 500;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border-color: #c3e6cb;
+        }
+        .steps {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .step {
+            margin: 20px 0;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .step:last-child {
+            border-bottom: none;
+        }
+        .step-number {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 16px;
+        }
+        .step-content {
+            display: inline-block;
+            vertical-align: top;
+            width: calc(100% - 50px);
+        }
+        .step-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+        .step-desc {
+            color: #666;
+            line-height: 1.6;
+        }
+        .code {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        .button {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            margin: 10px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+        .button.success {
+            background: #27ae60;
+        }
+        .button.success:hover {
+            background: #229954;
+        }
+        .file-status {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #3498db;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="icon">🔄</div>
+            <h1>服务器重启指南</h1>
+            <div class="subtitle">解决用户管理功能缓存问题</div>
+        </div>
+
+        <div class="alert">
+            <strong>问题分析：</strong> 系统仍在加载旧的 user-management.js 文件，这可能是服务器缓存导致的。
+            <br><strong>解决方案：</strong> 重启Spring Boot服务器以清除服务器端缓存。
+        </div>
+
+        <div class="file-status">
+            <h3>📁 文件更新状态</h3>
+            <p>✅ 已创建新文件：<code>user-manager.js</code></p>
+            <p>✅ 已更新引用：<code>dashboard.html</code> 现在引用新文件</p>
+            <p>❌ 删除旧文件：<code>user-management.js</code> (有语法错误)</p>
+        </div>
+
+        <div class="steps">
+            <h2>🚀 重启步骤</h2>
+            
+            <div class="step">
+                <span class="step-number">1</span>
+                <div class="step-content">
+                    <div class="step-title">停止当前服务器</div>
+                    <div class="step-desc">
+                        在运行Spring Boot应用的终端或命令行中按 <strong>Ctrl + C</strong> 停止服务器
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">2</span>
+                <div class="step-content">
+                    <div class="step-title">重新启动服务器</div>
+                    <div class="step-desc">
+                        使用以下命令重新启动Spring Boot应用：
+                        <div class="code">
+                            # 如果使用Maven
+                            mvn spring-boot:run
+                            
+                            # 或者如果使用Gradle
+                            ./gradlew bootRun
+                            
+                            # 或者直接运行jar文件
+                            java -jar target/your-app.jar
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">3</span>
+                <div class="step-content">
+                    <div class="step-title">清除浏览器缓存</div>
+                    <div class="step-desc">
+                        在浏览器中按 <strong>Ctrl + Shift + R</strong> 强制刷新页面，或者：
+                        <br>• 按 F12 打开开发者工具
+                        <br>• 右键点击刷新按钮
+                        <br>• 选择"清空缓存并硬性重新加载"
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">4</span>
+                <div class="step-content">
+                    <div class="step-title">验证修复结果</div>
+                    <div class="step-desc">
+                        重新访问 <code>localhost:9090</code>，登录后点击用户管理，检查控制台应该显示：
+                        <div class="code">
+                            User manager module loading...
+                            User manager module loaded successfully!
+                        </div>
+                        而不是旧的错误信息。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="alert success">
+            <strong>✅ 修复完成标志：</strong>
+            <br>• 控制台显示 "User manager module loaded successfully!"
+            <br>• 用户管理页面正常显示用户列表
+            <br>• 添加用户功能完全正常
+            <br>• 不再有 "渲染用户列表 is not defined" 错误
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <button class="button success" onclick="window.close()">✅ 我已重启服务器</button>
+            <a href="dashboard.html" class="button">🏠 返回主系统</a>
+        </div>
+
+        <div style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 8px; font-size: 14px; color: #666;">
+            <strong>技术说明：</strong>
+            <br>• Spring Boot 会缓存静态资源文件
+            <br>• 文件名更改可以避免浏览器缓存问题
+            <br>• 服务器重启会清除所有缓存
+            <br>• 新文件 user-manager.js 已修复所有语法错误
+        </div>
+    </div>
+
+    <script>
+        // 显示当前时间
+        document.addEventListener('DOMContentLoaded', function() {
+            const timestamp = new Date().toLocaleString();
+            console.log('重启指南页面加载时间:', timestamp);
+        });
+    </script>
+</body>
+</html>

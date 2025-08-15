@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户管理简单测试</title>
+</head>
+<body>
+    <div style="padding: 20px; font-family: Arial, sans-serif;">
+        <h1>用户管理功能测试</h1>
+        <div id="test-status" style="margin: 20px 0; padding: 10px; background: #f0f0f0; border-radius: 5px;">
+            正在加载...
+        </div>
+        <div id="user-container" style="margin-top: 20px;"></div>
+    </div>
+
+    <script src="user-management.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const statusDiv = document.getElementById('test-status');
+            const container = document.getElementById('user-container');
+            
+            try {
+                // 检查函数是否正确加载
+                if (typeof loadUsersContent === 'function') {
+                    statusDiv.innerHTML = '✅ 用户管理模块加载成功！';
+                    statusDiv.style.background = '#d4edda';
+                    statusDiv.style.color = '#155724';
+                    
+                    // 加载用户管理内容
+                    loadUsersContent(container);
+                } else {
+                    statusDiv.innerHTML = '❌ 用户管理模块加载失败 - loadUsersContent函数未找到';
+                    statusDiv.style.background = '#f8d7da';
+                    statusDiv.style.color = '#721c24';
+                }
+            } catch (error) {
+                statusDiv.innerHTML = '❌ 加载错误: ' + error.message;
+                statusDiv.style.background = '#f8d7da';
+                statusDiv.style.color = '#721c24';
+                console.error('Error loading user management:', error);
+            }
+        });
+    </script>
+</body>
+</html>

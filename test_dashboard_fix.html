@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard 修复测试</title>
+</head>
+<body>
+    <h1>Dashboard 修复测试</h1>
+    <p>点击下面的按钮测试 showPage 函数是否正常工作：</p>
+    
+    <button onclick="testShowPageFunction()">测试 showPage 函数</button>
+    <div id="test-result"></div>
+
+    <script>
+        function testShowPageFunction() {
+            const resultDiv = document.getElementById('test-result');
+            
+            // 检查 showPage 函数是否在 dashboard.html 中定义
+            fetch('src/main/resources/static/dashboard.html')
+                .then(response => response.text())
+                .then(html => {
+                    if (html.includes('function showPage(pageId)')) {
+                        resultDiv.innerHTML = '<p style="color: green;">✅ 成功！showPage 函数已正确定义在 dashboard.html 中</p>';
+                    } else {
+                        resultDiv.innerHTML = '<p style="color: red;">❌ 错误！showPage 函数未找到</p>';
+                    }
+                })
+                .catch(error => {
+                    resultDiv.innerHTML = '<p style="color: red;">❌ 测试失败：' + error.message + '</p>';
+                });
+        }
+    </script>
+</body>
+</html>

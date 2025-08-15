@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户管理调试</title>
+</head>
+<body>
+    <div style="padding: 20px; font-family: Arial, sans-serif;">
+        <h1>用户管理调试页面</h1>
+        <div id="debug-info"></div>
+        <div id="user-container"></div>
+    </div>
+
+    <script>
+        // 在加载用户管理脚本之前先设置调试信息
+        console.log('Debug page loading...');
+        
+        window.addEventListener('error', function(e) {
+            const debugDiv = document.getElementById('debug-info');
+            debugDiv.innerHTML += '<div style="color: red; margin: 5px 0;">错误: ' + e.message + ' (行: ' + e.lineno + ')</div>';
+        });
+    </script>
+    
+    <script src="user-management.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const debugDiv = document.getElementById('debug-info');
+            const container = document.getElementById('user-container');
+            
+            debugDiv.innerHTML = '<h3>调试信息:</h3>';
+            
+            // 检查全局变量
+            debugDiv.innerHTML += '<div>usersData 是否存在: ' + (typeof usersData !== 'undefined') + '</div>';
+            debugDiv.innerHTML += '<div>loadUsersContent 是否存在: ' + (typeof loadUsersContent !== 'undefined') + '</div>';
+            debugDiv.innerHTML += '<div>window.loadUsersContent 是否存在: ' + (typeof window.loadUsersContent !== 'undefined') + '</div>';
+            
+            // 尝试调用函数
+            try {
+                if (typeof loadUsersContent === 'function') {
+                    debugDiv.innerHTML += '<div style="color: green;">正在调用 loadUsersContent...</div>';
+                    loadUsersContent(container);
+                    debugDiv.innerHTML += '<div style="color: green;">✅ 用户管理内容加载成功!</div>';
+                } else {
+                    debugDiv.innerHTML += '<div style="color: red;">❌ loadUsersContent 函数未定义</div>';
+                }
+            } catch (error) {
+                debugDiv.innerHTML += '<div style="color: red;">❌ 调用错误: ' + error.message + '</div>';
+                console.error('Error:', error);
+            }
+        });
+    </script>
+</body>
+</html>

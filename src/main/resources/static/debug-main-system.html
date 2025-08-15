@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主系统调试</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .debug-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .test-btn {
+            background: #3498db;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+        }
+        .debug-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            font-family: monospace;
+            font-size: 14px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="debug-container">
+        <h1>🔍 主系统调试</h1>
+        <p>这个页面用来调试主系统中的用户管理功能</p>
+        
+        <div class="debug-info" id="debugInfo">
+            正在加载调试信息...
+        </div>
+        
+        <button class="test-btn" onclick="testShowModal()">🧪 测试显示弹窗</button>
+        <button class="test-btn" onclick="testFunctions()">📋 检查函数</button>
+        <button class="test-btn" onclick="loadUserManagement()">📄 加载用户管理</button>
+        
+        <div id="user-container" style="margin-top: 30px;"></div>
+    </div>
+
+    <!-- 引入相同的脚本 -->
+    <script src="dashboard-emergency-fix.js"></script>
+    <script src="user-manager-final.js"></script>
+    
+    <script>
+        function addDebugInfo(message, type = 'info') {
+            const debugDiv = document.getElementById('debugInfo');
+            const timestamp = new Date().toLocaleTimeString();
+            const color = type === 'error' ? 'red' : (type === 'success' ? 'green' : 'black');
+            debugDiv.innerHTML += `<div style="color: ${color};">[${timestamp}] ${message}</div>`;
+            debugDiv.scrollTop = debugDiv.scrollHeight;
+        }
+
+        function testShowModal() {
+            addDebugInfo('测试显示弹窗...');
+            try {
+                if (typeof showAddUserModal === 'function') {
+                    addDebugInfo('✅ showAddUserModal 函数存在', 'success');
+                    showAddUserModal();
+                    addDebugInfo('✅ showAddUserModal 调用完成', 'success');
+                } else {
+                    addDebugInfo('❌ showAddUserModal 函数不存在', 'error');
+                }
+            } catch (error) {
+                addDebugInfo('❌ 调用出错: ' + error.message, 'error');
+            }
+        }
+
+        function testFunctions() {
+            addDebugInfo('检查所有函数...');
+            const functions = [
+                'loadUsersContent',
+                'showAddUserModal', 
+                'closeAddUserModal',
+                'saveNewUser',
+                'searchUsers',
+                'refreshUserList',
+                'deleteUser'
+            ];
+            
+            functions.forEach(funcName => {
+                if (typeof window[funcName] === 'function') {
+                    addDebugInfo(`✅ ${funcName} 存在`, 'success');
+                } else {
+                    addDebugInfo(`❌ ${funcName} 不存在`, 'error');
+                }
+            });
+        }
+
+        function loadUserManagement() {
+            addDebugInfo('加载用户管理内容...');
+            const container = document.getElementById('user-container');
+            
+            try {
+                if (typeof loadUsersContent === 'function') {
+                    loadUsersContent(container);
+                    addDebugInfo('✅ 用户管理内容加载成功', 'success');
+                } else {
+                    addDebugInfo('❌ loadUsersContent 函数不存在', 'error');
+                }
+            } catch (error) {
+                addDebugInfo('❌ 加载出错: ' + error.message, 'error');
+            }
+        }
+
+        // 页面加载完成后的初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            addDebugInfo('页面加载完成');
+            addDebugInfo('开始检查脚本加载状态...');
+            
+            // 检查脚本是否加载
+            setTimeout(() => {
+                testFunctions();
+            }, 1000);
+        });
+
+        // 监听所有点击事件
+        document.addEventListener('click', function(event) {
+            if (event.target.onclick && event.target.onclick.toString().includes('showAddUserModal')) {
+                addDebugInfo('🔍 检测到 showAddUserModal 按钮点击');
+            }
+        });
+
+        // 重写 showAlert 函数来捕获提示
+        const originalShowAlert = window.showAlert;
+        window.showAlert = function(message, type) {
+            addDebugInfo(`📢 提示消息: ${message} (类型: ${type})`);
+            if (originalShowAlert) {
+                originalShowAlert(message, type);
+            }
+        };
+    </script>
+</body>
+</html>
